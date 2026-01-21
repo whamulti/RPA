@@ -169,7 +169,7 @@ class Bot:
 
             # Find Element Activity
             # Displayname: Find_Element
-            menu_porta_impressora = webBot.find_element(selector="/html/body/div[2]/div[2]/div/main/div/div/div[2]/div[2]/ul/li[11]/a/span", by=By.XPATH, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
+            menu_porta_impressora = webBot.find_element(selector="/html/body/div[2]/div[2]/div/main/div/div/div[2]/div[2]/ul/li[9]/a/span", by=By.XPATH, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
 
             # Click Activity
             # Displayname: Click
@@ -181,7 +181,7 @@ class Bot:
 
             # Find Element Activity
             # Displayname: Find_Element
-            adicionar_ip = webBot.find_element(selector="/html/body/div[2]/div[2]/div/main/div/div/div[2]/div[2]/div/div[11]/div/form/div/div[3]/button", by=By.XPATH, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
+            adicionar_ip = webBot.find_element(selector="add", by=By.NAME, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
 
             # Click Activity
             # Displayname: Click
@@ -217,7 +217,7 @@ class Bot:
 
             #  Navigate to Activity
             # Displayname: Navigate_To
-            webBot.navigate_to("http://10.2.17.66/front/printer.form.php?id=-1&withtemplate=2")
+            webBot.navigate_to("http://10.2.17.66/front/phone.form.php?id=-1&withtemplate=2")
 
             # Wait Activity
             # Displayname: Wait

@@ -89,10 +89,10 @@
                         <jwf:Find_Element DisplayName="Encontrar_nome" sap2010:WorkflowViewState.IdRef="Find_Element_73" InstanceBrowser="webBot" by="NAME" ensure_clickable="False" ensure_visible="False" instance_element="envia_impressora" selector="&quot;add&quot;" waiting_time="1000" />
                         <jmc:Click DisplayName="Adicionar_impressora" Element="envia_impressora" sap2010:WorkflowViewState.IdRef="Click_20" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
                         <jww:Wait DisplayName="Espera_pop_up" sap2010:WorkflowViewState.IdRef="Wait_6" InstanceBrowser="webBot" wait_time="15000" />
-                        <jwf:Find_Element sap2010:WorkflowViewState.IdRef="Find_Element_76" InstanceBrowser="webBot" by="XPATH" ensure_clickable="False" ensure_visible="False" instance_element="menu_porta_impressora" selector="&quot;/html/body/div[2]/div[2]/div/main/div/div/div[2]/div[2]/ul/li[11]/a/span&quot;" waiting_time="1000" />
+                        <jwf:Find_Element sap2010:WorkflowViewState.IdRef="Find_Element_76" InstanceBrowser="webBot" by="XPATH" ensure_clickable="False" ensure_visible="False" instance_element="menu_porta_impressora" selector="&quot;/html/body/div[2]/div[2]/div/main/div/div/div[2]/div[2]/ul/li[9]/a/span&quot;" waiting_time="1000" />
                         <jmc:Click Element="menu_porta_impressora" sap2010:WorkflowViewState.IdRef="Click_22" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
                         <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_7" InstanceBrowser="webBot" wait_time="5000" />
-                        <jwf:Find_Element sap2010:WorkflowViewState.IdRef="Find_Element_77" InstanceBrowser="webBot" by="XPATH" ensure_clickable="False" ensure_visible="False" instance_element="adicionar_ip" selector="&quot;/html/body/div[2]/div[2]/div/main/div/div/div[2]/div[2]/div/div[11]/div/form/div/div[3]/button&quot;" waiting_time="1000" />
+                        <jwf:Find_Element sap2010:WorkflowViewState.IdRef="Find_Element_77" InstanceBrowser="webBot" by="NAME" ensure_clickable="False" ensure_visible="False" instance_element="adicionar_ip" selector="&quot;add&quot;" waiting_time="1000" />
                         <jmc:Click Element="adicionar_ip" sap2010:WorkflowViewState.IdRef="Click_23" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
                         <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_8" InstanceBrowser="webBot" wait_time="5000" />
                         <jwf:Find_Element sap2010:WorkflowViewState.IdRef="Find_Element_78" InstanceBrowser="webBot" by="NAME" ensure_clickable="False" ensure_visible="False" instance_element="end_ip" selector="&quot;NetworkName__ipaddresses[-1]&quot;" waiting_time="1000" />
@@ -101,7 +101,7 @@
                         <jwf:Find_Element sap2010:WorkflowViewState.IdRef="Find_Element_79" InstanceBrowser="webBot" by="NAME" ensure_clickable="False" ensure_visible="False" instance_element="envia_ip" selector="&quot;add&quot;" waiting_time="1000" />
                         <jmc:Click Element="envia_ip" sap2010:WorkflowViewState.IdRef="Click_24" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
                         <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_10" InstanceBrowser="webBot" wait_time="15000" />
-                        <jwn:Navigate_To sap2010:WorkflowViewState.IdRef="Navigate_To_2" inBrowser="webBot" url="&quot;http://10.2.17.66/front/printer.form.php?id=-1&amp;withtemplate=2&quot;" />
+                        <jwn:Navigate_To sap2010:WorkflowViewState.IdRef="Navigate_To_2" inBrowser="webBot" url="&quot;http://10.2.17.66/front/phone.form.php?id=-1&amp;withtemplate=2&quot;" />
                         <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_11" InstanceBrowser="webBot" wait_time="5000" />
                       </Sequence>
                     </Sequence>
