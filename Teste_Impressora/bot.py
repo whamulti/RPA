@@ -7,7 +7,7 @@ from datetime import datetime
 
 class Bot:
     def bot(self):
-        # Sequence: Sequencia_bot
+        # Sequence: Sequencia_bot_impressora
 
         #  Activity Instance WebBot
         # Displayname: Abre_Chrome
@@ -41,15 +41,15 @@ class Bot:
         # Sequence: Elementos_Login_Zabbix
 
         # Find Element Activity
-        # Displayname: Usuario
+        # Displayname: Usuario_zabbix
         usuario_zabbix = webBot.find_element(selector="name", by=By.ID, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
 
         # Find Element Activity
-        # Displayname: Senha
+        # Displayname: Senha_zabbix
         senha_zabbix = webBot.find_element(selector="password", by=By.ID, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
 
         # Find Element Activity
-        # Displayname: Conectar_se
+        # Displayname: Conectar_se_zabbix
         botao_zabbix = webBot.find_element(selector="enter", by=By.ID, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
 
         # Type Into Activity
@@ -68,7 +68,7 @@ class Bot:
         # Displayname: Extrair_dados_tabela
         banco_impressoras_zabbix = Webscrap().webscrap(inBot=webBot, inXPATH="/html/body/div/main/form/table", inLines=0,inNext='', inGetLink=False)
 
-        # Sequence: Assign List
+        # Sequence: Lista_acoes
 
         # Assign Activity
         # Displayname: Assign
@@ -79,7 +79,7 @@ class Bot:
         lista_ips = banco_impressoras_zabbix['Interface2'].tolist()
 
         # Assign Activity
-        # Displayname: Assign_Values
+        # Displayname: Converte_dados
         banco_impressoras_zabbix = banco_impressoras_zabbix.to_dict(orient='records')
 
         #  Navigate to Activity
@@ -99,15 +99,15 @@ class Bot:
         # Sequence: Element list
 
         # Find Element Activity
-        # Displayname: Find_Element
+        # Displayname: usuario_glpi
         usuario_glpi = webBot.find_element(selector="login_name", by=By.ID, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
 
         # Find Element Activity
-        # Displayname: Find_Element
+        # Displayname: senha_glpi
         senha_glpi = webBot.find_element(selector="login_password", by=By.ID, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
 
         # Find Element Activity
-        # Displayname: Find_Element
+        # Displayname: conectar_se_glpi
         botao_glpi = webBot.find_element(selector="/html/body/div/div/div/div[2]/div[2]/form/div/div/div[6]/button", by=By.XPATH, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
 
         # Type Into Activity
@@ -119,7 +119,7 @@ class Bot:
         senha_glpi.send_keys("0805")
 
         # Click Activity
-        # Displayname: Botão
+        # Displayname: Clica_botao
         botao_glpi.click()
 
         # Find Element Activity
@@ -140,20 +140,12 @@ class Bot:
             nome_impressora = webBot.find_element(selector="name", by=By.NAME, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
 
             # Type Into Activity
-            # Displayname: Dados_banco
+            # Displayname: Dados_de_nome
             nome_impressora.send_keys(item_impressora["Nome"])
-
-            # Wait Activity
-            # Displayname: Wait
-            webBot.wait(5000)
 
             # Scroll Element Activity
             # Displayname: Descer_pagina
             webBot.scroll_down(clicks=15)
-
-            # Wait Activity
-            # Displayname: Wait
-            webBot.wait(5000)
 
             # Find Element Activity
             # Displayname: Encontrar_nome
@@ -164,64 +156,60 @@ class Bot:
             envia_impressora.click()
 
             # Wait Activity
-            # Displayname: Espera_pop_up
+            # Displayname: Espera_15_segundos
             webBot.wait(15000)
 
             # Find Element Activity
             # Displayname: Find_Element
-            menu_porta_impressora = webBot.find_element(selector="/html/body/div[2]/div[2]/div/main/div/div/div[2]/div[2]/ul/li[11]/a/span", by=By.XPATH, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
+            menu_porta_rede = webBot.find_element(selector="/html/body/div[2]/div[2]/div/main/div/div/div[2]/div[2]/ul/li[11]/a/span", by=By.XPATH, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
 
             # Click Activity
-            # Displayname: Click
-            menu_porta_impressora.click()
+            # Displayname: Clica_botao
+            menu_porta_rede.click()
 
             # Wait Activity
-            # Displayname: Wait
-            webBot.wait(5000)
+            # Displayname: Espera_3_segundos
+            webBot.wait(3000)
 
             # Find Element Activity
-            # Displayname: Find_Element
-            adicionar_ip = webBot.find_element(selector="/html/body/div[2]/div[2]/div/main/div/div/div[2]/div[2]/div/div[11]/div/form/div/div[3]/button", by=By.XPATH, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
+            # Displayname: elementos_impressora
+            adicionar_ip = webBot.find_element(selector="add", by=By.NAME, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
 
             # Click Activity
-            # Displayname: Click
+            # Displayname: Clica_botao
             adicionar_ip.click()
 
             # Wait Activity
-            # Displayname: Wait
-            webBot.wait(5000)
+            # Displayname: Espera_3_segundos
+            webBot.wait(3000)
 
             # Find Element Activity
-            # Displayname: Find_Element
+            # Displayname: elementos_ip
             end_ip = webBot.find_element(selector="NetworkName__ipaddresses[-1]", by=By.NAME, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
 
             # Type Into Activity
-            # Displayname: Type Into end_ip field
+            # Displayname: Dados_de_ip
             end_ip.send_keys(item_impressora["Interface2"])
 
-            # Wait Activity
-            # Displayname: Wait
-            webBot.wait(5000)
-
             # Find Element Activity
-            # Displayname: Find_Element
+            # Displayname: Elementos_botao
             envia_ip = webBot.find_element(selector="add", by=By.NAME, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
 
             # Click Activity
-            # Displayname: Click
+            # Displayname: Clica_botao
             envia_ip.click()
 
             # Wait Activity
-            # Displayname: Wait
+            # Displayname: Espera_15_segundos
             webBot.wait(15000)
 
             #  Navigate to Activity
-            # Displayname: Navigate_To
+            # Displayname: retornar_pagina
             webBot.navigate_to("http://10.2.17.66/front/printer.form.php?id=-1&withtemplate=2")
 
             # Wait Activity
-            # Displayname: Wait
-            webBot.wait(5000)
+            # Displayname: Espera_3_segundos
+            webBot.wait(3000)
 
 
 
