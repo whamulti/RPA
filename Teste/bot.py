@@ -10,7 +10,7 @@ class Bot:
         # Sequence: Sequencia_bot
 
         #  Activity Instance WebBot
-        # Displayname: Abre_Edge
+        # Displayname: Abre_Chrome
         webBot = WebBot()
 
         # Open Browser Activity
