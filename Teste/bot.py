@@ -16,7 +16,7 @@ class Bot:
         # Open Browser Activity
         # Displayname: Pagina_Zabbix
         webBot = WebBot()
-        webBot.driver_path = "C:\\RPA\\WebDrivers\\CHROME\\chromedriver.exe"
+        webBot.driver_path = "C:\\Users\\ricardo\\Documents\\GitHub\\RPA\\WebDrivers\\CHROME\\chromedriver.exe"
         webBot.browser = Browser.CHROME
         webBot.headless = False
         webBotDef_options = default_options()
