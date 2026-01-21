@@ -48,7 +48,7 @@
     <jmc:Click Element="var_4" sap2010:WorkflowViewState.IdRef="Click_7" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
     <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_10" InstanceBrowser="webBot" wait_time="3000" />
     <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_9" InstanceBrowser="webBot" wait_time="3000" />
-    <sads:DebugSymbol.Symbol>dxZDOlxSUEFcVGVzdGUxXEJvdC54YW1sDxADNA4CAQERBRFiAgEPEgUShwMCAQ4TBROdAgIBDRQFFJQBAgEMFQUVZAIBCxYFIBsCAQohBSHlAQIBCSIFIuABAgEIIwUjlAECAQckBSRkAgEGJQUvGwIBBTAFMJQBAgEEMQUxZQIBAzIFMmQCAQI=</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>dzVDOlxVc2Vyc1xyaWNhcmRvXERvY3VtZW50c1xHaXRIdWJcUlBBXFRlc3RlMVxCb3QueGFtbA8QAzQOAgEBEQURYgIBDxIFEocDAgEOEwUTnQICAQ0UBRSUAQIBDBUFFWQCAQsWBSAbAgEKIQUh5QECAQkiBSLgAQIBCCMFI5QBAgEHJAUkZAIBBiUFLxsCAQUwBTCUAQIBBDEFMWUCAQMyBTJkAgEC</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
