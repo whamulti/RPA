@@ -86,14 +86,14 @@
       <sap2010:ViewStateData Id="Click_7" sap:VirtualizedContainerService.HintSize="400,81" />
       <sap2010:ViewStateData Id="Wait_10" sap:VirtualizedContainerService.HintSize="400,96" />
       <sap2010:ViewStateData Id="Wait_9" sap:VirtualizedContainerService.HintSize="400,96" />
-      <sap2010:ViewStateData Id="Sequence_3" sap:VirtualizedContainerService.HintSize="422,3935">
+      <sap2010:ViewStateData Id="Sequence_3" sap:VirtualizedContainerService.HintSize="422,3737">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="JornadaRPAStudio.Workflow_1" sap:VirtualizedContainerService.HintSize="462,4015" />
+      <sap2010:ViewStateData Id="JornadaRPAStudio.Workflow_1" sap:VirtualizedContainerService.HintSize="462,3817" />
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>
