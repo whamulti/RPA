@@ -143,6 +143,10 @@ class Bot:
             # Displayname: Dados_de_nome
             nome_impressora.send_keys(item_impressora["Nome"])
 
+            # Wait Activity
+            # Displayname: Espera_3_segundos
+            webBot.wait(3000)
+
             # Scroll Element Activity
             # Displayname: Descer_pagina
             webBot.scroll_down(clicks=15)
@@ -160,7 +164,7 @@ class Bot:
             webBot.wait(15000)
 
             # Find Element Activity
-            # Displayname: Find_Element
+            # Displayname: Elemento_menu
             menu_porta_rede = webBot.find_element(selector="/html/body/div[2]/div[2]/div/main/div/div/div[2]/div[2]/ul/li[11]/a/span", by=By.XPATH, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
 
             # Click Activity
@@ -190,6 +194,10 @@ class Bot:
             # Type Into Activity
             # Displayname: Dados_de_ip
             end_ip.send_keys(item_impressora["Interface2"])
+
+            # Wait Activity
+            # Displayname: Espera_3_segundos
+            webBot.wait(3000)
 
             # Find Element Activity
             # Displayname: Elementos_botao
