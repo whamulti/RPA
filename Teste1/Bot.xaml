@@ -15,10 +15,9 @@
  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <Sequence sap2010:WorkflowViewState.IdRef="Sequence_3">
     <jwi:Instance_Webbot sap2010:WorkflowViewState.IdRef="Instance_Webbot_1" instance="webBot" />
-    <jwo:OpenBrowser download_folder_path="{x:Null}" user_data_dir="{x:Null}" Headless="False" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="&quot;http://10.2.17.66/front/printer.form.php?id=-1&amp;withtemplate=2&quot;" WebDriverPath="''" anonimous="False" arguments="[]" createInstance="True" inBrowser="CHROME" outBrowser="webBot" page_load_strategy="Normal" upWebDriver="False" />
+    <jwo:OpenBrowser download_folder_path="{x:Null}" user_data_dir="{x:Null}" Headless="False" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="&quot;http://10.2.17.66/front/ruleproblem.form.php?id=103&quot;" WebDriverPath="''" anonimous="False" arguments="[]" createInstance="True" inBrowser="CHROME" outBrowser="webBot" page_load_strategy="Normal" upWebDriver="False" />
     <jwf:Find_Element sap2010:WorkflowViewState.IdRef="Find_Element_1" InstanceBrowser="webBot" by="XPATH" ensure_clickable="False" ensure_visible="False" instance_element="botao" selector="&quot;/html/body/div/div/div/div[2]/div[2]/div/div/div[2]/a/span&quot;" waiting_time="1000" />
     <jmc:Click Element="botao" sap2010:WorkflowViewState.IdRef="Click_1" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
-    <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_5" InstanceBrowser="webBot" wait_time="3000" />
     <jwe:Element_Library InstanceBrowser="{x:Null}" sap2010:WorkflowViewState.IdRef="Element_Library_1" by="NAME" ensure_clickable="True" ensure_visible="True" instance_element="namepassword" selector="&quot;password&quot;" waiting_time="0">
       <jwe:Element_Library.Body>
         <ActivityAction x:TypeArguments="x:String">
@@ -30,25 +29,41 @@
         </ActivityAction>
       </jwe:Element_Library.Body>
     </jwe:Element_Library>
-    <jkt:Type_Into sap2010:WorkflowViewState.IdRef="Type_Into_1" click_before="False" convertTo="None" element_instance="usuario" empty_field="False" interval="0" text="&quot;ricardo&quot;" type="Send_Keys" with_spaces="True" />
+    <jkt:Type_Into sap2010:WorkflowViewState.IdRef="Type_Into_10" click_before="False" convertTo="None" element_instance="usuario" empty_field="False" interval="0" text="&quot;ricardo&quot;" type="Send_Keys" with_spaces="True" />
     <jkt:Type_Into sap2010:WorkflowViewState.IdRef="Type_Into_2" click_before="False" convertTo="None" element_instance="senha" empty_field="False" interval="0" text="&quot;0805&quot;" type="Send_Keys" with_spaces="True" />
     <jmc:Click Element="login" sap2010:WorkflowViewState.IdRef="Click_2" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
-    <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_4" InstanceBrowser="webBot" wait_time="5000" />
-    <jwe:Element_Library InstanceBrowser="{x:Null}" sap2010:WorkflowViewState.IdRef="Element_Library_2" by="XPATH" ensure_clickable="True" ensure_visible="True" instance_element="xpath518" selector="&quot;/html/body/div[2]/div[2]/div/main/div/div/div[2]/div/div/div/div/form/div/div[3]/div/div/div/div/div[3]/div/div/span/span/span/span[2]&quot;" waiting_time="0">
-      <jwe:Element_Library.Body>
-        <ActivityAction x:TypeArguments="x:String">
-          <Sequence DisplayName="Element list" sap2010:WorkflowViewState.IdRef="Sequence_6">
-            <jwf:Find_Element sap2010:WorkflowViewState.IdRef="Find_Element_10" InstanceBrowser="webBot" by="XPATH" ensure_clickable="False" ensure_visible="False" instance_element="var_4" selector="&quot;/html/body/div[2]/div[2]/div/main/div/div/div[2]/div/div/div/div/form/div/div[3]/div/div/div/div/div[3]/div/div/span/span/span/span&quot;" waiting_time="1000" />
-            <jwf:Find_Element sap2010:WorkflowViewState.IdRef="Find_Element_11" InstanceBrowser="webBot" by="XPATH" ensure_clickable="False" ensure_visible="False" instance_element="var_5" selector="&quot;/html/body/span/span/span/input&quot;" waiting_time="1000" />
-            <jwf:Find_Element sap2010:WorkflowViewState.IdRef="Find_Element_12" InstanceBrowser="webBot" by="NAME" ensure_clickable="False" ensure_visible="False" instance_element="var_6" selector="&quot;add&quot;" waiting_time="1000" />
-          </Sequence>
-        </ActivityAction>
-      </jwe:Element_Library.Body>
-    </jwe:Element_Library>
-    <jmc:Click Element="var_4" sap2010:WorkflowViewState.IdRef="Click_7" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
-    <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_10" InstanceBrowser="webBot" wait_time="3000" />
-    <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_9" InstanceBrowser="webBot" wait_time="3000" />
-    <sads:DebugSymbol.Symbol>dzVDOlxVc2Vyc1xyaWNhcmRvXERvY3VtZW50c1xHaXRIdWJcUlBBXFRlc3RlMVxCb3QueGFtbA8QAzQOAgEBEQURYgIBDxIFEocDAgEOEwUTnQICAQ0UBRSUAQIBDBUFFWQCAQsWBSAbAgEKIQUh5QECAQkiBSLgAQIBCCMFI5QBAgEHJAUkZAIBBiUFLxsCAQUwBTCUAQIBBDEFMWUCAQMyBTJkAgEC</sads:DebugSymbol.Symbol>
+    <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_13" InstanceBrowser="webBot" wait_time="3000" />
+    <jwf:Find_Element sap2010:WorkflowViewState.IdRef="Find_Element_30" InstanceBrowser="webBot" by="XPATH" ensure_clickable="False" ensure_visible="False" instance_element="var_1" selector="&quot;/html/body/div[2]/div[2]/div/main/div/div/div[2]/div[2]/ul/li[2]/a/span&quot;" waiting_time="1000" />
+    <jmc:Click Element="var_1" sap2010:WorkflowViewState.IdRef="Click_18" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
+    <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_19" InstanceBrowser="webBot" wait_time="3000" />
+    <jwf:Find_Element sap2010:WorkflowViewState.IdRef="Find_Element_32" InstanceBrowser="webBot" by="NAME" ensure_clickable="False" ensure_visible="False" instance_element="var_2" selector="&quot;add_criterion&quot;" waiting_time="1000" />
+    <jmc:Click Element="var_2" sap2010:WorkflowViewState.IdRef="Click_19" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
+    <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_20" InstanceBrowser="webBot" wait_time="3000" />
+    <jwf:Find_Element sap2010:WorkflowViewState.IdRef="Find_Element_34" InstanceBrowser="webBot" by="XPATH" ensure_clickable="False" ensure_visible="False" instance_element="var_3" selector="&quot;/html/body/div[2]/div[2]/div/main/div/div/div[2]/div[2]/div/div[2]/div/div/form/div/div/div/div/div/div/div/div/span/div/div/span/span/span/span/span&quot;" waiting_time="1000" />
+    <jmc:Click Element="var_3" sap2010:WorkflowViewState.IdRef="Click_20" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
+    <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_21" InstanceBrowser="webBot" wait_time="3000" />
+    <jwf:Find_Element sap2010:WorkflowViewState.IdRef="Find_Element_35" InstanceBrowser="webBot" by="XPATH" ensure_clickable="False" ensure_visible="False" instance_element="var_4" selector="&quot;/html/body/span/span/span/input&quot;" waiting_time="1000" />
+    <jkt:Type_Into sap2010:WorkflowViewState.IdRef="Type_Into_12" click_before="False" convertTo="None" element_instance="var_4" empty_field="False" interval="0" text="&quot;Descricao&quot;" type="Send_Keys" with_spaces="True" />
+    <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_22" InstanceBrowser="webBot" wait_time="5000" />
+    <jwf:Find_Element sap2010:WorkflowViewState.IdRef="Find_Element_36" InstanceBrowser="webBot" by="CSS_SELECTOR" ensure_clickable="False" ensure_visible="False" instance_element="var_5" selector="&quot;.select2-results__option--highlighted&quot;" waiting_time="1000" />
+    <jmc:Click Element="var_5" sap2010:WorkflowViewState.IdRef="Click_22" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
+    <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_23" InstanceBrowser="webBot" wait_time="3000" />
+    <jwf:Find_Element DisplayName="outrodrop" sap2010:WorkflowViewState.IdRef="Find_Element_38" InstanceBrowser="webBot" by="XPATH" ensure_clickable="False" ensure_visible="False" instance_element="var_6" selector="&quot;/html/body/div[2]/div[2]/div/main/div/div/div[2]/div[2]/div/div[2]/div/div/form/div/div/div/div/div/div/div/div/span/div/span/span/span/span/span[2]&quot;" waiting_time="1000" />
+    <jmc:Click Element="var_6" sap2010:WorkflowViewState.IdRef="Click_23" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
+    <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_25" InstanceBrowser="webBot" wait_time="3000" />
+    <jwf:Find_Element sap2010:WorkflowViewState.IdRef="Find_Element_39" InstanceBrowser="webBot" by="XPATH" ensure_clickable="False" ensure_visible="False" instance_element="var_7" selector="&quot;/html/body/span/span/span/input&quot;" waiting_time="1000" />
+    <jkt:Type_Into sap2010:WorkflowViewState.IdRef="Type_Into_14" click_before="False" convertTo="None" element_instance="var_7" empty_field="False" interval="0" text="&quot;contem&quot;" type="Send_Keys" with_spaces="True" />
+    <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_26" InstanceBrowser="webBot" wait_time="5000" />
+    <jwf:Find_Element sap2010:WorkflowViewState.IdRef="Find_Element_42" InstanceBrowser="webBot" by="CSS_SELECTOR" ensure_clickable="False" ensure_visible="False" instance_element="var_5" selector="&quot;.select2-results__option--highlighted&quot;" waiting_time="1000" />
+    <jmc:Click Element="var_5" sap2010:WorkflowViewState.IdRef="Click_24" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
+    <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_27" InstanceBrowser="webBot" wait_time="3000" />
+    <jwf:Find_Element sap2010:WorkflowViewState.IdRef="Find_Element_41" InstanceBrowser="webBot" by="NAME" ensure_clickable="False" ensure_visible="False" instance_element="var_8" selector="&quot;pattern&quot;" waiting_time="1000" />
+    <jkt:Type_Into sap2010:WorkflowViewState.IdRef="Type_Into_15" click_before="False" convertTo="None" element_instance="var_8" empty_field="False" interval="0" text="&quot;10.3.3.0&quot;" type="Send_Keys" with_spaces="True" />
+    <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_28" InstanceBrowser="webBot" wait_time="5000" />
+    <jwf:Find_Element sap2010:WorkflowViewState.IdRef="Find_Element_43" InstanceBrowser="webBot" by="NAME" ensure_clickable="False" ensure_visible="False" instance_element="var_9" selector="&quot;add&quot;" waiting_time="1000" />
+    <jmc:Click Element="var_9" sap2010:WorkflowViewState.IdRef="Click_25" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
+    <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_29" InstanceBrowser="webBot" wait_time="15000" />
+    <sads:DebugSymbol.Symbol>dzVDOlxVc2Vyc1xyaWNhcmRvXERvY3VtZW50c1xHaXRIdWJcUlBBXFRlc3RlMVxCb3QueGFtbCgQA0MOAgEBEQURYgIBKBIFEvkCAgEnEwUTnQICASYUBRSUAQIBJRUFHxsCASQgBSDmAQIBIyEFIeABAgEiIgUilAECASEjBSNlAgEgJAUkqwICAR8lBSWVAQIBHiYFJmUCAR0nBSfwAQIBHCgFKJUBAgEbKQUpZQIBGioFKvkCAgEZKwUrlQECARgsBSxlAgEXLQUtgwICARYuBS7mAQIBFS8FL2UCARQwBTCQAgIBEzEFMZUBAgESMgUyZQIBETMFM5ADAgEQNAU0lQECAQ81BTVlAgEONgU2gwICAQ03BTfjAQIBDDgFOGUCAQs5BTmQAgIBCjoFOpUBAgEJOwU7ZQIBCDwFPOoBAgEHPQU95QECAQY+BT5lAgEFPwU/5gECAQRABUCVAQIBA0EFQWYCAQI=</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
@@ -56,7 +71,6 @@
       <sap2010:ViewStateData Id="OpenBrowser_1" sap:VirtualizedContainerService.HintSize="400,194" />
       <sap2010:ViewStateData Id="Find_Element_1" sap:VirtualizedContainerService.HintSize="400,177" />
       <sap2010:ViewStateData Id="Click_1" sap:VirtualizedContainerService.HintSize="400,81" />
-      <sap2010:ViewStateData Id="Wait_5" sap:VirtualizedContainerService.HintSize="400,96" />
       <sap2010:ViewStateData Id="Find_Element_2" sap:VirtualizedContainerService.HintSize="200,177" />
       <sap2010:ViewStateData Id="Find_Element_3" sap:VirtualizedContainerService.HintSize="200,177" />
       <sap2010:ViewStateData Id="Find_Element_4" sap:VirtualizedContainerService.HintSize="200,177" />
@@ -68,32 +82,48 @@
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
       <sap2010:ViewStateData Id="Element_Library_1" sap:VirtualizedContainerService.HintSize="400,834" />
-      <sap2010:ViewStateData Id="Type_Into_1" sap:VirtualizedContainerService.HintSize="400,123" />
+      <sap2010:ViewStateData Id="Type_Into_10" sap:VirtualizedContainerService.HintSize="400,123" />
       <sap2010:ViewStateData Id="Type_Into_2" sap:VirtualizedContainerService.HintSize="400,123" />
       <sap2010:ViewStateData Id="Click_2" sap:VirtualizedContainerService.HintSize="400,81" />
-      <sap2010:ViewStateData Id="Wait_4" sap:VirtualizedContainerService.HintSize="400,96" />
-      <sap2010:ViewStateData Id="Find_Element_10" sap:VirtualizedContainerService.HintSize="200,177" />
-      <sap2010:ViewStateData Id="Find_Element_11" sap:VirtualizedContainerService.HintSize="200,177" />
-      <sap2010:ViewStateData Id="Find_Element_12" sap:VirtualizedContainerService.HintSize="200,177" />
-      <sap2010:ViewStateData Id="Sequence_6" sap:VirtualizedContainerService.HintSize="222,735">
+      <sap2010:ViewStateData Id="Wait_13" sap:VirtualizedContainerService.HintSize="400,96" />
+      <sap2010:ViewStateData Id="Find_Element_30" sap:VirtualizedContainerService.HintSize="400,177" />
+      <sap2010:ViewStateData Id="Click_18" sap:VirtualizedContainerService.HintSize="400,81" />
+      <sap2010:ViewStateData Id="Wait_19" sap:VirtualizedContainerService.HintSize="400,96" />
+      <sap2010:ViewStateData Id="Find_Element_32" sap:VirtualizedContainerService.HintSize="400,177" />
+      <sap2010:ViewStateData Id="Click_19" sap:VirtualizedContainerService.HintSize="400,81" />
+      <sap2010:ViewStateData Id="Wait_20" sap:VirtualizedContainerService.HintSize="400,96" />
+      <sap2010:ViewStateData Id="Find_Element_34" sap:VirtualizedContainerService.HintSize="400,177" />
+      <sap2010:ViewStateData Id="Click_20" sap:VirtualizedContainerService.HintSize="400,81" />
+      <sap2010:ViewStateData Id="Wait_21" sap:VirtualizedContainerService.HintSize="400,96" />
+      <sap2010:ViewStateData Id="Find_Element_35" sap:VirtualizedContainerService.HintSize="400,177" />
+      <sap2010:ViewStateData Id="Type_Into_12" sap:VirtualizedContainerService.HintSize="400,123" />
+      <sap2010:ViewStateData Id="Wait_22" sap:VirtualizedContainerService.HintSize="400,96" />
+      <sap2010:ViewStateData Id="Find_Element_36" sap:VirtualizedContainerService.HintSize="400,177" />
+      <sap2010:ViewStateData Id="Click_22" sap:VirtualizedContainerService.HintSize="400,81" />
+      <sap2010:ViewStateData Id="Wait_23" sap:VirtualizedContainerService.HintSize="400,96" />
+      <sap2010:ViewStateData Id="Find_Element_38" sap:VirtualizedContainerService.HintSize="400,177" />
+      <sap2010:ViewStateData Id="Click_23" sap:VirtualizedContainerService.HintSize="400,81" />
+      <sap2010:ViewStateData Id="Wait_25" sap:VirtualizedContainerService.HintSize="400,96" />
+      <sap2010:ViewStateData Id="Find_Element_39" sap:VirtualizedContainerService.HintSize="400,177" />
+      <sap2010:ViewStateData Id="Type_Into_14" sap:VirtualizedContainerService.HintSize="400,123" />
+      <sap2010:ViewStateData Id="Wait_26" sap:VirtualizedContainerService.HintSize="400,96" />
+      <sap2010:ViewStateData Id="Find_Element_42" sap:VirtualizedContainerService.HintSize="400,177" />
+      <sap2010:ViewStateData Id="Click_24" sap:VirtualizedContainerService.HintSize="400,81" />
+      <sap2010:ViewStateData Id="Wait_27" sap:VirtualizedContainerService.HintSize="400,96" />
+      <sap2010:ViewStateData Id="Find_Element_41" sap:VirtualizedContainerService.HintSize="400,177" />
+      <sap2010:ViewStateData Id="Type_Into_15" sap:VirtualizedContainerService.HintSize="400,123" />
+      <sap2010:ViewStateData Id="Wait_28" sap:VirtualizedContainerService.HintSize="400,96" />
+      <sap2010:ViewStateData Id="Find_Element_43" sap:VirtualizedContainerService.HintSize="400,177" />
+      <sap2010:ViewStateData Id="Click_25" sap:VirtualizedContainerService.HintSize="400,81" />
+      <sap2010:ViewStateData Id="Wait_29" sap:VirtualizedContainerService.HintSize="400,96" />
+      <sap2010:ViewStateData Id="Sequence_3" sap:VirtualizedContainerService.HintSize="422,7124">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Element_Library_2" sap:VirtualizedContainerService.HintSize="400,834" />
-      <sap2010:ViewStateData Id="Click_7" sap:VirtualizedContainerService.HintSize="400,81" />
-      <sap2010:ViewStateData Id="Wait_10" sap:VirtualizedContainerService.HintSize="400,96" />
-      <sap2010:ViewStateData Id="Wait_9" sap:VirtualizedContainerService.HintSize="400,96" />
-      <sap2010:ViewStateData Id="Sequence_3" sap:VirtualizedContainerService.HintSize="422,3737">
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="JornadaRPAStudio.Workflow_1" sap:VirtualizedContainerService.HintSize="462,3817" />
+      <sap2010:ViewStateData Id="JornadaRPAStudio.Workflow_1" sap:VirtualizedContainerService.HintSize="462,7204" />
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>

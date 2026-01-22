@@ -84,7 +84,7 @@ class Bot:
 
         #  Navigate to Activity
         # Displayname: Navegar_para
-        webBot.navigate_to("http://10.2.17.66/front/phone.form.php?id=-1&withtemplate=2")
+        webBot.navigate_to("http://10.2.17.26/front/phone.form.php?id=-1&withtemplate=2")
 
         # Find Element Activity
         # Displayname: Localiza_botao
@@ -149,7 +149,7 @@ class Bot:
 
             # Scroll Element Activity
             # Displayname: Descer_pagina
-            webBot.scroll_down(clicks=15)
+            webBot.scroll_down(clicks=20)
 
             # Find Element Activity
             # Displayname: Encontrar_nome
@@ -191,6 +191,10 @@ class Bot:
             # Displayname: elementos_ip
             end_ip = webBot.find_element(selector="NetworkName__ipaddresses[-1]", by=By.NAME, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
 
+            # Scroll Element Activity
+            # Displayname: Descer_pagina
+            webBot.scroll_down(clicks=20)
+
             # Type Into Activity
             # Displayname: Dados_de_ip
             end_ip.send_keys(item_impressora["Interface2"])
@@ -213,7 +217,7 @@ class Bot:
 
             #  Navigate to Activity
             # Displayname: retornar_pagina
-            webBot.navigate_to("http://10.2.17.66/front/phone.form.php?id=-1&withtemplate=2")
+            webBot.navigate_to("http://10.2.17.26/front/phone.form.php?id=-1&withtemplate=2")
 
             # Wait Activity
             # Displayname: Espera_3_segundos
