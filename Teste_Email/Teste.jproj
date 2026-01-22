@@ -1,0 +1,41 @@
+{
+  "NameProject": "Teste",
+  "Main": "Bot.xaml",
+  "Description": "",
+  "Tecnology": "Python",
+  "Dependencies": [],
+  "WebDrivers": [
+    {
+      "Import": "CHROME,C:\\Users\\ricardo\\Documents\\GitHub\\RPA\\WebDrivers\\CHROME\\chromedriver.exe"
+    },
+    {
+      "Import": "CUSTOM,C:\\RPA\\WebDrivers\\custom\\custom.exe"
+    },
+    {
+      "Import": "EDGE,C:\\Users\\ricardo\\Documents\\GitHub\\RPA\\WebDrivers\\EDGE\\msedgedriver.exe"
+    },
+    {
+      "Import": "FIREFOX,C:\\Users\\ricardo\\Documents\\GitHub\\RPA\\WebDrivers\\FIREFOX\\geckodriver.exe"
+    }
+  ],
+  "MaestroLogin": "",
+  "Packages": [
+    {
+      "Import": "JornadaRPA.Web"
+    },
+    {
+      "Import": "JornadaRPA.Mouse"
+    },
+    {
+      "Import": "JornadaRPA.Python"
+    },
+    {
+      "Import": "JornadaRPA.Keyboard"
+    }
+  ],
+  "PathSelector": "C:\\Jornada RPA Selector 1.0\\JornadaRPA.Selector.exe",
+  "PathRunner": "C:\\",
+  "PathInstalledPython": "C:\\Users\\ricardo\\Documents\\GitHub\\RPA\\Teste_Email\\venv\\Scripts",
+  "PathPythonVersion": "3.13",
+  "PathPythonBaseVersion": null
+}
