@@ -81,7 +81,7 @@ class Bot:
 
         # ForEach Activity
         # Displayname: Laco_repeticao
-        for item_email in banco_impressoras_zabbix:
+        for item_email in banco_email:
             # Sequence: Corpo
 
             # DisplayName: Formulario_acao_elementos_web
@@ -112,6 +112,10 @@ class Bot:
             # Displayname: Dados_de_ip
             email.send_keys(item_email["EMAIL"])
 
+            # Wait Activity
+            # Displayname: Wait
+            webBot.wait(3000)
+
             # Find Element Activity
             # Displayname: Encontrar_nome
             envia_nome = webBot.find_element(selector="add", by=By.NAME, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
@@ -119,54 +123,6 @@ class Bot:
             # Click Activity
             # Displayname: Adicionar_impressora
             envia_nome.click()
-
-            # Wait Activity
-            # Displayname: Espera_15_segundos
-            webBot.wait(15000)
-
-            # Find Element Activity
-            # Displayname: Elemento_menu
-            menu_porta_rede = webBot.find_element(selector="/html/body/div[2]/div[2]/div/main/div/div/div[2]/div[2]/ul/li[11]/a/span", by=By.XPATH, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
-
-            # Click Activity
-            # Displayname: Clica_botao
-            menu_porta_rede.click()
-
-            # Wait Activity
-            # Displayname: Espera_3_segundos
-            webBot.wait(3000)
-
-            # Find Element Activity
-            # Displayname: elementos_impressora
-            adicionar_ip = webBot.find_element(selector="add", by=By.NAME, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
-
-            # Click Activity
-            # Displayname: Clica_botao
-            adicionar_ip.click()
-
-            # Wait Activity
-            # Displayname: Espera_3_segundos
-            webBot.wait(3000)
-
-            # Find Element Activity
-            # Displayname: elementos_ip
-            end_ip = webBot.find_element(selector="NetworkName__ipaddresses[-1]", by=By.NAME, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
-
-            # Scroll Element Activity
-            # Displayname: Descer_pagina
-            webBot.scroll_down(clicks=20)
-
-            # Wait Activity
-            # Displayname: Espera_3_segundos
-            webBot.wait(3000)
-
-            # Find Element Activity
-            # Displayname: Elementos_botao
-            envia_ip = webBot.find_element(selector="add", by=By.NAME, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
-
-            # Click Activity
-            # Displayname: Clica_botao
-            envia_ip.click()
 
             # Wait Activity
             # Displayname: Espera_15_segundos
