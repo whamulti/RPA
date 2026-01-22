@@ -53,7 +53,7 @@
         </ActivityAction>
       </jpm:Multiple_Assign.Body>
     </jpm:Multiple_Assign>
-    <jwn:Navigate_To DisplayName="Navegar_para" sap2010:WorkflowViewState.IdRef="Navigate_To_1" inBrowser="webBot" url="&quot;http://10.2.17.66/front/networkequipment.form.php?id=-1&amp;withtemplate=2&quot;" />
+    <jwn:Navigate_To DisplayName="Navegar_para" sap2010:WorkflowViewState.IdRef="Navigate_To_1" inBrowser="webBot" url="&quot;http://10.2.17.26/front/networkequipment.form.php?id=-1&amp;withtemplate=2&quot;" />
     <jwf:Find_Element DisplayName="Localiza_botao" sap2010:WorkflowViewState.IdRef="Find_Element_65" InstanceBrowser="webBot" by="XPATH" ensure_clickable="False" ensure_visible="False" instance_element="Error" selector="&quot;/html/body/div/div/div/div[2]/div[2]/div/div/div[2]/a/span&quot;" waiting_time="1000" />
     <jmc:Click DisplayName="Clica_botao" Element="Error" sap2010:WorkflowViewState.IdRef="Click_19" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
     <jwe:Element_Library InstanceBrowser="{x:Null}" DisplayName="Elemetos_Login_Glpi" sap2010:WorkflowViewState.IdRef="Element_Library_5" by="XPATH" ensure_clickable="True" ensure_visible="True" instance_element="xpath804" selector="&quot;/html/body/div/div/div/div[2]/div[2]/form/div/div/div[6]/button&quot;" waiting_time="0">
@@ -84,7 +84,7 @@
                         <jwf:Find_Element DisplayName="Encontrar_nome" sap2010:WorkflowViewState.IdRef="Find_Element_72" InstanceBrowser="webBot" by="NAME" ensure_clickable="False" ensure_visible="False" instance_element="nome_impressora" selector="&quot;name&quot;" waiting_time="1000" />
                         <jkt:Type_Into DisplayName="Dados_de_nome" sap2010:WorkflowViewState.IdRef="Type_Into_18" click_before="False" convertTo="None" element_instance="nome_impressora" empty_field="False" interval="0" text="item_impressora[&quot;Nome&quot;]" type="Send_Keys" with_spaces="True" />
                         <jww:Wait DisplayName="Espera_3_segundos" sap2010:WorkflowViewState.IdRef="Wait_12" InstanceBrowser="webBot" wait_time="3000" />
-                        <jws:Scroll_Page DisplayName="Descer_pagina" sap2010:WorkflowViewState.IdRef="Scroll_Page_2" Steps="15" direction="Down" instance="webBot" />
+                        <jws:Scroll_Page DisplayName="Descer_pagina" sap2010:WorkflowViewState.IdRef="Scroll_Page_2" Steps="20" direction="Down" instance="webBot" />
                         <jwf:Find_Element DisplayName="Encontrar_nome" sap2010:WorkflowViewState.IdRef="Find_Element_73" InstanceBrowser="webBot" by="NAME" ensure_clickable="False" ensure_visible="False" instance_element="envia_impressora" selector="&quot;add&quot;" waiting_time="1000" />
                         <jmc:Click DisplayName="Adicionar_impressora" Element="envia_impressora" sap2010:WorkflowViewState.IdRef="Click_20" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
                         <jww:Wait DisplayName="Espera_15_segundos" sap2010:WorkflowViewState.IdRef="Wait_6" InstanceBrowser="webBot" wait_time="15000" />
@@ -94,13 +94,14 @@
                         <jwf:Find_Element DisplayName="elementos_impressora" sap2010:WorkflowViewState.IdRef="Find_Element_77" InstanceBrowser="webBot" by="NAME" ensure_clickable="False" ensure_visible="False" instance_element="adicionar_ip" selector="&quot;add&quot;" waiting_time="1000" />
                         <jmc:Click DisplayName="Clica_botao" Element="adicionar_ip" sap2010:WorkflowViewState.IdRef="Click_23" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
                         <jww:Wait DisplayName="Espera_3_segundos" sap2010:WorkflowViewState.IdRef="Wait_8" InstanceBrowser="webBot" wait_time="3000" />
+                        <jws:Scroll_Page DisplayName="Descer_pagina" sap2010:WorkflowViewState.IdRef="Scroll_Page_3" Steps="20" direction="Down" instance="webBot" />
                         <jwf:Find_Element DisplayName="elementos_ip" sap2010:WorkflowViewState.IdRef="Find_Element_78" InstanceBrowser="webBot" by="NAME" ensure_clickable="False" ensure_visible="False" instance_element="end_ip" selector="&quot;NetworkName__ipaddresses[-1]&quot;" waiting_time="1000" />
                         <jkt:Type_Into DisplayName="Dados_de_ip" sap2010:WorkflowViewState.IdRef="Type_Into_19" click_before="False" convertTo="None" element_instance="end_ip" empty_field="False" interval="0" text="item_impressora[&quot;Interface2&quot;]" type="Send_Keys" with_spaces="True" />
                         <jww:Wait DisplayName="Espera_3_segundos" sap2010:WorkflowViewState.IdRef="Wait_13" InstanceBrowser="webBot" wait_time="3000" />
                         <jwf:Find_Element DisplayName="Elementos_botao" sap2010:WorkflowViewState.IdRef="Find_Element_79" InstanceBrowser="webBot" by="NAME" ensure_clickable="False" ensure_visible="False" instance_element="envia_ip" selector="&quot;add&quot;" waiting_time="1000" />
                         <jmc:Click DisplayName="Clica_botao" Element="envia_ip" sap2010:WorkflowViewState.IdRef="Click_24" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
                         <jww:Wait DisplayName="Espera_15_segundos" sap2010:WorkflowViewState.IdRef="Wait_10" InstanceBrowser="webBot" wait_time="15000" />
-                        <jwn:Navigate_To DisplayName="retornar_pagina" sap2010:WorkflowViewState.IdRef="Navigate_To_2" inBrowser="webBot" url="&quot;http://10.2.17.66/front/networkequipment.form.php?id=-1&amp;withtemplate=2&quot;" />
+                        <jwn:Navigate_To DisplayName="retornar_pagina" sap2010:WorkflowViewState.IdRef="Navigate_To_2" inBrowser="webBot" url="&quot;http://10.2.17.26/front/networkequipment.form.php?id=-1&amp;withtemplate=2&quot;" />
                         <jww:Wait DisplayName="Espera_3_segundos" sap2010:WorkflowViewState.IdRef="Wait_11" InstanceBrowser="webBot" wait_time="3000" />
                       </Sequence>
                     </Sequence>
@@ -112,7 +113,7 @@
         </ActivityAction>
       </jpf:ForEach.Body>
     </jpf:ForEach>
-    <sads:DebugSymbol.Symbol>dztDOlxVc2Vyc1xyaWNhcmRvXERvY3VtZW50c1xHaXRIdWJcUlBBXFRlc3RlX0NhbWVyYVxCb3QueGFtbBUYA3QOAgEBGQUZfAIBFRoFGrMFAgEUGwUbgwECARMcBRyoAgIBEh0FHa8BAgERHgUoGwIBECkFKYcCAgEPKgUqiQICAQ4rBSu2AQIBDSwFLKkCAgEMLQU3GwIBCzgFONMBAgEKOQU5uwICAQk6BTqvAQIBCDsFRRsCAQdGBUaGAgIBBkcFR/8BAgEFSAVIswECAQRJBUmOAgIBA0oFchMCAQI=</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d0BDOlxVc2Vyc1xyaWNhcmRvXERvY3VtZW50c1xHaXRIdWJcUlBBXFRlc3RlX0Rpc3Bvc2l0aXZvXEJvdC54YW1sFRgDdQ4CAQEZBRl8AgEVGgUaswUCARQbBRuDAQIBExwFHKgCAgESHQUdrwECAREeBSgbAgEQKQUphwICAQ8qBSqJAgIBDisFK7YBAgENLAUsqQICAQwtBTcbAgELOAU40wECAQo5BTm7AgIBCToFOq8BAgEIOwVFGwIBB0YFRoYCAgEGRwVH/wECAQVIBUizAQIBBEkFSY4CAgEDSgVzEwIBAg==</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
@@ -213,6 +214,7 @@
       <sap2010:ViewStateData Id="Find_Element_77" sap:VirtualizedContainerService.HintSize="335,177" />
       <sap2010:ViewStateData Id="Click_23" sap:VirtualizedContainerService.HintSize="335,81" />
       <sap2010:ViewStateData Id="Wait_8" sap:VirtualizedContainerService.HintSize="335,96" />
+      <sap2010:ViewStateData Id="Scroll_Page_3" sap:VirtualizedContainerService.HintSize="335,81" />
       <sap2010:ViewStateData Id="Find_Element_78" sap:VirtualizedContainerService.HintSize="335,177" />
       <sap2010:ViewStateData Id="Type_Into_19" sap:VirtualizedContainerService.HintSize="335,123" />
       <sap2010:ViewStateData Id="Wait_13" sap:VirtualizedContainerService.HintSize="335,96" />
