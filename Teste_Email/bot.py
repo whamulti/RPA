@@ -125,8 +125,68 @@ class Bot:
             envia_nome.click()
 
             # Wait Activity
-            # Displayname: Espera_15_segundos
-            webBot.wait(15000)
+            # Displayname: Espera_20_segundos
+            webBot.wait(20000)
+
+            # Scroll Element Activity
+            # Displayname: Descer_pagina
+            webBot.scroll_down(clicks=3)
+
+            # Find Element Activity
+            # Displayname: Find_Element
+            clica_localizacao = webBot.find_element(selector="/html/body/div[2]/div[2]/div/main/div/div/div[2]/div[2]/div/div/div/form/div/div/div/div/div/div[14]/div/div/span/span/span/span", by=By.XPATH, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
+
+            # Click Activity
+            # Displayname: Click
+            clica_localizacao.click()
+
+            # Wait Activity
+            # Displayname: Wait
+            webBot.wait(3000)
+
+            # Find Element Activity
+            # Displayname: Find_Element
+            digita_localizacao = webBot.find_element(selector="/html/body/span/span/span/input", by=By.XPATH, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
+
+            # Type Into Activity
+            # Displayname: Dados_de_ip
+            digita_localizacao.send_keys(item_email["LOCALIZACAO"])
+
+            # Wait Activity
+            # Displayname: Wait
+            webBot.wait(3000)
+
+            # Find Element Activity
+            # Displayname: Find_Element
+            seleciona_localizacao = webBot.find_element(selector=".select2-results__option--highlighted", by=By.CSS_SELECTOR, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
+
+            # Click Activity
+            # Displayname: Click
+            seleciona_localizacao.click()
+
+            # Wait Activity
+            # Displayname: Wait
+            webBot.wait(3000)
+
+            # Scroll Element Activity
+            # Displayname: Descer_pagina
+            webBot.scroll_down(clicks=10)
+
+            # Wait Activity
+            # Displayname: Wait
+            webBot.wait(3000)
+
+            # Find Element Activity
+            # Displayname: Find_Element
+            altera_usuario = webBot.find_element(selector="update", by=By.NAME, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
+
+            # Click Activity
+            # Displayname: Click
+            altera_usuario.click()
+
+            # Wait Activity
+            # Displayname: Espera_20_segundos
+            webBot.wait(20000)
 
             #  Navigate to Activity
             # Displayname: retornar_pagina
