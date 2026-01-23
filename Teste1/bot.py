@@ -1,11 +1,14 @@
 # Community Version: This license is intended for educational and tool evaluation purposes.
 
+from jornadaRPA.webScrap import Webscrap
 from botcity.web.browsers.chrome import default_options
 from botcity.web import *
 from datetime import datetime
 
 class Bot:
     def bot(self):
+        # Sequence: Sequence_teste1
+
         #  Activity Instance WebBot
         # Displayname: Instance_Webbot
         webBot = WebBot()
@@ -19,15 +22,19 @@ class Bot:
         webBotDef_options = default_options()
         webBotDef_options.add_argument("--page-load-strategy=Normal")
         webBot.options = webBotDef_options
-        webBot.browse("http://10.2.17.66/front/ruleproblem.form.php?id=103")
+        webBot.browse("http://10.2.17.7/zabbix/zabbix.php?action=host.list&filter_groups%5B%5D=29&filter_host=&filter_dns=&filter_ip=&filter_port=&filter_status=-1&filter_monitored_by=-1&filter_evaltype=0&filter_tags%5B0%5D%5Btag%5D=&filter_tags%5B0%5D%5Boperator%5D=0&filter_tags%5B0%5D%5Bvalue%5D=&filter_set=1")
 
         # Find Element Activity
         # Displayname: Find_Element
-        botao = webBot.find_element(selector="/html/body/div/div/div/div[2]/div[2]/div/div/div[2]/a/span", by=By.XPATH, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
+        botao = webBot.find_element(selector="/html/body/div/main/output/div[2]/button", by=By.XPATH, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
 
         # Click Activity
         # Displayname: Click
         botao.click()
+
+        # Wait Activity
+        # Displayname: Wait
+        webBot.wait(3000)
 
         # DisplayName: Element_Library
 
@@ -35,151 +42,73 @@ class Bot:
 
         # Find Element Activity
         # Displayname: Find_Element
-        login = webBot.find_element(selector="submit", by=By.NAME, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
+        namename = webBot.find_element(selector="name", by=By.ID, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
 
         # Find Element Activity
         # Displayname: Find_Element
-        usuario = webBot.find_element(selector="login_name", by=By.NAME, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
+        namepassword = webBot.find_element(selector="password", by=By.ID, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
 
         # Find Element Activity
         # Displayname: Find_Element
-        senha = webBot.find_element(selector="login_password", by=By.NAME, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
+        nameenter = webBot.find_element(selector="enter", by=By.ID, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
 
         # Type Into Activity
         # Displayname: Type_Into
-        usuario.send_keys("ricardo")
+        namename.send_keys("admin")
 
         # Type Into Activity
         # Displayname: Type_Into
-        senha.send_keys("0805")
+        namepassword.send_keys("biotipo2023")
 
         # Click Activity
         # Displayname: Click
-        login.click()
+        nameenter.click()
 
         # Wait Activity
         # Displayname: Wait
         webBot.wait(3000)
 
-        # Find Element Activity
-        # Displayname: Find_Element
-        var_1 = webBot.find_element(selector="/html/body/div[2]/div[2]/div/main/div/div/div[2]/div[2]/ul/li[2]/a/span", by=By.XPATH, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
-
-        # Click Activity
-        # Displayname: Click
-        var_1.click()
-
-        # Wait Activity
-        # Displayname: Wait
-        webBot.wait(3000)
-
-        # Find Element Activity
-        # Displayname: Find_Element
-        var_2 = webBot.find_element(selector="add_criterion", by=By.NAME, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
-
-        # Click Activity
-        # Displayname: Click
-        var_2.click()
-
-        # Wait Activity
-        # Displayname: Wait
-        webBot.wait(3000)
-
-        # Find Element Activity
-        # Displayname: Find_Element
-        var_3 = webBot.find_element(selector="/html/body/div[2]/div[2]/div/main/div/div/div[2]/div[2]/div/div[2]/div/div/form/div/div/div/div/div/div/div/div/span/div/div/span/span/span/span/span", by=By.XPATH, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
-
-        # Click Activity
-        # Displayname: Click
-        var_3.click()
-
-        # Wait Activity
-        # Displayname: Wait
-        webBot.wait(3000)
-
-        # Find Element Activity
-        # Displayname: Find_Element
-        var_4 = webBot.find_element(selector="/html/body/span/span/span/input", by=By.XPATH, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
-
-        # Type Into Activity
-        # Displayname: Type_Into
-        var_4.send_keys("Descricao")
+        # Extract DataTable Activity
+        # Displayname: ExtractDataTable
+        banco_impressoras_zabbix = Webscrap().webscrap(inBot=webBot, inXPATH="/html/body/div/main/form/table", inLines=0,inNext='', inGetLink=False)
 
         # Wait Activity
         # Displayname: Wait
         webBot.wait(5000)
 
-        # Find Element Activity
-        # Displayname: Find_Element
-        var_5 = webBot.find_element(selector=".select2-results__option--highlighted", by=By.CSS_SELECTOR, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
+        # Sequence: Assign List
 
-        # Click Activity
-        # Displayname: Click
-        var_5.click()
+        # Assign Activity
+        # Displayname: Assign
+        banco_impressoras_zabbix = banco_impressoras_zabbix.assign(Interface2=banco_impressoras_zabbix['Interface'].str.split(':').str[0])
 
-        # Wait Activity
-        # Displayname: Wait
-        webBot.wait(3000)
+        # Assign Activity
+        # Displayname: Assign_Values
+        lista_ips = banco_impressoras_zabbix['Interface2'].tolist()
 
-        # Find Element Activity
-        # Displayname: outrodrop
-        var_6 = webBot.find_element(selector="/html/body/div[2]/div[2]/div/main/div/div/div[2]/div[2]/div/div[2]/div/div/form/div/div/div/div/div/div/div/div/span/div/span/span/span/span/span[2]", by=By.XPATH, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
+        # Assign Activity
+        # Displayname: Assign_Values
+        banco_impressoras_zabbix = banco_impressoras_zabbix.assign(Localizacao=banco_impressoras_zabbix['Nome'].str.split(' - ').str[1])
 
-        # Click Activity
-        # Displayname: Click
-        var_6.click()
+        # Assign Activity
+        # Displayname: Assign_Values
+        lista_localizacoes = banco_impressoras_zabbix['Localizacao'].tolist()
 
-        # Wait Activity
-        # Displayname: Wait
-        webBot.wait(3000)
-
-        # Find Element Activity
-        # Displayname: Find_Element
-        var_7 = webBot.find_element(selector="/html/body/span/span/span/input", by=By.XPATH, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
-
-        # Type Into Activity
-        # Displayname: Type_Into
-        var_7.send_keys("contem")
-
-        # Wait Activity
-        # Displayname: Wait
-        webBot.wait(5000)
-
-        # Find Element Activity
-        # Displayname: Find_Element
-        var_5 = webBot.find_element(selector=".select2-results__option--highlighted", by=By.CSS_SELECTOR, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
-
-        # Click Activity
-        # Displayname: Click
-        var_5.click()
+        # Assign Activity
+        # Displayname: Assign_Values
+        banco_impressoras_zabbix = banco_impressoras_zabbix.to_dict(orient='records')
 
         # Wait Activity
         # Displayname: Wait
         webBot.wait(3000)
 
-        # Find Element Activity
-        # Displayname: Find_Element
-        var_8 = webBot.find_element(selector="pattern", by=By.NAME, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
-
-        # Type Into Activity
-        # Displayname: Type_Into
-        var_8.send_keys("10.3.3.0")
+        # Print Activity
+        # Displayname: Print
+        print(banco_impressoras_zabbix)
 
         # Wait Activity
         # Displayname: Wait
-        webBot.wait(5000)
-
-        # Find Element Activity
-        # Displayname: Find_Element
-        var_9 = webBot.find_element(selector="add", by=By.NAME, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
-
-        # Click Activity
-        # Displayname: Click
-        var_9.click()
-
-        # Wait Activity
-        # Displayname: Wait
-        webBot.wait(15000)
+        webBot.wait(3000)
 
 
         return

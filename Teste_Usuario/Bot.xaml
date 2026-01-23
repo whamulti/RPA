@@ -19,12 +19,12 @@
  xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
  xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-  <Sequence DisplayName="Sequencia_bot_impressora" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Sequencia_bot_usuario" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <jwi:Instance_Webbot DisplayName="Abre_Chrome" sap2010:WorkflowViewState.IdRef="Instance_Webbot_1" instance="webBot" />
     <jwo:OpenBrowser download_folder_path="{x:Null}" user_data_dir="{x:Null}" DisplayName="Pagina_Zabbix" Headless="False" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="&quot;file:///C:/Users/Ricardo/Downloads/usuarios_biotipo.html&quot;" WebDriverPath="''" anonimous="False" arguments="[]" createInstance="True" inBrowser="CHROME" outBrowser="webBot" page_load_strategy="Normal" upWebDriver="False" />
     <jwm:Maximize_Window DisplayName="Maximiza_Window" sap2010:WorkflowViewState.IdRef="Maximize_Window_3" botInstance="webBot" />
-    <jwe:ExtractDataTable Datatable="banco_email" DisplayName="Extrair_dados_tabela" sap2010:WorkflowViewState.IdRef="ExtractDataTable_1" Lines="0" XPathNext="None" XPathtable="&quot;/html/body/div/div[2]/table&quot;" getLinks="False" inBrowser="webBot" returnData="Dict" />
-    <jwn:Navigate_To DisplayName="Navegar_para" sap2010:WorkflowViewState.IdRef="Navigate_To_1" inBrowser="webBot" url="&quot;http://10.2.17.66/front/user.form.php&quot;" />
+    <jwe:ExtractDataTable Datatable="banco_usuario" DisplayName="Extrair_dados_tabela" sap2010:WorkflowViewState.IdRef="ExtractDataTable_1" Lines="0" XPathNext="None" XPathtable="&quot;/html/body/div/div[2]/table&quot;" getLinks="False" inBrowser="webBot" returnData="Dict" />
+    <jwn:Navigate_To DisplayName="Navegar_para" sap2010:WorkflowViewState.IdRef="Navigate_To_1" inBrowser="webBot" url="&quot;http://10.2.17.26/front/user.form.php&quot;" />
     <jwf:Find_Element DisplayName="Localiza_botao" sap2010:WorkflowViewState.IdRef="Find_Element_65" InstanceBrowser="webBot" by="XPATH" ensure_clickable="False" ensure_visible="False" instance_element="Error" selector="&quot;/html/body/div/div/div/div[2]/div[2]/div/div/div[2]/a/span&quot;" waiting_time="1000" />
     <jmc:Click DisplayName="Clica_botao" Element="Error" sap2010:WorkflowViewState.IdRef="Click_19" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
     <jwe1:Element_Library InstanceBrowser="{x:Null}" DisplayName="Elemetos_Login_Glpi" sap2010:WorkflowViewState.IdRef="Element_Library_5" by="XPATH" ensure_clickable="True" ensure_visible="True" instance_element="xpath804" selector="&quot;/html/body/div/div/div/div[2]/div[2]/form/div/div/div[6]/button&quot;" waiting_time="0">
@@ -42,7 +42,7 @@
     <jkt:Type_Into DisplayName="Senha_glpi" sap2010:WorkflowViewState.IdRef="Type_Into_12" click_before="False" convertTo="None" element_instance="senha_glpi" empty_field="False" interval="0" text="&quot;0805&quot;" type="Send_Keys" with_spaces="True" />
     <jmc:Click DisplayName="Clica_botao" Element="botao_glpi" sap2010:WorkflowViewState.IdRef="Click_6" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
     <jwf:Find_Element DisplayName="Encontra_campo" sap2010:WorkflowViewState.IdRef="Find_Element_74" InstanceBrowser="webBot" by="NAME" ensure_clickable="False" ensure_visible="False" instance_element="nome_usuario" selector="&quot;name&quot;" waiting_time="1000" />
-    <jpf:ForEach DisplayName="Laco_repeticao" sap2010:WorkflowViewState.IdRef="ForEach_4" item="item_email" values="banco_email">
+    <jpf:ForEach DisplayName="Laco_repeticao" sap2010:WorkflowViewState.IdRef="ForEach_4" item="item_usuario" values="banco_usuario">
       <jpf:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <Sequence DisplayName="Corpo" sap2010:WorkflowViewState.IdRef="Sequence_21">
@@ -53,21 +53,21 @@
                     <Sequence sap2010:WorkflowViewState.IdRef="Sequence_23">
                       <Sequence DisplayName="Lista_acoes" sap2010:WorkflowViewState.IdRef="Sequence_22">
                         <jwf:Find_Element DisplayName="Encontrar_nome" sap2010:WorkflowViewState.IdRef="Find_Element_72" InstanceBrowser="webBot" by="NAME" ensure_clickable="False" ensure_visible="False" instance_element="nome_usuario" selector="&quot;name&quot;" waiting_time="1000" />
-                        <jkt:Type_Into DisplayName="Dados_de_nome" sap2010:WorkflowViewState.IdRef="Type_Into_18" click_before="False" convertTo="None" element_instance="nome_usuario" empty_field="False" interval="0" text="item_email[&quot;NOME&quot;]" type="Send_Keys" with_spaces="True" />
+                        <jkt:Type_Into DisplayName="Dados_de_nome" sap2010:WorkflowViewState.IdRef="Type_Into_18" click_before="False" convertTo="None" element_instance="nome_usuario" empty_field="False" interval="0" text="item_usuario[&quot;NOME&quot;]" type="Send_Keys" with_spaces="True" />
                         <jww:Wait DisplayName="Espera_3_segundos" sap2010:WorkflowViewState.IdRef="Wait_12" InstanceBrowser="webBot" wait_time="3000" />
                         <jws:Scroll_Page DisplayName="Descer_pagina" sap2010:WorkflowViewState.IdRef="Scroll_Page_2" Steps="20" direction="Down" instance="webBot" />
                         <jwf:Find_Element sap2010:WorkflowViewState.IdRef="Find_Element_80" InstanceBrowser="webBot" by="NAME" ensure_clickable="False" ensure_visible="False" instance_element="email" selector="&quot;_useremails[-1]&quot;" waiting_time="1000" />
-                        <jkt:Type_Into DisplayName="Dados_de_ip" sap2010:WorkflowViewState.IdRef="Type_Into_19" click_before="False" convertTo="None" element_instance="email" empty_field="False" interval="0" text="item_email[&quot;EMAIL&quot;]" type="Send_Keys" with_spaces="True" />
+                        <jkt:Type_Into DisplayName="Dados_de_ip" sap2010:WorkflowViewState.IdRef="Type_Into_19" click_before="False" convertTo="None" element_instance="email" empty_field="False" interval="0" text="item_usuario[&quot;EMAIL&quot;]" type="Send_Keys" with_spaces="True" />
                         <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_13" InstanceBrowser="webBot" wait_time="3000" />
                         <jwf:Find_Element DisplayName="Encontrar_nome" sap2010:WorkflowViewState.IdRef="Find_Element_73" InstanceBrowser="webBot" by="NAME" ensure_clickable="False" ensure_visible="False" instance_element="envia_nome" selector="&quot;add&quot;" waiting_time="1000" />
-                        <jmc:Click DisplayName="Adicionar_impressora" Element="envia_nome" sap2010:WorkflowViewState.IdRef="Click_20" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
+                        <jmc:Click DisplayName="Adicionar_nome" Element="envia_nome" sap2010:WorkflowViewState.IdRef="Click_20" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
                         <jww:Wait DisplayName="Espera_20_segundos" sap2010:WorkflowViewState.IdRef="Wait_6" InstanceBrowser="webBot" wait_time="20000" />
                         <jws:Scroll_Page DisplayName="Descer_pagina" sap2010:WorkflowViewState.IdRef="Scroll_Page_4" Steps="3" direction="Down" instance="webBot" />
                         <jwf:Find_Element sap2010:WorkflowViewState.IdRef="Find_Element_81" InstanceBrowser="webBot" by="XPATH" ensure_clickable="False" ensure_visible="False" instance_element="clica_localizacao" selector="&quot;/html/body/div[2]/div[2]/div/main/div/div/div[2]/div[2]/div/div/div/form/div/div/div/div/div/div[14]/div/div/span/span/span/span&quot;" waiting_time="1000" />
                         <jmc:Click Element="clica_localizacao" sap2010:WorkflowViewState.IdRef="Click_22" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
                         <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_17" InstanceBrowser="webBot" wait_time="3000" />
                         <jwf:Find_Element sap2010:WorkflowViewState.IdRef="Find_Element_82" InstanceBrowser="webBot" by="XPATH" ensure_clickable="False" ensure_visible="False" instance_element="digita_localizacao" selector="&quot;/html/body/span/span/span/input&quot;" waiting_time="1000" />
-                        <jkt:Type_Into DisplayName="Dados_de_ip" sap2010:WorkflowViewState.IdRef="Type_Into_20" click_before="False" convertTo="None" element_instance="digita_localizacao" empty_field="False" interval="0" text="item_email[&quot;LOCALIZACAO&quot;]" type="Send_Keys" with_spaces="True" />
+                        <jkt:Type_Into DisplayName="Dados_de_ip" sap2010:WorkflowViewState.IdRef="Type_Into_20" click_before="False" convertTo="None" element_instance="digita_localizacao" empty_field="False" interval="0" text="item_usuario[&quot;LOCALIZACAO&quot;]" type="Send_Keys" with_spaces="True" />
                         <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_16" InstanceBrowser="webBot" wait_time="3000" />
                         <jwf:Find_Element sap2010:WorkflowViewState.IdRef="Find_Element_83" InstanceBrowser="webBot" by="CSS_SELECTOR" ensure_clickable="False" ensure_visible="False" instance_element="seleciona_localizacao" selector="&quot;.select2-results__option--highlighted&quot;" waiting_time="1000" />
                         <jmc:Click Element="seleciona_localizacao" sap2010:WorkflowViewState.IdRef="Click_23" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
@@ -77,7 +77,7 @@
                         <jwf:Find_Element sap2010:WorkflowViewState.IdRef="Find_Element_84" InstanceBrowser="webBot" by="NAME" ensure_clickable="False" ensure_visible="False" instance_element="altera_usuario" selector="&quot;update&quot;" waiting_time="1000" />
                         <jmc:Click Element="altera_usuario" sap2010:WorkflowViewState.IdRef="Click_21" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
                         <jww:Wait DisplayName="Espera_20_segundos" sap2010:WorkflowViewState.IdRef="Wait_14" InstanceBrowser="webBot" wait_time="20000" />
-                        <jwn:Navigate_To DisplayName="retornar_pagina" sap2010:WorkflowViewState.IdRef="Navigate_To_2" inBrowser="webBot" url="&quot;http://10.2.17.66/front/user.form.php&quot;" />
+                        <jwn:Navigate_To DisplayName="retornar_pagina" sap2010:WorkflowViewState.IdRef="Navigate_To_2" inBrowser="webBot" url="&quot;http://10.2.17.26/front/user.form.php&quot;" />
                         <jww:Wait DisplayName="Espera_3_segundos" sap2010:WorkflowViewState.IdRef="Wait_11" InstanceBrowser="webBot" wait_time="3000" />
                       </Sequence>
                     </Sequence>
@@ -89,7 +89,7 @@
         </ActivityAction>
       </jpf:ForEach.Body>
     </jpf:ForEach>
-    <sads:DebugSymbol.Symbol>dzpDOlxVc2Vyc1xyaWNhcmRvXERvY3VtZW50c1xHaXRIdWJcUlBBXFRlc3RlX0VtYWlsXEJvdC54YW1sDhYDXQ4CAQEXBRd8AgEOGAUYmgMCAQ0ZBRmDAQIBDBoFGpMCAgELGwUbrgECAQocBRy7AgIBCR0FHa8BAgEIHgUoHAIBBykFKYYCAgEGKgUq/wECAQUrBSuzAQIBBCwFLIsCAgEDLQVbEwIBAg==</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>dzxDOlxVc2Vyc1xyaWNhcmRvXERvY3VtZW50c1xHaXRIdWJcUlBBXFRlc3RlX1VzdWFyaW9cQm90LnhhbWwOFgNdDgIBARcFF3wCAQ4YBRiaAwIBDRkFGYMBAgEMGgUalQICAQsbBRuuAQIBChwFHLsCAgEJHQUdrwECAQgeBSgcAgEHKQUphgICAQYqBSr/AQIBBSsFK7MBAgEELAUsiwICAQMtBVsTAgEC</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>

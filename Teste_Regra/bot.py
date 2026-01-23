@@ -7,7 +7,7 @@ from datetime import datetime
 
 class Bot:
     def bot(self):
-        # Sequence: Sequencia_bot_camera
+        # Sequence: Sequencia_bot_regra
 
         #  Activity Instance WebBot
         # Displayname: Abre_Chrome
@@ -22,7 +22,7 @@ class Bot:
         webBotDef_options = default_options()
         webBotDef_options.add_argument("--page-load-strategy=Normal")
         webBot.options = webBotDef_options
-        webBot.browse("http://10.2.17.7/zabbix/zabbix.php?action=host.list&filter_groups%5B%5D=33&filter_groups%5B%5D=23&filter_host=&filter_dns=&filter_ip=&filter_port=&filter_status=-1&filter_monitored_by=-1&filter_evaltype=0&filter_tags%5B0%5D%5Btag%5D=&filter_tags%5B0%5D%5Boperator%5D=0&filter_tags%5B0%5D%5Bvalue%5D=&filter_set=1")
+        webBot.browse("http://10.2.17.7/zabbix/zabbix.php?action=host.list&filter_groups%5B%5D=28&filter_host=&filter_dns=&filter_ip=&filter_port=&filter_status=-1&filter_monitored_by=-1&filter_evaltype=0&filter_tags%5B0%5D%5Btag%5D=&filter_tags%5B0%5D%5Boperator%5D=0&filter_tags%5B0%5D%5Bvalue%5D=&filter_set=1")
 
         # Maximize window Activity
         # Displayname: Maximiza_Window
@@ -66,21 +66,29 @@ class Bot:
 
         # Extract DataTable Activity
         # Displayname: Extrair_dados_tabela
-        banco_impressoras_zabbix = Webscrap().webscrap(inBot=webBot, inXPATH="/html/body/div/main/form/table", inLines=0,inNext='', inGetLink=False)
+        banco_regra = Webscrap().webscrap(inBot=webBot, inXPATH="/html/body/div/main/form/table", inLines=0,inNext='', inGetLink=False)
 
         # Sequence: Lista_acoes
 
         # Assign Activity
         # Displayname: Assign
-        banco_impressoras_zabbix = banco_impressoras_zabbix.assign(Interface2=banco_impressoras_zabbix['Interface'].str.split(':').str[0])
+        banco_regra = banco_regra.assign(Interface2=banco_regra['Interface'].str.split(':').str[0])
 
         # Assign Activity
         # Displayname: Assign_Values
-        lista_ips = banco_impressoras_zabbix['Interface2'].tolist()
+        lista_ips = banco_regra['Interface2'].tolist()
+
+        # Assign Activity
+        # Displayname: Assign_Values
+        banco_regra = banco_regra.assign(Localizacao=banco_regra['Nome'].str.split(' - ').str[1])
+
+        # Assign Activity
+        # Displayname: Assign_Values
+        lista_localizacoes = banco_regra['Localizacao'].tolist()
 
         # Assign Activity
         # Displayname: Converte_dados
-        banco_impressoras_zabbix = banco_impressoras_zabbix.to_dict(orient='records')
+        banco_regra = banco_regra.to_dict(orient='records')
 
         #  Navigate to Activity
         # Displayname: Navegar_para
@@ -128,7 +136,7 @@ class Bot:
 
         # ForEach Activity
         # Displayname: Laco_repeticao
-        for item_regra in banco_impressoras_zabbix:
+        for item_regra in banco_regra:
             # Sequence: Corpo
 
             # DisplayName: Formulario_acao_elementos_web

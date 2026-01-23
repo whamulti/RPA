@@ -8,7 +8,7 @@ from datetime import datetime
 
 class Bot:
     def bot(self):
-        # Sequence: Sequencia_bot_impressora
+        # Sequence: Sequencia_bot_usuario
 
         #  Activity Instance WebBot
         # Displayname: Abre_Chrome
@@ -31,13 +31,13 @@ class Bot:
 
         # Extract DataTable Activity
         # Displayname: Extrair_dados_tabela
-        banco_email = Webscrap().webscrap(inBot=webBot, inXPATH="/html/body/div/div[2]/table", inLines=0,inNext='', inGetLink=False)
+        banco_usuario = Webscrap().webscrap(inBot=webBot, inXPATH="/html/body/div/div[2]/table", inLines=0,inNext='', inGetLink=False)
 
-        banco_email = banco_email.to_dict(orient='records')
+        banco_usuario = banco_usuario.to_dict(orient='records')
 
         #  Navigate to Activity
         # Displayname: Navegar_para
-        webBot.navigate_to("http://10.2.17.66/front/user.form.php")
+        webBot.navigate_to("http://10.2.17.26/front/user.form.php")
 
         # Find Element Activity
         # Displayname: Localiza_botao
@@ -81,7 +81,7 @@ class Bot:
 
         # ForEach Activity
         # Displayname: Laco_repeticao
-        for item_email in banco_email:
+        for item_usuario in banco_usuario:
             # Sequence: Corpo
 
             # DisplayName: Formulario_acao_elementos_web
@@ -94,7 +94,7 @@ class Bot:
 
             # Type Into Activity
             # Displayname: Dados_de_nome
-            nome_usuario.send_keys(item_email["NOME"])
+            nome_usuario.send_keys(item_usuario["NOME"])
 
             # Wait Activity
             # Displayname: Espera_3_segundos
@@ -110,7 +110,7 @@ class Bot:
 
             # Type Into Activity
             # Displayname: Dados_de_ip
-            email.send_keys(item_email["EMAIL"])
+            email.send_keys(item_usuario["EMAIL"])
 
             # Wait Activity
             # Displayname: Wait
@@ -121,7 +121,7 @@ class Bot:
             envia_nome = webBot.find_element(selector="add", by=By.NAME, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
 
             # Click Activity
-            # Displayname: Adicionar_impressora
+            # Displayname: Adicionar_nome
             envia_nome.click()
 
             # Wait Activity
@@ -150,7 +150,7 @@ class Bot:
 
             # Type Into Activity
             # Displayname: Dados_de_ip
-            digita_localizacao.send_keys(item_email["LOCALIZACAO"])
+            digita_localizacao.send_keys(item_usuario["LOCALIZACAO"])
 
             # Wait Activity
             # Displayname: Wait
@@ -190,7 +190,7 @@ class Bot:
 
             #  Navigate to Activity
             # Displayname: retornar_pagina
-            webBot.navigate_to("http://10.2.17.66/front/user.form.php")
+            webBot.navigate_to("http://10.2.17.26/front/user.form.php")
 
             # Wait Activity
             # Displayname: Espera_3_segundos

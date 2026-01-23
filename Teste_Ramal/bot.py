@@ -22,7 +22,7 @@ class Bot:
         webBotDef_options = default_options()
         webBotDef_options.add_argument("--page-load-strategy=Normal")
         webBot.options = webBotDef_options
-        webBot.browse("http://10.2.17.7/zabbix/zabbix.php?action=host.list&filter_groups%5B%5D=33&filter_host=&filter_dns=&filter_ip=&filter_port=&filter_status=-1&filter_monitored_by=-1&filter_evaltype=0&filter_tags%5B0%5D%5Btag%5D=&filter_tags%5B0%5D%5Boperator%5D=0&filter_tags%5B0%5D%5Bvalue%5D=&filter_set=1")
+        webBot.browse("http://10.2.17.7/zabbix/zabbix.php?action=host.list&filter_groups%5B%5D=33&filter_host=&filter_dns=&filter_ip=&filter_port=&filter_status=0&filter_monitored_by=-1&filter_evaltype=0&filter_tags%5B0%5D%5Btag%5D=&filter_tags%5B0%5D%5Boperator%5D=0&filter_tags%5B0%5D%5Bvalue%5D=&filter_set=1")
 
         # Maximize window Activity
         # Displayname: Maximiza_Window
@@ -66,21 +66,29 @@ class Bot:
 
         # Extract DataTable Activity
         # Displayname: Extrair_dados_tabela
-        banco_impressoras_zabbix = Webscrap().webscrap(inBot=webBot, inXPATH="/html/body/div/main/form/table", inLines=0,inNext='', inGetLink=False)
+        banco_ramal = Webscrap().webscrap(inBot=webBot, inXPATH="/html/body/div/main/form/table", inLines=0,inNext='', inGetLink=False)
 
         # Sequence: Lista_acoes
 
         # Assign Activity
         # Displayname: Assign
-        banco_impressoras_zabbix = banco_impressoras_zabbix.assign(Interface2=banco_impressoras_zabbix['Interface'].str.split(':').str[0])
+        banco_ramal = banco_ramal.assign(Interface2=banco_ramal['Interface'].str.split(':').str[0])
 
         # Assign Activity
         # Displayname: Assign_Values
-        lista_ips = banco_impressoras_zabbix['Interface2'].tolist()
+        lista_ips = banco_ramal['Interface2'].tolist()
+
+        # Assign Activity
+        # Displayname: Assign_Values
+        banco_ramal = banco_ramal.assign(Localizacao=banco_ramal['Nome'].str.split(' - ').str[1])
+
+        # Assign Activity
+        # Displayname: Assign_Values
+        lista_localizacoes = banco_ramal['Localizacao'].tolist()
 
         # Assign Activity
         # Displayname: Converte_dados
-        banco_impressoras_zabbix = banco_impressoras_zabbix.to_dict(orient='records')
+        banco_ramal = banco_ramal.to_dict(orient='records')
 
         #  Navigate to Activity
         # Displayname: Navegar_para
@@ -128,7 +136,7 @@ class Bot:
 
         # ForEach Activity
         # Displayname: Laco_repeticao
-        for item_impressora in banco_impressoras_zabbix:
+        for item_ramal in banco_ramal:
             # Sequence: Corpo
 
             # DisplayName: Formulario_acao_elementos_web
@@ -141,7 +149,7 @@ class Bot:
 
             # Type Into Activity
             # Displayname: Dados_de_nome
-            nome_impressora.send_keys(item_impressora["Nome"])
+            nome_impressora.send_keys(item_ramal["Nome"])
 
             # Wait Activity
             # Displayname: Espera_3_segundos
@@ -197,7 +205,7 @@ class Bot:
 
             # Type Into Activity
             # Displayname: Dados_de_ip
-            end_ip.send_keys(item_impressora["Interface2"])
+            end_ip.send_keys(item_ramal["Interface2"])
 
             # Wait Activity
             # Displayname: Espera_3_segundos
