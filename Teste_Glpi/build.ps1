@@ -1,5 +1,5 @@
 $excludeFolders = @("venv", ".vscode", "__pycache__") 
-$excludeFiles = @("Teste1.zip", "*.xaml", "*.jproj")
+$excludeFiles = @("Teste.zip", "*.xaml", "*.jproj")
 
 $files = Get-ChildItem -Path . -Recurse | Where-Object {
     -not (
@@ -8,4 +8,4 @@ $files = Get-ChildItem -Path . -Recurse | Where-Object {
     )
 }
 
-Compress-Archive -Path $files.FullName -DestinationPath "Teste1.zip" -Force
+Compress-Archive -Path $files.FullName -DestinationPath "Teste.zip" -Force
