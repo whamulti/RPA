@@ -7,7 +7,7 @@ from datetime import datetime
 
 class Bot:
     def bot(self):
-        # Sequence: Sequencia_bot_regra
+        # Sequence: Sequencia_bot_regra_problema
 
         #  Activity Instance WebBot
         # Displayname: Abre_Chrome

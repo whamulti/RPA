@@ -17,7 +17,7 @@
  xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
  xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-  <Sequence DisplayName="Sequence_teste1" sap2010:WorkflowViewState.IdRef="Sequence_3">
+  <Sequence DisplayName="Sequence_teste_zabbix" sap2010:WorkflowViewState.IdRef="Sequence_3">
     <jwi:Instance_Webbot sap2010:WorkflowViewState.IdRef="Instance_Webbot_1" instance="webBot" />
     <jwo:OpenBrowser download_folder_path="{x:Null}" user_data_dir="{x:Null}" Headless="False" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="&quot;http://10.2.17.7/zabbix/zabbix.php?action=host.list&amp;filter_groups%5B%5D=29&amp;filter_host=&amp;filter_dns=&amp;filter_ip=&amp;filter_port=&amp;filter_status=-1&amp;filter_monitored_by=-1&amp;filter_evaltype=0&amp;filter_tags%5B0%5D%5Btag%5D=&amp;filter_tags%5B0%5D%5Boperator%5D=0&amp;filter_tags%5B0%5D%5Bvalue%5D=&amp;filter_set=1&quot;" WebDriverPath="''" anonimous="False" arguments="[]" createInstance="True" inBrowser="CHROME" outBrowser="webBot" page_load_strategy="Normal" upWebDriver="False" />
     <jwf:Find_Element sap2010:WorkflowViewState.IdRef="Find_Element_1" InstanceBrowser="webBot" by="XPATH" ensure_clickable="False" ensure_visible="False" instance_element="botao" selector="&quot;/html/body/div/main/output/div[2]/button&quot;" waiting_time="1000" />
@@ -56,7 +56,7 @@
     <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_30" InstanceBrowser="webBot" wait_time="3000" />
     <jpp:Print sap2010:WorkflowViewState.IdRef="Print_1" print="banco_impressoras_zabbix" />
     <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_31" InstanceBrowser="webBot" wait_time="3000" />
-    <sads:DebugSymbol.Symbol>dzVDOlxVc2Vyc1xyaWNhcmRvXERvY3VtZW50c1xHaXRIdWJcUlBBXFRlc3RlMVxCb3QueGFtbBEUAzwOAgEBFQUVYgIBERYFFpcFAgEQFwUXiwICAQ8YBRiUAQIBDhkFGWUCAQ0aBSQbAgEMJQUl5QECAQsmBSbuAQIBCicFJ5gBAgEJKAUoZQIBCCkFKYYCAgEHKgUqZQIBBisFNxsCAQU4BThlAgEEOQU5XQIBAzoFOmUCAQI=</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>dztDOlxVc2Vyc1xSaWNhcmRvXERvY3VtZW50c1xHaXRIdWJcUlBBXFRlc3RlX1phYmJpeFxCb3QueGFtbBEUAzwOAgEBFQUVYgIBERYFFpcFAgEQFwUXiwICAQ8YBRiUAQIBDhkFGWUCAQ0aBSQbAgEMJQUl5QECAQsmBSbuAQIBCicFJ5gBAgEJKAUoZQIBCCkFKYYCAgEHKgUqZQIBBisFNxsCAQU4BThlAgEEOQU5XQIBAzoFOmUCAQI=</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
