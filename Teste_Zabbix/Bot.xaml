@@ -1,0 +1,111 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="JornadaRPA.Bot" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap2010:WorkflowViewState.IdRef="JornadaRPAStudio.Workflow_1"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:jkt="clr-namespace:JornadaRPA.Keyboard.Type_Into;assembly=JornadaRPA.Keyboard"
+ xmlns:jmc="clr-namespace:JornadaRPA.Mouse.Click;assembly=JornadaRPA.Mouse"
+ xmlns:jpa="clr-namespace:JornadaRPA.Python.Assign_Values;assembly=JornadaRPA.Python"
+ xmlns:jpm="clr-namespace:JornadaRPA.Python.Multiple_Assign;assembly=JornadaRPA.Python"
+ xmlns:jpp="clr-namespace:JornadaRPA.Python.Print;assembly=JornadaRPA.Python"
+ xmlns:jwe="clr-namespace:JornadaRPA.Web.Element_Library;assembly=JornadaRPA.Web"
+ xmlns:jwe1="clr-namespace:JornadaRPA.Web.ExtractDataTable;assembly=JornadaRPA.Web"
+ xmlns:jwf="clr-namespace:JornadaRPA.Web.Find_Element;assembly=JornadaRPA.Web"
+ xmlns:jwi="clr-namespace:JornadaRPA.Web.Instance_Webbot;assembly=JornadaRPA.Web"
+ xmlns:jwo="clr-namespace:JornadaRPA.Web.OpenBrowser;assembly=JornadaRPA.Web"
+ xmlns:jww="clr-namespace:JornadaRPA.Web.Wait;assembly=JornadaRPA.Web"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Sequence DisplayName="Sequence_teste1" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <jwi:Instance_Webbot sap2010:WorkflowViewState.IdRef="Instance_Webbot_1" instance="webBot" />
+    <jwo:OpenBrowser download_folder_path="{x:Null}" user_data_dir="{x:Null}" Headless="False" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="&quot;http://10.2.17.7/zabbix/zabbix.php?action=host.list&amp;filter_groups%5B%5D=29&amp;filter_host=&amp;filter_dns=&amp;filter_ip=&amp;filter_port=&amp;filter_status=-1&amp;filter_monitored_by=-1&amp;filter_evaltype=0&amp;filter_tags%5B0%5D%5Btag%5D=&amp;filter_tags%5B0%5D%5Boperator%5D=0&amp;filter_tags%5B0%5D%5Bvalue%5D=&amp;filter_set=1&quot;" WebDriverPath="''" anonimous="False" arguments="[]" createInstance="True" inBrowser="CHROME" outBrowser="webBot" page_load_strategy="Normal" upWebDriver="False" />
+    <jwf:Find_Element sap2010:WorkflowViewState.IdRef="Find_Element_1" InstanceBrowser="webBot" by="XPATH" ensure_clickable="False" ensure_visible="False" instance_element="botao" selector="&quot;/html/body/div/main/output/div[2]/button&quot;" waiting_time="1000" />
+    <jmc:Click Element="botao" sap2010:WorkflowViewState.IdRef="Click_1" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
+    <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_32" InstanceBrowser="webBot" wait_time="3000" />
+    <jwe:Element_Library InstanceBrowser="{x:Null}" sap2010:WorkflowViewState.IdRef="Element_Library_1" by="NAME" ensure_clickable="True" ensure_visible="True" instance_element="nameenter" selector="&quot;enter&quot;" waiting_time="0">
+      <jwe:Element_Library.Body>
+        <ActivityAction x:TypeArguments="x:String">
+          <Sequence DisplayName="Element list" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <jwf:Find_Element sap2010:WorkflowViewState.IdRef="Find_Element_2" InstanceBrowser="webBot" by="ID" ensure_clickable="False" ensure_visible="False" instance_element="namename" selector="&quot;name&quot;" waiting_time="1000" />
+            <jwf:Find_Element sap2010:WorkflowViewState.IdRef="Find_Element_3" InstanceBrowser="webBot" by="ID" ensure_clickable="False" ensure_visible="False" instance_element="namepassword" selector="&quot;password&quot;" waiting_time="1000" />
+            <jwf:Find_Element sap2010:WorkflowViewState.IdRef="Find_Element_4" InstanceBrowser="webBot" by="ID" ensure_clickable="False" ensure_visible="False" instance_element="nameenter" selector="&quot;enter&quot;" waiting_time="1000" />
+          </Sequence>
+        </ActivityAction>
+      </jwe:Element_Library.Body>
+    </jwe:Element_Library>
+    <jkt:Type_Into sap2010:WorkflowViewState.IdRef="Type_Into_10" click_before="False" convertTo="None" element_instance="namename" empty_field="False" interval="0" text="&quot;admin&quot;" type="Send_Keys" with_spaces="True" />
+    <jkt:Type_Into sap2010:WorkflowViewState.IdRef="Type_Into_2" click_before="False" convertTo="None" element_instance="namepassword" empty_field="False" interval="0" text="&quot;biotipo2023&quot;" type="Send_Keys" with_spaces="True" />
+    <jmc:Click Element="nameenter" sap2010:WorkflowViewState.IdRef="Click_2" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
+    <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_13" InstanceBrowser="webBot" wait_time="3000" />
+    <jwe1:ExtractDataTable Datatable="banco_impressoras_zabbix" sap2010:WorkflowViewState.IdRef="ExtractDataTable_1" Lines="0" XPathNext="None" XPathtable="&quot;/html/body/div/main/form/table&quot;" getLinks="False" inBrowser="webBot" returnData="Dataframe" />
+    <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_26" InstanceBrowser="webBot" wait_time="5000" />
+    <jpm:Multiple_Assign sap2010:WorkflowViewState.IdRef="Multiple_Assign_1">
+      <jpm:Multiple_Assign.Body>
+        <ActivityAction x:TypeArguments="x:String">
+          <Sequence DisplayName="Assign List" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <jpa:Assign_Values DisplayName="Assign" sap2010:WorkflowViewState.IdRef="Assign_Values_2" isGlobal="False" to="banco_impressoras_zabbix" value="banco_impressoras_zabbix.assign(Interface2=banco_impressoras_zabbix['Interface'].str.split(':').str[0])" />
+            <jpa:Assign_Values sap2010:WorkflowViewState.IdRef="Assign_Values_3" isGlobal="False" to="lista_ips" value="banco_impressoras_zabbix['Interface2'].tolist()" />
+            <jpa:Assign_Values sap2010:WorkflowViewState.IdRef="Assign_Values_5" isGlobal="False" to="banco_impressoras_zabbix" value="banco_impressoras_zabbix.assign(Localizacao=banco_impressoras_zabbix['Nome'].str.split(' - ').str[1])" />
+            <jpa:Assign_Values sap2010:WorkflowViewState.IdRef="Assign_Values_6" isGlobal="False" to="lista_localizacoes" value="banco_impressoras_zabbix['Localizacao'].tolist()" />
+            <jpa:Assign_Values sap2010:WorkflowViewState.IdRef="Assign_Values_4" isGlobal="False" to="banco_impressoras_zabbix" value="banco_impressoras_zabbix.to_dict(orient='records')" />
+          </Sequence>
+        </ActivityAction>
+      </jpm:Multiple_Assign.Body>
+    </jpm:Multiple_Assign>
+    <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_30" InstanceBrowser="webBot" wait_time="3000" />
+    <jpp:Print sap2010:WorkflowViewState.IdRef="Print_1" print="banco_impressoras_zabbix" />
+    <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_31" InstanceBrowser="webBot" wait_time="3000" />
+    <sads:DebugSymbol.Symbol>dzVDOlxVc2Vyc1xyaWNhcmRvXERvY3VtZW50c1xHaXRIdWJcUlBBXFRlc3RlMVxCb3QueGFtbBEUAzwOAgEBFQUVYgIBERYFFpcFAgEQFwUXiwICAQ8YBRiUAQIBDhkFGWUCAQ0aBSQbAgEMJQUl5QECAQsmBSbuAQIBCicFJ5gBAgEJKAUoZQIBCCkFKYYCAgEHKgUqZQIBBisFNxsCAQU4BThlAgEEOQU5XQIBAzoFOmUCAQI=</sads:DebugSymbol.Symbol>
+  </Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="Instance_Webbot_1" sap:VirtualizedContainerService.HintSize="521,105" />
+      <sap2010:ViewStateData Id="OpenBrowser_1" sap:VirtualizedContainerService.HintSize="521,194" />
+      <sap2010:ViewStateData Id="Find_Element_1" sap:VirtualizedContainerService.HintSize="521,177" />
+      <sap2010:ViewStateData Id="Click_1" sap:VirtualizedContainerService.HintSize="521,81" />
+      <sap2010:ViewStateData Id="Wait_32" sap:VirtualizedContainerService.HintSize="521,96" />
+      <sap2010:ViewStateData Id="Find_Element_2" sap:VirtualizedContainerService.HintSize="200,177" />
+      <sap2010:ViewStateData Id="Find_Element_3" sap:VirtualizedContainerService.HintSize="200,177" />
+      <sap2010:ViewStateData Id="Find_Element_4" sap:VirtualizedContainerService.HintSize="200,177" />
+      <sap2010:ViewStateData Id="Sequence_6" sap:VirtualizedContainerService.HintSize="222,735">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Element_Library_1" sap:VirtualizedContainerService.HintSize="521,834" />
+      <sap2010:ViewStateData Id="Type_Into_10" sap:VirtualizedContainerService.HintSize="521,123" />
+      <sap2010:ViewStateData Id="Type_Into_2" sap:VirtualizedContainerService.HintSize="521,123" />
+      <sap2010:ViewStateData Id="Click_2" sap:VirtualizedContainerService.HintSize="521,81" />
+      <sap2010:ViewStateData Id="Wait_13" sap:VirtualizedContainerService.HintSize="521,96" />
+      <sap2010:ViewStateData Id="ExtractDataTable_1" sap:VirtualizedContainerService.HintSize="521,320" />
+      <sap2010:ViewStateData Id="Wait_26" sap:VirtualizedContainerService.HintSize="521,96" />
+      <sap2010:ViewStateData Id="Assign_Values_2" sap:VirtualizedContainerService.HintSize="485,125" />
+      <sap2010:ViewStateData Id="Assign_Values_3" sap:VirtualizedContainerService.HintSize="485,125" />
+      <sap2010:ViewStateData Id="Assign_Values_5" sap:VirtualizedContainerService.HintSize="485,125" />
+      <sap2010:ViewStateData Id="Assign_Values_6" sap:VirtualizedContainerService.HintSize="485,125" />
+      <sap2010:ViewStateData Id="Assign_Values_4" sap:VirtualizedContainerService.HintSize="485,125" />
+      <sap2010:ViewStateData Id="Sequence_5" sap:VirtualizedContainerService.HintSize="507,909">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Multiple_Assign_1" sap:VirtualizedContainerService.HintSize="521,1042" />
+      <sap2010:ViewStateData Id="Wait_30" sap:VirtualizedContainerService.HintSize="521,96" />
+      <sap2010:ViewStateData Id="Print_1" sap:VirtualizedContainerService.HintSize="521,87" />
+      <sap2010:ViewStateData Id="Wait_31" sap:VirtualizedContainerService.HintSize="521,96" />
+      <sap2010:ViewStateData Id="Sequence_3" sap:VirtualizedContainerService.HintSize="543,4371">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="JornadaRPAStudio.Workflow_1" sap:VirtualizedContainerService.HintSize="583,4451" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>
