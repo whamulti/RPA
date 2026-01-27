@@ -37,7 +37,7 @@ class Bot:
 
         #  Navigate to Activity
         # Displayname: Navegar_para
-        webBot.navigate_to("http://10.2.17.66/front/form/form.form.php?id=13")
+        webBot.navigate_to("http://10.2.17.26/front/form/form.form.php?id=17")
 
         # Find Element Activity
         # Displayname: Localiza_botao

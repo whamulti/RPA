@@ -23,7 +23,7 @@
     <jwo:OpenBrowser download_folder_path="{x:Null}" user_data_dir="{x:Null}" DisplayName="Pagina_Zabbix" Headless="False" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="&quot;file:///C:/Users/ricardo/Downloads/usuarios_biotipo.html&quot;" WebDriverPath="''" anonimous="False" arguments="[]" createInstance="True" inBrowser="CHROME" outBrowser="webBot" page_load_strategy="Normal" upWebDriver="False" />
     <jwm:Maximize_Window sap2010:WorkflowViewState.IdRef="Maximize_Window_4" botInstance="webBot" />
     <jwe:ExtractDataTable Datatable="banco_regra" DisplayName="Extrair_dados_tabela" sap2010:WorkflowViewState.IdRef="ExtractDataTable_1" Lines="0" XPathNext="None" XPathtable="&quot;/html/body/div/div[2]/table&quot;" getLinks="False" inBrowser="webBot" returnData="Dict" />
-    <jwn:Navigate_To DisplayName="Navegar_para" sap2010:WorkflowViewState.IdRef="Navigate_To_1" inBrowser="webBot" url="&quot;http://10.2.17.66/front/ruleticket.form.php&quot;" />
+    <jwn:Navigate_To DisplayName="Navegar_para" sap2010:WorkflowViewState.IdRef="Navigate_To_1" inBrowser="webBot" url="&quot;http://10.2.17.26/front/ruleticket.form.php&quot;" />
     <jwf:Find_Element DisplayName="Localiza_botao" sap2010:WorkflowViewState.IdRef="Find_Element_65" InstanceBrowser="webBot" by="XPATH" ensure_clickable="False" ensure_visible="False" instance_element="Error" selector="&quot;/html/body/div/div/div/div[2]/div[2]/div/div/div[2]/a/span&quot;" waiting_time="1000" />
     <jmc:Click DisplayName="Clica_botao" Element="Error" sap2010:WorkflowViewState.IdRef="Click_19" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
     <jwe1:Element_Library InstanceBrowser="{x:Null}" DisplayName="Elemetos_Login_Glpi" sap2010:WorkflowViewState.IdRef="Element_Library_5" by="XPATH" ensure_clickable="True" ensure_visible="True" instance_element="xpath804" selector="&quot;/html/body/div/div/div/div[2]/div[2]/form/div/div/div[6]/button&quot;" waiting_time="0">
@@ -125,7 +125,7 @@
                         <jww:Wait DisplayName="Espera_3_segundos" sap2010:WorkflowViewState.IdRef="Wait_90" InstanceBrowser="webBot" wait_time="3000" />
                         <jwf:Find_Element DisplayName="Elemento_menu" sap2010:WorkflowViewState.IdRef="Find_Element_152" InstanceBrowser="webBot" by="XPATH" ensure_clickable="False" ensure_visible="False" instance_element="acoes" selector="&quot;/html/body/div[2]/div[2]/div/main/div/div/div[2]/div[2]/ul/li[3]/a/span&quot;" waiting_time="1000" />
                         <jmc:Click DisplayName="Clica_botao" Element="acoes" sap2010:WorkflowViewState.IdRef="Click_76" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
-                        <jwn:Navigate_To sap2010:WorkflowViewState.IdRef="Navigate_To_2" inBrowser="webBot" url="&quot;http://10.2.17.66/front/ruleticket.form.php&quot;" />
+                        <jwn:Navigate_To sap2010:WorkflowViewState.IdRef="Navigate_To_2" inBrowser="webBot" url="&quot;http://10.2.17.26/front/ruleticket.form.php&quot;" />
                       </Sequence>
                     </Sequence>
                   </Sequence>
