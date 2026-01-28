@@ -35,7 +35,7 @@
   ],
   "PathSelector": "C:\\Jornada RPA Selector 1.0\\JornadaRPA.Selector.exe",
   "PathRunner": "C:\\",
-  "PathInstalledPython": "C:\\Users\\ricardo\\Documents\\GitHub\\RPA\\Teste_Zabbix_Impressora\\venv\\Scripts",
+  "PathInstalledPython": "C:\\Users\\ricardo\\Documents\\GitHub\\RPA\\Teste_Glpi_Impressora\\venv\\Scripts",
   "PathPythonVersion": "3.13",
   "PathPythonBaseVersion": null
 }

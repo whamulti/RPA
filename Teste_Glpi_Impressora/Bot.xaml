@@ -21,7 +21,7 @@
  xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
  xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-  <Sequence DisplayName="Sequencia_zabbix_Impressora" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Sequencia_glpi_Impressora" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <jwi:Instance_Webbot DisplayName="Abre_Chrome" sap2010:WorkflowViewState.IdRef="Instance_Webbot_1" instance="webBot" />
     <jwo:OpenBrowser download_folder_path="{x:Null}" user_data_dir="{x:Null}" DisplayName="Pagina_Zabbix" Headless="False" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="&quot;http://10.2.17.7/zabbix/zabbix.php?action=host.list&amp;filter_groups%5B%5D=32&amp;filter_host=&amp;filter_dns=&amp;filter_ip=&amp;filter_port=&amp;filter_status=0&amp;filter_monitored_by=-1&amp;filter_evaltype=0&amp;filter_tags%5B0%5D%5Btag%5D=&amp;filter_tags%5B0%5D%5Boperator%5D=0&amp;filter_tags%5B0%5D%5Bvalue%5D=&amp;filter_set=1&quot;" WebDriverPath="''" anonimous="False" arguments="[]" createInstance="True" inBrowser="CHROME" outBrowser="webBot" page_load_strategy="Normal" upWebDriver="False" />
     <jwm:Maximize_Window DisplayName="Maximiza_Window" sap2010:WorkflowViewState.IdRef="Maximize_Window_3" botInstance="webBot" />
@@ -115,7 +115,7 @@
         </ActivityAction>
       </jpf:ForEach.Body>
     </jpf:ForEach>
-    <sads:DebugSymbol.Symbol>d0ZDOlxVc2Vyc1xyaWNhcmRvXERvY3VtZW50c1xHaXRIdWJcUlBBXFRlc3RlX1phYmJpeF9JbXByZXNzb3JhXEJvdC54YW1sFRgDdw4CAQEZBRl8AgEVGgUasgUCARQbBRuDAQIBExwFHKgCAgESHQUdrwECAREeBSgbAgEQKQUphwICAQ8qBSqJAgIBDisFK7YBAgENLAUsqQICAQwtBTkbAgELOgU6ygECAQo7BTu7AgIBCTwFPK8BAgEIPQVHGwIBB0gFSIYCAgEGSQVJ/wECAQVKBUqzAQIBBEsFS44CAgEDTAV1EwIBAg==</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d0RDOlxVc2Vyc1xyaWNhcmRvXERvY3VtZW50c1xHaXRIdWJcUlBBXFRlc3RlX0dscGlfSW1wcmVzc29yYVxCb3QueGFtbBUYA3cOAgEBGQUZfAIBFRoFGrIFAgEUGwUbgwECARMcBRyoAgIBEh0FHa8BAgERHgUoGwIBECkFKYcCAgEPKgUqiQICAQ4rBSu2AQIBDSwFLKkCAgEMLQU5GwIBCzoFOsoBAgEKOwU7uwICAQk8BTyvAQIBCD0FRxsCAQdIBUiGAgIBBkkFSf8BAgEFSgVKswECAQRLBUuOAgIBA0wFdRMCAQI=</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
