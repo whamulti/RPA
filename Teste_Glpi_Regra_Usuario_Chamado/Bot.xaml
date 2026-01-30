@@ -18,7 +18,7 @@
  xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
  xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-  <Sequence DisplayName="Sequencia_glpi_regra_chamado" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Sequencia_glpi_regra_usuario_chamado" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <jwi:Instance_Webbot DisplayName="Abre_Chrome" sap2010:WorkflowViewState.IdRef="Instance_Webbot_1" instance="webBot" />
     <jwo:OpenBrowser download_folder_path="{x:Null}" user_data_dir="{x:Null}" DisplayName="Pagina_Zabbix" Headless="False" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="&quot;file:///C:/Users/ricardo/Downloads/usuarios_biotipo.html&quot;" WebDriverPath="''" anonimous="False" arguments="[]" createInstance="True" inBrowser="CHROME" outBrowser="webBot" page_load_strategy="Normal" upWebDriver="False" />
     <jwm:Maximize_Window sap2010:WorkflowViewState.IdRef="Maximize_Window_4" botInstance="webBot" />
@@ -159,7 +159,7 @@
         </ActivityAction>
       </jpf:ForEach.Body>
     </jpf:ForEach>
-    <sads:DebugSymbol.Symbol>d0dDOlxVc2Vyc1xyaWNhcmRvXERvY3VtZW50c1xHaXRIdWJcUlBBXFRlc3RlX0dscGlfUmVncmFfQ2hhbWFkb1xCb3QueGFtbA8VA6MBDgIBARYFFnwCAQ8XBReaAwIBDhgFGGUCAQ0ZBRmTAgIBDBoFGrQBAgELGwUbuwICAQocBRyvAQIBCR0FJxwCAQgoBSiGAgIBBykFKf8BAgEGKgUqswECAQUrBStlAgEELAUslAICAQMtBaEBEwIBAg==</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d09DOlxVc2Vyc1xyaWNhcmRvXERvY3VtZW50c1xHaXRIdWJcUlBBXFRlc3RlX0dscGlfUmVncmFfVXN1YXJpb19DaGFtYWRvXEJvdC54YW1sDxUDowEOAgEBFgUWfAIBDxcFF5oDAgEOGAUYZQIBDRkFGZMCAgEMGgUatAECAQsbBRu7AgIBChwFHK8BAgEJHQUnHAIBCCgFKIYCAgEHKQUp/wECAQYqBSqzAQIBBSsFK2UCAQQsBSyUAgIBAy0FoQETAgEC</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>

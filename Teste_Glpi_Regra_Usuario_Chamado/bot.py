@@ -8,7 +8,7 @@ from datetime import datetime
 
 class Bot:
     def bot(self):
-        # Sequence: Sequencia_glpi_regra_chamado
+        # Sequence: Sequencia_glpi_regra_usuario_chamado
 
         #  Activity Instance WebBot
         # Displayname: Abre_Chrome
