@@ -273,7 +273,7 @@ class Bot:
 
             # Type Into Activity
             # Displayname: Dados_de_ip
-            condicao.send_keys(item_regra["NOME"])
+            condicao.send_keys(item_regra["Interface2"])
 
             # Wait Activity
             # Displayname: Espera_3_segundos
@@ -333,7 +333,7 @@ class Bot:
 
             # Type Into Activity
             # Displayname: Type_Into
-            nome_acoes.send_keys("Requerente")
+            nome_acoes.send_keys("Elementos associados")
 
             # Wait Activity
             # Displayname: espera_nome
