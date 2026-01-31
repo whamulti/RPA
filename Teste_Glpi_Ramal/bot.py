@@ -92,7 +92,7 @@ class Bot:
 
         #  Navigate to Activity
         # Displayname: Navegar_para
-        webBot.navigate_to("http://10.2.17.26/front/phone.form.php?id=-1&withtemplate=2")
+        webBot.navigate_to("http://10.2.17.66/front/phone.form.php?id=-1&withtemplate=2")
 
         # Find Element Activity
         # Displayname: Localiza_botao
@@ -225,7 +225,7 @@ class Bot:
 
             #  Navigate to Activity
             # Displayname: retornar_pagina
-            webBot.navigate_to("http://10.2.17.26/front/phone.form.php?id=-1&withtemplate=2")
+            webBot.navigate_to("http://10.2.17.66/front/phone.form.php?id=-1&withtemplate=2")
 
             # Wait Activity
             # Displayname: Espera_3_segundos

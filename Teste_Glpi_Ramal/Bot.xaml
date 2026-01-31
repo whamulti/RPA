@@ -55,7 +55,7 @@
         </ActivityAction>
       </jpm:Multiple_Assign.Body>
     </jpm:Multiple_Assign>
-    <jwn:Navigate_To DisplayName="Navegar_para" sap2010:WorkflowViewState.IdRef="Navigate_To_1" inBrowser="webBot" url="&quot;http://10.2.17.26/front/phone.form.php?id=-1&amp;withtemplate=2&quot;" />
+    <jwn:Navigate_To DisplayName="Navegar_para" sap2010:WorkflowViewState.IdRef="Navigate_To_1" inBrowser="webBot" url="&quot;http://10.2.17.66/front/phone.form.php?id=-1&amp;withtemplate=2&quot;" />
     <jwf:Find_Element DisplayName="Localiza_botao" sap2010:WorkflowViewState.IdRef="Find_Element_65" InstanceBrowser="webBot" by="XPATH" ensure_clickable="False" ensure_visible="False" instance_element="Error" selector="&quot;/html/body/div/div/div/div[2]/div[2]/div/div/div[2]/a/span&quot;" waiting_time="1000" />
     <jmc:Click DisplayName="Clica_botao" Element="Error" sap2010:WorkflowViewState.IdRef="Click_19" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
     <jwe:Element_Library InstanceBrowser="{x:Null}" DisplayName="Elemetos_Login_Glpi" sap2010:WorkflowViewState.IdRef="Element_Library_5" by="XPATH" ensure_clickable="True" ensure_visible="True" instance_element="xpath804" selector="&quot;/html/body/div/div/div/div[2]/div[2]/form/div/div/div[6]/button&quot;" waiting_time="0">
@@ -103,7 +103,7 @@
                         <jwf:Find_Element DisplayName="Elementos_botao" sap2010:WorkflowViewState.IdRef="Find_Element_79" InstanceBrowser="webBot" by="NAME" ensure_clickable="False" ensure_visible="False" instance_element="envia_ip" selector="&quot;add&quot;" waiting_time="1000" />
                         <jmc:Click DisplayName="Clica_botao" Element="envia_ip" sap2010:WorkflowViewState.IdRef="Click_24" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
                         <jww:Wait DisplayName="Espera_15_segundos" sap2010:WorkflowViewState.IdRef="Wait_10" InstanceBrowser="webBot" wait_time="15000" />
-                        <jwn:Navigate_To DisplayName="retornar_pagina" sap2010:WorkflowViewState.IdRef="Navigate_To_2" inBrowser="webBot" url="&quot;http://10.2.17.26/front/phone.form.php?id=-1&amp;withtemplate=2&quot;" />
+                        <jwn:Navigate_To DisplayName="retornar_pagina" sap2010:WorkflowViewState.IdRef="Navigate_To_2" inBrowser="webBot" url="&quot;http://10.2.17.66/front/phone.form.php?id=-1&amp;withtemplate=2&quot;" />
                         <jww:Wait DisplayName="Espera_3_segundos" sap2010:WorkflowViewState.IdRef="Wait_11" InstanceBrowser="webBot" wait_time="3000" />
                       </Sequence>
                     </Sequence>
@@ -115,7 +115,7 @@
         </ActivityAction>
       </jpf:ForEach.Body>
     </jpf:ForEach>
-    <sads:DebugSymbol.Symbol>dz9DOlxVc2Vyc1xyaWNhcmRvXERvY3VtZW50c1xHaXRIdWJcUlBBXFRlc3RlX0dscGlfUmFtYWxcQm90LnhhbWwVGAN3DgIBARkFGXwCARUaBRqyBQIBFBsFG4MBAgETHAUcqAICARIdBR2vAQIBER4FKBsCARApBSmHAgIBDyoFKokCAgEOKwUrtgECAQ0sBSycAgIBDC0FORsCAQs6BTrIAQIBCjsFO7sCAgEJPAU8rwECAQg9BUcbAgEHSAVIhgICAQZJBUn/AQIBBUoFSrMBAgEESwVLjgICAQNMBXUTAgEC</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>dz9DOlxVc2Vyc1xSaWNhcmRvXERvY3VtZW50c1xHaXRIdWJcUlBBXFRlc3RlX0dscGlfUmFtYWxcQm90LnhhbWwVGAN3DgIBARkFGXwCARUaBRqyBQIBFBsFG4MBAgETHAUcqAICARIdBR2vAQIBER4FKBsCARApBSmHAgIBDyoFKokCAgEOKwUrtgECAQ0sBSycAgIBDC0FORsCAQs6BTrIAQIBCjsFO7sCAgEJPAU8rwECAQg9BUcbAgEHSAVIhgICAQZJBUn/AQIBBUoFSrMBAgEESwVLjgICAQNMBXUTAgEC</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
