@@ -22,7 +22,7 @@ class Bot:
         webBotDef_options = default_options()
         webBotDef_options.add_argument("--page-load-strategy=Normal")
         webBot.options = webBotDef_options
-        webBot.browse("http://10.2.17.7/zabbix/zabbix.php?action=host.list&filter_groups%5B%5D=22&filter_host=&filter_dns=&filter_ip=&filter_port=&filter_status=0&filter_monitored_by=-1&filter_evaltype=0&filter_tags%5B0%5D%5Btag%5D=&filter_tags%5B0%5D%5Boperator%5D=0&filter_tags%5B0%5D%5Bvalue%5D=&filter_set=1")
+        webBot.browse("http://10.2.17.7/zabbix/zabbix.php?action=host.list&filter_groups%5B%5D=29&filter_host=&filter_dns=&filter_ip=&filter_port=&filter_status=0&filter_monitored_by=-1&filter_evaltype=0&filter_tags%5B0%5D%5Btag%5D=&filter_tags%5B0%5D%5Boperator%5D=0&filter_tags%5B0%5D%5Bvalue%5D=&filter_set=1")
 
         # Maximize window Activity
         # Displayname: Maximiza_Window
@@ -92,7 +92,7 @@ class Bot:
 
         #  Navigate to Activity
         # Displayname: Navegar_para
-        webBot.navigate_to("http://10.2.17.26/front/networkequipment.form.php?id=-1&withtemplate=2")
+        webBot.navigate_to("http://10.2.17.66/front/networkequipment.form.php?id=-1&withtemplate=2")
 
         # Find Element Activity
         # Displayname: Localiza_botao
@@ -225,7 +225,7 @@ class Bot:
 
             #  Navigate to Activity
             # Displayname: retornar_pagina
-            webBot.navigate_to("http://10.2.17.26/front/networkequipment.form.php?id=-1&withtemplate=2")
+            webBot.navigate_to("http://10.2.17.66/front/networkequipment.form.php?id=-1&withtemplate=2")
 
             # Wait Activity
             # Displayname: Espera_3_segundos
