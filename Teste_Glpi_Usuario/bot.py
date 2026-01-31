@@ -37,7 +37,7 @@ class Bot:
 
         #  Navigate to Activity
         # Displayname: Navegar_para
-        webBot.navigate_to("http://10.2.17.26/front/user.form.php")
+        webBot.navigate_to("http://10.2.17.66/front/user.form.php")
 
         # Find Element Activity
         # Displayname: Localiza_botao
@@ -190,7 +190,7 @@ class Bot:
 
             #  Navigate to Activity
             # Displayname: retornar_pagina
-            webBot.navigate_to("http://10.2.17.26/front/user.form.php")
+            webBot.navigate_to("http://10.2.17.66/front/user.form.php")
 
             # Wait Activity
             # Displayname: Espera_3_segundos
