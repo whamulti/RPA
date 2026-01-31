@@ -37,7 +37,7 @@ class Bot:
 
         #  Navigate to Activity
         # Displayname: Navegar_para
-        webBot.navigate_to("http://10.2.17.26/front/ruleticket.form.php")
+        webBot.navigate_to("http://10.2.17.66/front/ruleticket.form.php")
 
         # Find Element Activity
         # Displayname: Localiza_botao
@@ -478,7 +478,7 @@ class Bot:
 
             #  Navigate to Activity
             # Displayname: Navigate_To
-            webBot.navigate_to("http://10.2.17.26/front/ruleticket.form.php")
+            webBot.navigate_to("http://10.2.17.66/front/ruleticket.form.php")
 
 
 
