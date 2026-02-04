@@ -9,7 +9,7 @@ from datetime import datetime
 
 class Bot:
     def bot(self):
-        # Sequence: Teste_glpi_formulario
+        # Sequence: Sequencia_teste
 
         #  Activity Instance WebBot
         # Displayname: Abre_Chrome
@@ -33,13 +33,13 @@ class Bot:
 
         # Extract DataTable Activity
         # Displayname: Extrair_dados_tabela
-        banco_formulario = Webscrap().webscrap(inBot=webBot, inXPATH="/html/body/div/div[2]/table", inLines=0,inNext='', inGetLink=False)
+        banco_usuario = Webscrap().webscrap(inBot=webBot, inXPATH="/html/body/div/div[2]/table", inLines=0,inNext='', inGetLink=False)
 
-        banco_formulario = banco_formulario.to_dict(orient='records')
+        banco_usuario = banco_usuario.to_dict(orient='records')
 
         #  Navigate to Activity
         # Displayname: Navegar_para
-        webBot.navigate_to("http://10.2.17.66/front/form/form.form.php?id=13")
+        webBot.navigate_to("http://10.2.17.66/front/user.form.php")
 
         # Find Element Activity
         # Displayname: Localiza_botao
@@ -83,68 +83,6 @@ class Bot:
 
         # Wait Activity
         # Displayname: Wait
-        webBot.wait(3000)
-
-        # Find Element Activity
-        # Displayname: Find_Element
-        opcao = webBot.find_element(selector="/html/body/div[2]/div[2]/div/main/div/div/div[2]/div[2]/div/div/form/div/div/div/div/div/div/div/section/div[3]/section/section/div[2]/div[4]/div/div/span/span/span/span", by=By.XPATH, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
-
-        # Click Activity
-        # Displayname: Click
-        opcao.click()
-
-        # Wait Activity
-        # Displayname: Wait
-        webBot.wait(3000)
-
-        # Find Element Activity
-        # Displayname: Find_Element
-        seleciona = webBot.find_element(selector=".select2-results__option--highlighted", by=By.CSS_SELECTOR, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
-
-        # Click Activity
-        # Displayname: Click
-        seleciona.click()
-
-        # Wait Activity
-        # Displayname: Wait
-        webBot.wait(3000)
-
-        # Find Element Activity
-        # Displayname: Encontra_campo
-        nome_usuario = webBot.find_element(selector="/html/body/div[2]/div[2]/div/main/div/div/div[2]/div[2]/div/div/form/div/div/div/div/div/div/div/section/div[3]/section/section/div[2]/div[4]/div[2]/div[2]/input[2]", by=By.XPATH, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
-
-        # ForEach Activity
-        # Displayname: Laco_repeticao
-        for item_formulario in banco_formulario:
-            # Sequence: Corpo
-
-            # DisplayName: Formulario_acao_elementos_web
-
-            # Sequence: Lista_acoes
-
-            # Find Element Activity
-            # Displayname: Encontrar_nome
-            nome_usuario = webBot.find_element(selector="/html/body/div[2]/div[2]/div/main/div/div/div[2]/div[2]/div/div/form/div/div/div/div/div/div/div/section/div[3]/section/section/div[2]/div[4]/div[2]/div[2]/input[2]", by=By.XPATH, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
-
-            # Type Into Activity
-            # Displayname: Dados_de_nome
-            nome_usuario.send_keys(item_formulario["NOME"])
-
-            # Wait Activity
-            # Displayname: Espera_3_segundos
-            webBot.wait(3000)
-
-
-        # Find Element Activity
-        # Displayname: Find_Element
-        salva = webBot.find_element(selector="update", by=By.NAME, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
-
-        # Click Activity
-        # Displayname: Click
-        salva.click()
-
-        # Wait Activity
-        # Displayname: 3_segundos
         webBot.wait(3000)
 
 

@@ -13,6 +13,7 @@
  xmlns:jwm="clr-namespace:JornadaRPA.Web.Maximize_Window;assembly=JornadaRPA.Web"
  xmlns:jwn="clr-namespace:JornadaRPA.Web.Navigate_To;assembly=JornadaRPA.Web"
  xmlns:jwo="clr-namespace:JornadaRPA.Web.OpenBrowser;assembly=JornadaRPA.Web"
+ xmlns:jws="clr-namespace:JornadaRPA.Web.Scroll_Page;assembly=JornadaRPA.Web"
  xmlns:jww="clr-namespace:JornadaRPA.Web.Wait;assembly=JornadaRPA.Web"
  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
  xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
@@ -22,7 +23,7 @@
  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <Sequence DisplayName="Sequencia_glpi_regra_item_chamado" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <jwi:Instance_Webbot DisplayName="Abre_Chrome" sap2010:WorkflowViewState.IdRef="Instance_Webbot_2" instance="webBot" />
-    <jwo:OpenBrowser download_folder_path="{x:Null}" user_data_dir="{x:Null}" DisplayName="Pagina_Zabbix" Headless="False" sap2010:WorkflowViewState.IdRef="OpenBrowser_2" Url="&quot;http://10.2.17.7/zabbix/zabbix.php?action=host.list&amp;filter_groups%5B%5D=29&amp;filter_host=&amp;filter_dns=&amp;filter_ip=&amp;filter_port=&amp;filter_status=-1&amp;filter_monitored_by=-1&amp;filter_evaltype=0&amp;filter_tags%5B0%5D%5Btag%5D=&amp;filter_tags%5B0%5D%5Boperator%5D=0&amp;filter_tags%5B0%5D%5Bvalue%5D=&amp;filter_set=1&quot;" WebDriverPath="''" anonimous="False" arguments="[]" createInstance="True" inBrowser="CHROME" outBrowser="webBot" page_load_strategy="Normal" upWebDriver="False" />
+    <jwo:OpenBrowser download_folder_path="{x:Null}" user_data_dir="{x:Null}" DisplayName="Pagina_Zabbix" Headless="False" sap2010:WorkflowViewState.IdRef="OpenBrowser_2" Url="&quot;http://10.2.17.7/zabbix/zabbix.php?action=host.list&amp;filter_groups%5B%5D=29&amp;filter_host=&amp;filter_dns=&amp;filter_ip=&amp;filter_port=&amp;filter_status=-1&amp;filter_monitored_by=-1&amp;filter_evaltype=0&amp;filter_tags%5B0%5D%5Btag%5D=&amp;filter_tags%5B0%5D%5Boperator%5D=0&amp;filter_tags%5B0%5D%5Bvalue%5D=&amp;filter_set=1&quot;" WebDriverPath="''" anonimous="False" arguments="[]" createInstance="True" inBrowser="CHROME" outBrowser="webBot" page_load_strategy="Normal" upWebDriver="True" />
     <jwm:Maximize_Window DisplayName="Maximiza_Window" sap2010:WorkflowViewState.IdRef="Maximize_Window_5" botInstance="webBot" />
     <jwf:Find_Element DisplayName="Localiza_botao" sap2010:WorkflowViewState.IdRef="Find_Element_168" InstanceBrowser="webBot" by="XPATH" ensure_clickable="False" ensure_visible="False" instance_element="voce" selector="&quot;/html/body/div/main/output/div[2]/button&quot;" waiting_time="1000" />
     <jmc:Click DisplayName="Clicar_botao" Element="voce" sap2010:WorkflowViewState.IdRef="Click_88" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
@@ -70,6 +71,7 @@
     </jwe:Element_Library>
     <jkt:Type_Into DisplayName="Usuario_glpi" sap2010:WorkflowViewState.IdRef="Type_Into_11" click_before="False" convertTo="None" element_instance="usuario_glpi" empty_field="False" interval="0" text="&quot;ricardo&quot;" type="Send_Keys" with_spaces="True" />
     <jkt:Type_Into DisplayName="Senha_glpi" sap2010:WorkflowViewState.IdRef="Type_Into_12" click_before="False" convertTo="None" element_instance="senha_glpi" empty_field="False" interval="0" text="&quot;0805&quot;" type="Send_Keys" with_spaces="True" />
+    <jws:Scroll_Page Steps="10" direction="Down" instance="webBot" />
     <jmc:Click DisplayName="Clica_botao" Element="botao_glpi" sap2010:WorkflowViewState.IdRef="Click_6" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
     <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_58" InstanceBrowser="webBot" wait_time="3000" />
     <jwf:Find_Element DisplayName="elementos_impressora_primeiro" sap2010:WorkflowViewState.IdRef="Find_Element_137" InstanceBrowser="webBot" by="NAME" ensure_clickable="False" ensure_visible="False" instance_element="regra" selector="&quot;name&quot;" waiting_time="1000" />
@@ -175,7 +177,7 @@
         </ActivityAction>
       </jpf:ForEach.Body>
     </jpf:ForEach>
-    <sads:DebugSymbol.Symbol>d0xDOlxVc2Vyc1xSaWNhcmRvXERvY3VtZW50c1xHaXRIdWJcUlBBXFRlc3RlX0dscGlfUmVncmFfSXRlbV9DaGFtYWRvXEJvdC54YW1sFhcDswEOAgEBGAUYfAIBFhkFGbMFAgEVGgUagwECARQbBRupAgIBExwFHK8BAgESHQUnGwIBESgFKIgCAgEQKQUpigICAQ8qBSq3AQIBDisFK5wCAgENLAU4GwIBDDkFObQBAgELOgU6uwICAQo7BTuvAQIBCTwFRhsCAQhHBUeGAgIBB0gFSP8BAgEGSQVJswECAQVKBUplAgEESwVLlAICAQNMBbEBEwIBAg==</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d0xDOlxVc2Vyc1xyaWNhcmRvXERvY3VtZW50c1xHaXRIdWJcUlBBXFRlc3RlX0dscGlfUmVncmFfSXRlbV9DaGFtYWRvXEJvdC54YW1sFxgDtQEOAgEBGQUZfAIBFxoFGrIFAgEWGwUbgwECARUcBRypAgIBFB0FHa8BAgETHgUoGwIBEikFKYgCAgERKgUqigICARArBSu3AQIBDywFLJwCAgEOLQU5GwIBDToFOrQBAgEMOwU7uwICAQs8BTyvAQIBCj0FRxsCAQlIBUiGAgIBCEkFSf8BAgEHSgVKRgIBBksFS7MBAgEFTAVMZQIBBE0FTZQCAgEDTgWzARMCAQI=</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
@@ -378,14 +380,14 @@
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
       <sap2010:ViewStateData Id="ForEach_4" sap:VirtualizedContainerService.HintSize="600,14002" />
-      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="622,19959">
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="622,19999">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="JornadaRPAStudio.Workflow_1" sap:VirtualizedContainerService.HintSize="662,20039">
+      <sap2010:ViewStateData Id="JornadaRPAStudio.Workflow_1" sap:VirtualizedContainerService.HintSize="662,20079">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>

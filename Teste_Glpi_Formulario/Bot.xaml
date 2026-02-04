@@ -11,6 +11,7 @@
  xmlns:jwm="clr-namespace:JornadaRPA.Web.Maximize_Window;assembly=JornadaRPA.Web"
  xmlns:jwn="clr-namespace:JornadaRPA.Web.Navigate_To;assembly=JornadaRPA.Web"
  xmlns:jwo="clr-namespace:JornadaRPA.Web.OpenBrowser;assembly=JornadaRPA.Web"
+ xmlns:jws="clr-namespace:JornadaRPA.Web.Scroll_Page;assembly=JornadaRPA.Web"
  xmlns:jww="clr-namespace:JornadaRPA.Web.Wait;assembly=JornadaRPA.Web"
  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
  xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
@@ -20,7 +21,7 @@
  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <Sequence DisplayName="Teste_glpi_formulario" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <jwi:Instance_Webbot DisplayName="Abre_Chrome" sap2010:WorkflowViewState.IdRef="Instance_Webbot_1" instance="webBot" />
-    <jwo:OpenBrowser download_folder_path="{x:Null}" user_data_dir="{x:Null}" DisplayName="Pagina_Zabbix" Headless="False" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="&quot;file:///C:/Users/Ricardo/Downloads/usuarios_biotipo.html&quot;" WebDriverPath="''" anonimous="False" arguments="[]" createInstance="True" inBrowser="CHROME" outBrowser="webBot" page_load_strategy="Normal" upWebDriver="False" />
+    <jwo:OpenBrowser download_folder_path="{x:Null}" user_data_dir="{x:Null}" DisplayName="Pagina_Zabbix" Headless="False" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="&quot;file:///C:/Users/Ricardo/Downloads/usuarios_biotipo.html&quot;" WebDriverPath="''" anonimous="False" arguments="[]" createInstance="True" inBrowser="CHROME" outBrowser="webBot" page_load_strategy="Normal" upWebDriver="True" />
     <jwm:Maximize_Window DisplayName="Maximiza_Window" sap2010:WorkflowViewState.IdRef="Maximize_Window_3" botInstance="webBot" />
     <jwe:ExtractDataTable Datatable="banco_formulario" DisplayName="Extrair_dados_tabela" sap2010:WorkflowViewState.IdRef="ExtractDataTable_1" Lines="0" XPathNext="None" XPathtable="&quot;/html/body/div/div[2]/table&quot;" getLinks="False" inBrowser="webBot" returnData="Dict" />
     <jwn:Navigate_To DisplayName="Navegar_para" sap2010:WorkflowViewState.IdRef="Navigate_To_1" inBrowser="webBot" url="&quot;http://10.2.17.66/front/form/form.form.php?id=13&quot;" />
@@ -39,6 +40,7 @@
     </jwe1:Element_Library>
     <jkt:Type_Into DisplayName="Usuario_glpi" sap2010:WorkflowViewState.IdRef="Type_Into_11" click_before="False" convertTo="None" element_instance="usuario_glpi" empty_field="False" interval="0" text="&quot;ricardo&quot;" type="Send_Keys" with_spaces="True" />
     <jkt:Type_Into DisplayName="Senha_glpi" sap2010:WorkflowViewState.IdRef="Type_Into_12" click_before="False" convertTo="None" element_instance="senha_glpi" empty_field="False" interval="0" text="&quot;0805&quot;" type="Send_Keys" with_spaces="True" />
+    <jws:Scroll_Page Steps="10" direction="Down" instance="webBot" />
     <jmc:Click DisplayName="Clica_botao" Element="botao_glpi" sap2010:WorkflowViewState.IdRef="Click_6" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
     <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_14" InstanceBrowser="webBot" wait_time="3000" />
     <jwf:Find_Element sap2010:WorkflowViewState.IdRef="Find_Element_75" InstanceBrowser="webBot" by="XPATH" ensure_clickable="False" ensure_visible="False" instance_element="opcao" selector="&quot;/html/body/div[2]/div[2]/div/main/div/div/div[2]/div[2]/div/div/form/div/div/div/div/div/div/div/section/div[3]/section/section/div[2]/div[4]/div/div/span/span/span/span&quot;" waiting_time="1000" />
@@ -74,7 +76,7 @@
     <jwf:Find_Element sap2010:WorkflowViewState.IdRef="Find_Element_82" InstanceBrowser="webBot" by="NAME" ensure_clickable="False" ensure_visible="False" instance_element="salva" selector="&quot;update&quot;" waiting_time="1000" />
     <jmc:Click Element="salva" sap2010:WorkflowViewState.IdRef="Click_27" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
     <jww:Wait DisplayName="3_segundos" sap2010:WorkflowViewState.IdRef="Wait_20" InstanceBrowser="webBot" wait_time="3000" />
-    <sads:DebugSymbol.Symbol>d0RDOlxVc2Vyc1xSaWNhcmRvXERvY3VtZW50c1xHaXRIdWJcUlBBXFRlc3RlX0dscGlfRm9ybXVsYXJpb1xCb3QueGFtbBgVA04OAgEBFgUWfAIBGBcFF5oDAgEXGAUYgwECARYZBRmYAgIBFRoFGrkBAgEUGwUbuwICARMcBRyvAQIBEh0FJxwCAREoBSiGAgIBECkFKf8BAgEPKgUqswECAQ4rBStlAgENLAUsjQMCAQwtBS2VAQIBCy4FLmUCAQovBS+UAgIBCTAFMJkBAgEIMQUxZQIBBzIFMqwDAgEGMwVJEwIBBUoFSukBAgEESwVLlQECAQNMBUx+AgEC</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d0RDOlxVc2Vyc1xyaWNhcmRvXERvY3VtZW50c1xHaXRIdWJcUlBBXFRlc3RlX0dscGlfRm9ybXVsYXJpb1xCb3QueGFtbBkWA1AOAgEBFwUXfAIBGRgFGJkDAgEYGQUZgwECARcaBRqYAgIBFhsFG7kBAgEVHAUcuwICARQdBR2vAQIBEx4FKBwCARIpBSmGAgIBESoFKv8BAgEQKwUrRgIBDywFLLMBAgEOLQUtZQIBDS4FLo0DAgEMLwUvlQECAQswBTBlAgEKMQUxlAICAQkyBTKZAQIBCDMFM2UCAQc0BTSsAwIBBjUFSxMCAQVMBUzpAQIBBE0FTZUBAgEDTgVOfgIBAg==</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
@@ -171,14 +173,14 @@
       <sap2010:ViewStateData Id="Find_Element_82" sap:VirtualizedContainerService.HintSize="600,177" />
       <sap2010:ViewStateData Id="Click_27" sap:VirtualizedContainerService.HintSize="600,81" />
       <sap2010:ViewStateData Id="Wait_20" sap:VirtualizedContainerService.HintSize="600,96" />
-      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="622,5812">
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="622,5852">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="JornadaRPAStudio.Workflow_1" sap:VirtualizedContainerService.HintSize="662,5892">
+      <sap2010:ViewStateData Id="JornadaRPAStudio.Workflow_1" sap:VirtualizedContainerService.HintSize="662,5932">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>

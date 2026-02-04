@@ -24,7 +24,7 @@
  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <Sequence DisplayName="Sequencia_Teste_Openfire_Usuario" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <jwi:Instance_Webbot DisplayName="Abre_Chrome" sap2010:WorkflowViewState.IdRef="Instance_Webbot_1" instance="webBot" />
-    <jwo:OpenBrowser download_folder_path="{x:Null}" user_data_dir="{x:Null}" DisplayName="Pagina_web" Headless="False" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="&quot;file:///C:/Users/ricardo/Downloads/openfire_users.html&quot;" WebDriverPath="''" anonimous="False" arguments="[]" createInstance="True" inBrowser="CHROME" outBrowser="webBot" page_load_strategy="Normal" upWebDriver="False" />
+    <jwo:OpenBrowser download_folder_path="{x:Null}" user_data_dir="{x:Null}" DisplayName="Pagina_web" Headless="False" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="&quot;file:///C:/Users/ricardo/Downloads/openfire_users.html&quot;" WebDriverPath="''" anonimous="False" arguments="[]" createInstance="True" inBrowser="CHROME" outBrowser="webBot" page_load_strategy="Normal" upWebDriver="True" />
     <jwm:Maximize_Window sap2010:WorkflowViewState.IdRef="Maximize_Window_4" botInstance="webBot" />
     <jwe:ExtractDataTable Datatable="banco_openfire" DisplayName="Extrair_dados_tabela" sap2010:WorkflowViewState.IdRef="ExtractDataTable_1" Lines="0" XPathNext="None" XPathtable="&quot;/html/body/div/div[2]/table&quot;" getLinks="False" inBrowser="webBot" returnData="Dict" />
     <jwn:Navigate_To DisplayName="Navegar_para" sap2010:WorkflowViewState.IdRef="Navigate_To_1" inBrowser="webBot" url="&quot;http://10.2.17.48:9090/user-create.jsp&quot;" />
@@ -131,7 +131,7 @@
         </ActivityAction>
       </jpf:ForEach.Body>
     </jpf:ForEach>
-    <sads:DebugSymbol.Symbol>d0VDOlxVc2Vyc1xSaWNhcmRvXERvY3VtZW50c1xHaXRIdWJcUlBBXFRlc3RlX09wZW5maXJlX1VzdWFyaW9cQm90LnhhbWwNGQOHAQ4CAQEaBRp8AgENGwUblQMCAQwcBRxlAgELHQUdlgICAQoeBR6vAQIBCR8FKRwCAQgqBSqEAgIBBysFK4cCAgEGLAUssQECAQUtBS1lAgEELgUujAICAQMvBYUBEwIBAg==</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d0VDOlxVc2Vyc1xyaWNhcmRvXERvY3VtZW50c1xHaXRIdWJcUlBBXFRlc3RlX09wZW5maXJlX1VzdWFyaW9cQm90LnhhbWwNGQOHAQ4CAQEaBRp8AgENGwUblAMCAQwcBRxlAgELHQUdlgICAQoeBR6vAQIBCR8FKRwCAQgqBSqEAgIBBysFK4cCAgEGLAUssQECAQUtBS1lAgEELgUujAICAQMvBYUBEwIBAg==</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>

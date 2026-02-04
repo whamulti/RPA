@@ -3,6 +3,7 @@
 import pandas as pd
 from jornadaRPA.webScrap import Webscrap
 from botcity.web.browsers.chrome import default_options
+from webdriver_manager.chrome import ChromeDriverManager
 from botcity.web import *
 from datetime import datetime
 
@@ -16,8 +17,9 @@ class Bot:
 
         # Open Browser Activity
         # Displayname: Pagina_Zabbix
+        webDriverPath = ChromeDriverManager().install()
         webBot = WebBot()
-        webBot.driver_path = "C:\\Users\\ricardo\\Documents\\GitHub\\RPA\\WebDrivers\\CHROME\\chromedriver.exe"
+        webBot.driver_path = webDriverPath
         webBot.browser = Browser.CHROME
         webBot.headless = False
         webBotDef_options = default_options()
@@ -70,6 +72,10 @@ class Bot:
         # Type Into Activity
         # Displayname: Senha_glpi
         senha_glpi.send_keys("0805")
+
+        # Scroll Element Activity
+        # Displayname: Scroll_Page
+        webBot.scroll_down(clicks=10)
 
         # Click Activity
         # Displayname: Clica_botao

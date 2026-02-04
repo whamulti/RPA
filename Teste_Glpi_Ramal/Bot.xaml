@@ -23,7 +23,7 @@
  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <Sequence DisplayName="Sequencia_glpi_ramal" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <jwi:Instance_Webbot DisplayName="Abre_Chrome" sap2010:WorkflowViewState.IdRef="Instance_Webbot_1" instance="webBot" />
-    <jwo:OpenBrowser download_folder_path="{x:Null}" user_data_dir="{x:Null}" DisplayName="Pagina_Zabbix" Headless="False" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="&quot;http://10.2.17.7/zabbix/zabbix.php?action=host.list&amp;filter_groups%5B%5D=33&amp;filter_host=&amp;filter_dns=&amp;filter_ip=&amp;filter_port=&amp;filter_status=0&amp;filter_monitored_by=-1&amp;filter_evaltype=0&amp;filter_tags%5B0%5D%5Btag%5D=&amp;filter_tags%5B0%5D%5Boperator%5D=0&amp;filter_tags%5B0%5D%5Bvalue%5D=&amp;filter_set=1&quot;" WebDriverPath="''" anonimous="False" arguments="[]" createInstance="True" inBrowser="CHROME" outBrowser="webBot" page_load_strategy="Normal" upWebDriver="False" />
+    <jwo:OpenBrowser download_folder_path="{x:Null}" user_data_dir="{x:Null}" DisplayName="Pagina_Zabbix" Headless="False" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="&quot;http://10.2.17.7/zabbix/zabbix.php?action=host.list&amp;filter_groups%5B%5D=33&amp;filter_host=&amp;filter_dns=&amp;filter_ip=&amp;filter_port=&amp;filter_status=0&amp;filter_monitored_by=-1&amp;filter_evaltype=0&amp;filter_tags%5B0%5D%5Btag%5D=&amp;filter_tags%5B0%5D%5Boperator%5D=0&amp;filter_tags%5B0%5D%5Bvalue%5D=&amp;filter_set=1&quot;" WebDriverPath="''" anonimous="False" arguments="[]" createInstance="True" inBrowser="CHROME" outBrowser="webBot" page_load_strategy="Normal" upWebDriver="True" />
     <jwm:Maximize_Window DisplayName="Maximiza_Window" sap2010:WorkflowViewState.IdRef="Maximize_Window_3" botInstance="webBot" />
     <jwf:Find_Element DisplayName="Localiza_botao" sap2010:WorkflowViewState.IdRef="Find_Element_75" InstanceBrowser="webBot" by="XPATH" ensure_clickable="False" ensure_visible="False" instance_element="voce" selector="&quot;/html/body/div/main/output/div[2]/button&quot;" waiting_time="1000" />
     <jmc:Click DisplayName="Clicar_botao" Element="voce" sap2010:WorkflowViewState.IdRef="Click_21" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
@@ -71,6 +71,7 @@
     </jwe:Element_Library>
     <jkt:Type_Into DisplayName="Usuario_glpi" sap2010:WorkflowViewState.IdRef="Type_Into_11" click_before="False" convertTo="None" element_instance="usuario_glpi" empty_field="False" interval="0" text="&quot;ricardo&quot;" type="Send_Keys" with_spaces="True" />
     <jkt:Type_Into DisplayName="Senha_glpi" sap2010:WorkflowViewState.IdRef="Type_Into_12" click_before="False" convertTo="None" element_instance="senha_glpi" empty_field="False" interval="0" text="&quot;0805&quot;" type="Send_Keys" with_spaces="True" />
+    <jws:Scroll_Page Steps="10" direction="Down" instance="webBot" />
     <jmc:Click DisplayName="Clica_botao" Element="botao_glpi" sap2010:WorkflowViewState.IdRef="Click_6" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
     <jwf:Find_Element DisplayName="Encontra_campo" sap2010:WorkflowViewState.IdRef="Find_Element_74" InstanceBrowser="webBot" by="NAME" ensure_clickable="False" ensure_visible="False" instance_element="nome_impressora" selector="&quot;name&quot;" waiting_time="1000" />
     <jpf:ForEach DisplayName="Laco_repeticao" sap2010:WorkflowViewState.IdRef="ForEach_4" item="item_ramal" values="banco_ramal">
@@ -115,7 +116,7 @@
         </ActivityAction>
       </jpf:ForEach.Body>
     </jpf:ForEach>
-    <sads:DebugSymbol.Symbol>dz9DOlxVc2Vyc1xSaWNhcmRvXERvY3VtZW50c1xHaXRIdWJcUlBBXFRlc3RlX0dscGlfUmFtYWxcQm90LnhhbWwVGAN3DgIBARkFGXwCARUaBRqyBQIBFBsFG4MBAgETHAUcqAICARIdBR2vAQIBER4FKBsCARApBSmHAgIBDyoFKokCAgEOKwUrtgECAQ0sBSycAgIBDC0FORsCAQs6BTrIAQIBCjsFO7sCAgEJPAU8rwECAQg9BUcbAgEHSAVIhgICAQZJBUn/AQIBBUoFSrMBAgEESwVLjgICAQNMBXUTAgEC</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>dz9DOlxVc2Vyc1xyaWNhcmRvXERvY3VtZW50c1xHaXRIdWJcUlBBXFRlc3RlX0dscGlfUmFtYWxcQm90LnhhbWwWGAN4DgIBARkFGXwCARYaBRqxBQIBFRsFG4MBAgEUHAUcqAICARMdBR2vAQIBEh4FKBsCAREpBSmHAgIBECoFKokCAgEPKwUrtgECAQ4sBSycAgIBDS0FORsCAQw6BTrIAQIBCzsFO7sCAgEKPAU8rwECAQk9BUcbAgEISAVIhgICAQdJBUn/AQIBBkoFSkYCAQVLBUuzAQIBBEwFTI4CAgEDTQV2EwIBAg==</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
@@ -257,14 +258,14 @@
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
       <sap2010:ViewStateData Id="ForEach_4" sap:VirtualizedContainerService.HintSize="600,4174" />
-      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="622,9995">
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="622,10035">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="JornadaRPAStudio.Workflow_1" sap:VirtualizedContainerService.HintSize="662,10075">
+      <sap2010:ViewStateData Id="JornadaRPAStudio.Workflow_1" sap:VirtualizedContainerService.HintSize="662,10115">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
