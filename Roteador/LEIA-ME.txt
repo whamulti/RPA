@@ -1,0 +1,56 @@
+AUTOMAÇÃO DE REBOOT DO ROTEADOR TP-LINK
+========================================
+
+DESCRIÇÃO:
+Este script automatiza o processo de reiniciar o roteador TP-LINK Archer C7
+através da interface web.
+
+REQUISITOS:
+1. Python 3.x instalado
+2. Selenium instalado: pip install selenium
+3. ChromeDriver compatível com sua versão do Chrome
+
+INSTALAÇÃO DO SELENIUM:
+Execute no terminal: pip install selenium
+
+DOWNLOAD DO CHROMEDRIVER:
+1. Verifique a versão do seu Chrome: chrome://settings/help
+2. Baixe o ChromeDriver correspondente em: https://chromedriver.chromium.org/downloads
+3. Coloque o chromedriver.exe no mesmo diretório do script ou no PATH do sistema
+
+CONFIGURAÇÕES:
+- URL: http://10.2.17.30
+- Usuário: admin
+- Senha: Admin1
+
+COMO USAR:
+1. Abra o terminal/prompt de comando
+2. Navegue até a pasta onde salvou o arquivo
+3. Execute: python automacao_reboot_roteador.py
+
+O QUE O SCRIPT FAZ:
+1. Abre o navegador Chrome
+2. Acessa a página de login do roteador
+3. Preenche usuário e senha
+4. Clica no botão Login
+5. Navega até o menu "System Tools"
+6. Clica em "Reboot" no submenu
+7. Clica no botão "Reboot" na página
+8. Confirma o reboot (caso apareça um alerta)
+9. Fecha o navegador
+
+OBSERVAÇÕES:
+- O script aguarda alguns segundos entre as ações para garantir que a página carregue
+- Em caso de erro, verifique se o roteador está acessível no IP informado
+- Caso os elementos da página tenham IDs diferentes, será necessário ajustar os seletores
+
+PERSONALIZAÇÃO:
+Se precisar alterar alguma configuração (URL, usuário, senha), edite as seguintes linhas:
+- Linha 15: driver.get("http://10.2.17.30")
+- Linha 23: campo_usuario.send_keys("admin")
+- Linha 28: campo_senha.send_keys("Admin1")
+
+SOLUÇÃO DE PROBLEMAS:
+1. "ChromeDriver não encontrado": Baixe e instale o ChromeDriver
+2. "Elemento não encontrado": Os IDs/nomes dos elementos podem ter mudado, será necessário inspecionar a página
+3. "Timeout": Aumente os valores de time.sleep() ou WebDriverWait
