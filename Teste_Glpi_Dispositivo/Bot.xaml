@@ -71,9 +71,9 @@
     </jwe:Element_Library>
     <jkt:Type_Into DisplayName="Usuario_glpi" sap2010:WorkflowViewState.IdRef="Type_Into_11" click_before="False" convertTo="None" element_instance="usuario_glpi" empty_field="False" interval="0" text="&quot;ricardo&quot;" type="Send_Keys" with_spaces="True" />
     <jkt:Type_Into DisplayName="Senha_glpi" sap2010:WorkflowViewState.IdRef="Type_Into_12" click_before="False" convertTo="None" element_instance="senha_glpi" empty_field="False" interval="0" text="&quot;0805&quot;" type="Send_Keys" with_spaces="True" />
-    <jws:Scroll_Page Steps="10" direction="Down" instance="webBot" sap2010:WorkflowViewState.IdRef="Scroll_Page_4" />
+    <jws:Scroll_Page sap2010:WorkflowViewState.IdRef="Scroll_Page_4" Steps="10" direction="Down" instance="webBot" />
     <jmc:Click DisplayName="Clica_botao" Element="botao_glpi" sap2010:WorkflowViewState.IdRef="Click_6" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
-    <jwf:Find_Element DisplayName="Encontra_campo" sap2010:WorkflowViewState.IdRef="Find_Element_74" InstanceBrowser="webBot" by="NAME" ensure_clickable="False" ensure_visible="False" instance_element="nome_impressora" selector="&quot;name&quot;" waiting_time="1000" />
+    <jwf:Find_Element DisplayName="Encontra_campo" sap2010:WorkflowViewState.IdRef="Find_Element_74" InstanceBrowser="webBot" by="NAME" ensure_clickable="False" ensure_visible="False" instance_element="nome_item" selector="&quot;name&quot;" waiting_time="1000" />
     <jpf:ForEach DisplayName="Laco_repeticao" sap2010:WorkflowViewState.IdRef="ForEach_4" item="item_dispositivo" values="banco_dispositivo">
       <jpf:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
@@ -84,8 +84,8 @@
                   <Sequence sap2010:WorkflowViewState.IdRef="Sequence_24">
                     <Sequence sap2010:WorkflowViewState.IdRef="Sequence_23">
                       <Sequence DisplayName="Lista_acoes" sap2010:WorkflowViewState.IdRef="Sequence_22">
-                        <jwf:Find_Element DisplayName="Encontrar_nome" sap2010:WorkflowViewState.IdRef="Find_Element_72" InstanceBrowser="webBot" by="NAME" ensure_clickable="False" ensure_visible="False" instance_element="nome_impressora" selector="&quot;name&quot;" waiting_time="1000" />
-                        <jkt:Type_Into DisplayName="Dados_de_nome" sap2010:WorkflowViewState.IdRef="Type_Into_18" click_before="False" convertTo="None" element_instance="nome_impressora" empty_field="False" interval="0" text="item_dispositivo[&quot;Nome&quot;]" type="Send_Keys" with_spaces="True" />
+                        <jwf:Find_Element DisplayName="Encontrar_nome" sap2010:WorkflowViewState.IdRef="Find_Element_72" InstanceBrowser="webBot" by="NAME" ensure_clickable="False" ensure_visible="False" instance_element="nome_item" selector="&quot;name&quot;" waiting_time="1000" />
+                        <jkt:Type_Into DisplayName="Dados_de_nome" sap2010:WorkflowViewState.IdRef="Type_Into_18" click_before="False" convertTo="None" element_instance="nome_item" empty_field="False" interval="0" text="item_dispositivo[&quot;Nome&quot;]" type="Send_Keys" with_spaces="True" />
                         <jww:Wait DisplayName="Espera_3_segundos" sap2010:WorkflowViewState.IdRef="Wait_12" InstanceBrowser="webBot" wait_time="3000" />
                         <jws:Scroll_Page DisplayName="Descer_pagina" sap2010:WorkflowViewState.IdRef="Scroll_Page_2" Steps="20" direction="Down" instance="webBot" />
                         <jwf:Find_Element DisplayName="Encontrar_nome" sap2010:WorkflowViewState.IdRef="Find_Element_73" InstanceBrowser="webBot" by="NAME" ensure_clickable="False" ensure_visible="False" instance_element="envia_impressora" selector="&quot;add&quot;" waiting_time="1000" />
@@ -116,7 +116,7 @@
         </ActivityAction>
       </jpf:ForEach.Body>
     </jpf:ForEach>
-    <sads:DebugSymbol.Symbol>d0VDOlxVc2Vyc1xyaWNhcmRvXERvY3VtZW50c1xHaXRIdWJcUlBBXFRlc3RlX0dscGlfRGlzcG9zaXRpdm9cQm90LnhhbWwWGAN4DgIBARkFGXwCARYaBRqxBQIBFRsFG4MBAgEUHAUcqAICARMdBR2vAQIBEh4FKBsCAREpBSmHAgIBECoFKokCAgEPKwUrtgECAQ4sBSyiAgIBDS0FORsCAQw6BTrTAQIBCzsFO7sCAgEKPAU8rwECAQk9BUcbAgEISAVIhgICAQdJBUn/AQIBBkoFSnYCAQVLBUuzAQIBBEwFTI4CAgEDTQV2EwIBAg==</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d0VDOlxVc2Vyc1xyaWNhcmRvXERvY3VtZW50c1xHaXRIdWJcUlBBXFRlc3RlX0dscGlfRGlzcG9zaXRpdm9cQm90LnhhbWwWGAN4DgIBARkFGXwCARYaBRqxBQIBFRsFG4MBAgEUHAUcqAICARMdBR2vAQIBEh4FKBsCAREpBSmHAgIBECoFKokCAgEPKwUrtgECAQ4sBSyiAgIBDS0FORsCAQw6BTrTAQIBCzsFO7sCAgEKPAU8rwECAQk9BUcbAgEISAVIhgICAQdJBUn/AQIBBkoFSnYCAQVLBUuzAQIBBEwFTIgCAgEDTQV2EwIBAg==</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>

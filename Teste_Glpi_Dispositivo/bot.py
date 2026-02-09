@@ -138,7 +138,7 @@ class Bot:
 
         # Find Element Activity
         # Displayname: Encontra_campo
-        nome_impressora = webBot.find_element(selector="name", by=By.NAME, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
+        nome_item = webBot.find_element(selector="name", by=By.NAME, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
 
         # ForEach Activity
         # Displayname: Laco_repeticao
@@ -151,11 +151,11 @@ class Bot:
 
             # Find Element Activity
             # Displayname: Encontrar_nome
-            nome_impressora = webBot.find_element(selector="name", by=By.NAME, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
+            nome_item = webBot.find_element(selector="name", by=By.NAME, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
 
             # Type Into Activity
             # Displayname: Dados_de_nome
-            nome_impressora.send_keys(item_dispositivo["Nome"])
+            nome_item.send_keys(item_dispositivo["Nome"])
 
             # Wait Activity
             # Displayname: Espera_3_segundos
