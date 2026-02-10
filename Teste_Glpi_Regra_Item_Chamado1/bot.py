@@ -8,7 +8,7 @@ from datetime import datetime
 
 class Bot:
     def bot(self):
-        # Sequence: Sequencia_glpi_regra_item_chamado
+        # Sequence: Sequencia_glpi_regra_item_chamado1
 
         #  Activity Instance WebBot
         # Displayname: Abre_Chrome
@@ -70,6 +70,10 @@ class Bot:
         # Displayname: Extrair_dados_tabela
         banco_regra = Webscrap().webscrap(inBot=webBot, inXPATH="/html/body/div/main/form/table", inLines=0,inNext='', inGetLink=False)
 
+        # Print Activity
+        # Displayname: Print
+        print(banco_regra)
+
         # Sequence: Lista_acoes
 
         # Assign Activity
@@ -94,7 +98,7 @@ class Bot:
 
         #  Navigate to Activity
         # Displayname: Navegar_para
-        webBot.navigate_to("http://10.2.17.26/front/ruleticket.form.php")
+        webBot.navigate_to("http://10.2.17.66/front/ruleticket.form.php")
 
         # Find Element Activity
         # Displayname: Localiza_botao
@@ -393,89 +397,325 @@ class Bot:
             # Displayname: Espera_3_segundos
             webBot.wait(3000)
 
-            # Find Element Activity
-            # Displayname: elementos_ip_inicio_criterio
-            drop_acoes = webBot.find_element(selector="/html/body/div[2]/div[2]/div/main/div/div/div[2]/div[2]/div/div[3]/div[2]/div/form/div/div/div/div/div/div/div/div/span/div/span/span/span/span/span", by=By.XPATH, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
+            # Sequence: Conditional Structure
 
-            # Click Activity
-            # Displayname: Clica_botao
-            drop_acoes.click()
+            # If Activity
+            # Displayname: If Condition
+            if item_regra["Localizacao"] == "JOLI":
+                # Sequence: Body
 
-            # Wait Activity
-            # Displayname: Espera_drop
-            webBot.wait(3000)
+                # Wait Activity
+                # Displayname: Espera_3_segundos
+                webBot.wait(3000)
 
-            # Find Element Activity
-            # Displayname: Find_Element
-            nome_acoes = webBot.find_element(selector="/html/body/span/span/span/input", by=By.XPATH, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
+                # Find Element Activity
+                # Displayname: elementos_impressora_primeiro
+                add_acoes = webBot.find_element(selector="add_action", by=By.NAME, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
 
-            # Type Into Activity
-            # Displayname: Type_Into
-            nome_acoes.send_keys("Localizacao")
+                # Click Activity
+                # Displayname: Clica_botao
+                add_acoes.click()
 
-            # Wait Activity
-            # Displayname: espera_nome
-            webBot.wait(3000)
+                # Wait Activity
+                # Displayname: Espera_3_segundos
+                webBot.wait(3000)
 
-            # Find Element Activity
-            # Displayname: Find_Element
-            select_acoes = webBot.find_element(selector=".select2-results__option--highlighted", by=By.CSS_SELECTOR, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
+                # Find Element Activity
+                # Displayname: elementos_ip_inicio_criterio
+                drop_acoes = webBot.find_element(selector="/html/body/div[2]/div[2]/div/main/div/div/div[2]/div[2]/div/div[3]/div[2]/div/form/div/div/div/div/div/div/div/div/span/div/span/span/span/span/span", by=By.XPATH, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
 
-            # Click Activity
-            # Displayname: Click
-            select_acoes.click()
+                # Click Activity
+                # Displayname: Clica_botao
+                drop_acoes.click()
 
-            # Wait Activity
-            # Displayname: espera_final_criterio
-            webBot.wait(3000)
+                # Wait Activity
+                # Displayname: Espera_drop
+                webBot.wait(3000)
 
-            # Find Element Activity
-            # Displayname: elementos_ip_inicio_criterio
-            drop_adiciona = webBot.find_element(selector="/html/body/div[2]/div[2]/div/main/div/div/div[2]/div[2]/div/div[3]/div[2]/div/form/div/div/div/div/div/div/div/div/span/div/span[2]/span/span/span/span/span", by=By.XPATH, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
+                # Find Element Activity
+                # Displayname: Find_Element
+                nome_acoes = webBot.find_element(selector="/html/body/span/span/span/input", by=By.XPATH, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
 
-            # Click Activity
-            # Displayname: Clica_botao
-            drop_adiciona.click()
+                # Type Into Activity
+                # Displayname: Type_Into
+                nome_acoes.send_keys("Localizacao")
 
-            # Wait Activity
-            # Displayname: Espera_drop
-            webBot.wait(3000)
+                # Wait Activity
+                # Displayname: espera_nome
+                webBot.wait(3000)
 
-            # Find Element Activity
-            # Displayname: Find_Element
-            nome_adicionar = webBot.find_element(selector="/html/body/span/span/span/input", by=By.XPATH, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
+                # Find Element Activity
+                # Displayname: Find_Element
+                select_acoes = webBot.find_element(selector=".select2-results__option--highlighted", by=By.CSS_SELECTOR, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
 
-            # Type Into Activity
-            # Displayname: Type_Into
-            nome_adicionar.send_keys("Copiar do item")
+                # Click Activity
+                # Displayname: Click
+                select_acoes.click()
 
-            # Wait Activity
-            # Displayname: espera_nome
-            webBot.wait(3000)
+                # Wait Activity
+                # Displayname: espera_final_criterio
+                webBot.wait(3000)
 
-            # Find Element Activity
-            # Displayname: Find_Element
-            select_acoes = webBot.find_element(selector=".select2-results__option--highlighted", by=By.CSS_SELECTOR, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
+                # Find Element Activity
+                # Displayname: elementos_ip_inicio_criterio
+                drop_adiciona = webBot.find_element(selector="/html/body/div[2]/div[2]/div/main/div/div/div[2]/div[2]/div/div[3]/div[2]/div/form/div/div/div/div/div/div/div/div/span/div/span[2]/span[2]/div/span/span/span/span", by=By.XPATH, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
 
-            # Click Activity
-            # Displayname: Click
-            select_acoes.click()
+                # Click Activity
+                # Displayname: Clica_botao
+                drop_adiciona.click()
 
-            # Wait Activity
-            # Displayname: Wait
-            webBot.wait(3000)
+                # Wait Activity
+                # Displayname: Espera_drop
+                webBot.wait(3000)
 
-            # Find Element Activity
-            # Displayname: Elementos_botao
-            envia_regra = webBot.find_element(selector="add", by=By.NAME, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
+                # Find Element Activity
+                # Displayname: Find_Element
+                nome_adicionar = webBot.find_element(selector="/html/body/span/span/span/input", by=By.XPATH, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
 
-            # Click Activity
-            # Displayname: Clica_botao
-            envia_regra.click()
+                # Type Into Activity
+                # Displayname: Type_Into
+                nome_adicionar.send_keys("JOLI")
 
-            # Wait Activity
-            # Displayname: Espera_3_segundos
-            webBot.wait(3000)
+                # Wait Activity
+                # Displayname: espera_nome
+                webBot.wait(3000)
+
+                # Find Element Activity
+                # Displayname: Find_Element
+                select_acoes = webBot.find_element(selector=".select2-results__option--highlighted", by=By.CSS_SELECTOR, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
+
+                # Click Activity
+                # Displayname: Click
+                select_acoes.click()
+
+                # Wait Activity
+                # Displayname: Wait
+                webBot.wait(3000)
+
+                # Find Element Activity
+                # Displayname: Elementos_botao
+                envia_regra = webBot.find_element(selector="add", by=By.NAME, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
+
+                # Click Activity
+                # Displayname: Clica_botao
+                envia_regra.click()
+
+                # Wait Activity
+                # Displayname: Espera_3_segundos
+                webBot.wait(3000)
+
+
+            # ElseIf Activity
+            # Displayname: ElseIf
+            elif item_regra["Localizacao"] == "ITAPEVI":
+                # Sequence: Body
+
+                # Wait Activity
+                # Displayname: Espera_3_segundos
+                webBot.wait(3000)
+
+                # Find Element Activity
+                # Displayname: elementos_impressora_primeiro
+                add_acoes = webBot.find_element(selector="add_action", by=By.NAME, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
+
+                # Click Activity
+                # Displayname: Clica_botao
+                add_acoes.click()
+
+                # Wait Activity
+                # Displayname: Espera_3_segundos
+                webBot.wait(3000)
+
+                # Find Element Activity
+                # Displayname: elementos_ip_inicio_criterio
+                drop_acoes = webBot.find_element(selector="/html/body/div[2]/div[2]/div/main/div/div/div[2]/div[2]/div/div[3]/div[2]/div/form/div/div/div/div/div/div/div/div/span/div/span/span/span/span/span", by=By.XPATH, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
+
+                # Click Activity
+                # Displayname: Clica_botao
+                drop_acoes.click()
+
+                # Wait Activity
+                # Displayname: Espera_drop
+                webBot.wait(3000)
+
+                # Find Element Activity
+                # Displayname: Find_Element
+                nome_acoes = webBot.find_element(selector="/html/body/span/span/span/input", by=By.XPATH, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
+
+                # Type Into Activity
+                # Displayname: Type_Into
+                nome_acoes.send_keys("Localizacao")
+
+                # Wait Activity
+                # Displayname: espera_nome
+                webBot.wait(3000)
+
+                # Find Element Activity
+                # Displayname: Find_Element
+                select_acoes = webBot.find_element(selector=".select2-results__option--highlighted", by=By.CSS_SELECTOR, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
+
+                # Click Activity
+                # Displayname: Click
+                select_acoes.click()
+
+                # Wait Activity
+                # Displayname: espera_final_criterio
+                webBot.wait(3000)
+
+                # Find Element Activity
+                # Displayname: elementos_ip_inicio_criterio
+                drop_adiciona = webBot.find_element(selector="/html/body/div[2]/div[2]/div/main/div/div/div[2]/div[2]/div/div[3]/div[2]/div/form/div/div/div/div/div/div/div/div/span/div/span[2]/span[2]/div/span/span/span/span", by=By.XPATH, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
+
+                # Click Activity
+                # Displayname: Clica_botao
+                drop_adiciona.click()
+
+                # Wait Activity
+                # Displayname: Espera_drop
+                webBot.wait(3000)
+
+                # Find Element Activity
+                # Displayname: Find_Element
+                nome_adicionar = webBot.find_element(selector="/html/body/span/span/span/input", by=By.XPATH, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
+
+                # Type Into Activity
+                # Displayname: Type_Into
+                nome_adicionar.send_keys("ITAPEVI")
+
+                # Wait Activity
+                # Displayname: espera_nome
+                webBot.wait(3000)
+
+                # Find Element Activity
+                # Displayname: Find_Element
+                select_acoes = webBot.find_element(selector=".select2-results__option--highlighted", by=By.CSS_SELECTOR, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
+
+                # Click Activity
+                # Displayname: Click
+                select_acoes.click()
+
+                # Wait Activity
+                # Displayname: Wait
+                webBot.wait(3000)
+
+                # Find Element Activity
+                # Displayname: Elementos_botao
+                envia_regra = webBot.find_element(selector="add", by=By.NAME, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
+
+                # Click Activity
+                # Displayname: Clica_botao
+                envia_regra.click()
+
+                # Wait Activity
+                # Displayname: Espera_3_segundos
+                webBot.wait(3000)
+
+
+            # Else Activity
+            # Displayname: Else
+            else:
+                # Sequence: Body
+
+                # Wait Activity
+                # Displayname: Espera_3_segundos
+                webBot.wait(3000)
+
+                # Find Element Activity
+                # Displayname: elementos_impressora_primeiro
+                add_acoes = webBot.find_element(selector="add_action", by=By.NAME, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
+
+                # Click Activity
+                # Displayname: Clica_botao
+                add_acoes.click()
+
+                # Wait Activity
+                # Displayname: Espera_3_segundos
+                webBot.wait(3000)
+
+                # Find Element Activity
+                # Displayname: elementos_ip_inicio_criterio
+                drop_acoes = webBot.find_element(selector="/html/body/div[2]/div[2]/div/main/div/div/div[2]/div[2]/div/div[3]/div[2]/div/form/div/div/div/div/div/div/div/div/span/div/span/span/span/span/span", by=By.XPATH, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
+
+                # Click Activity
+                # Displayname: Clica_botao
+                drop_acoes.click()
+
+                # Wait Activity
+                # Displayname: Espera_drop
+                webBot.wait(3000)
+
+                # Find Element Activity
+                # Displayname: Find_Element
+                nome_acoes = webBot.find_element(selector="/html/body/span/span/span/input", by=By.XPATH, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
+
+                # Type Into Activity
+                # Displayname: Type_Into
+                nome_acoes.send_keys("Localizacao")
+
+                # Wait Activity
+                # Displayname: espera_nome
+                webBot.wait(3000)
+
+                # Find Element Activity
+                # Displayname: Find_Element
+                select_acoes = webBot.find_element(selector=".select2-results__option--highlighted", by=By.CSS_SELECTOR, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
+
+                # Click Activity
+                # Displayname: Click
+                select_acoes.click()
+
+                # Wait Activity
+                # Displayname: espera_final_criterio
+                webBot.wait(3000)
+
+                # Find Element Activity
+                # Displayname: elementos_ip_inicio_criterio
+                drop_adiciona = webBot.find_element(selector="/html/body/div[2]/div[2]/div/main/div/div/div[2]/div[2]/div/div[3]/div[2]/div/form/div/div/div/div/div/div/div/div/span/div/span[2]/span[2]/div/span/span/span/span", by=By.XPATH, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
+
+                # Click Activity
+                # Displayname: Clica_botao
+                drop_adiciona.click()
+
+                # Wait Activity
+                # Displayname: Espera_drop
+                webBot.wait(3000)
+
+                # Find Element Activity
+                # Displayname: Find_Element
+                nome_adicionar = webBot.find_element(selector="/html/body/span/span/span/input", by=By.XPATH, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
+
+                # Type Into Activity
+                # Displayname: Type_Into
+                nome_adicionar.send_keys("MENDES")
+
+                # Wait Activity
+                # Displayname: espera_nome
+                webBot.wait(3000)
+
+                # Find Element Activity
+                # Displayname: Find_Element
+                select_acoes = webBot.find_element(selector=".select2-results__option--highlighted", by=By.CSS_SELECTOR, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
+
+                # Click Activity
+                # Displayname: Click
+                select_acoes.click()
+
+                # Wait Activity
+                # Displayname: Wait
+                webBot.wait(3000)
+
+                # Find Element Activity
+                # Displayname: Elementos_botao
+                envia_regra = webBot.find_element(selector="add", by=By.NAME, waiting_time=1000, ensure_visible=False, ensure_clickable=False)
+
+                # Click Activity
+                # Displayname: Clica_botao
+                envia_regra.click()
+
+                # Wait Activity
+                # Displayname: Espera_3_segundos
+                webBot.wait(3000)
+
 
             # Find Element Activity
             # Displayname: elementos_impressora_primeiro
@@ -607,7 +847,7 @@ class Bot:
 
             #  Navigate to Activity
             # Displayname: Navigate_To
-            webBot.navigate_to("http://10.2.17.26/front/ruleticket.form.php")
+            webBot.navigate_to("http://10.2.17.66/front/ruleticket.form.php")
 
 
 
