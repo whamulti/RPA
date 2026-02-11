@@ -19,7 +19,7 @@
  xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
  xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-  <Sequence DisplayName="Teste_glpi_formulario" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Teste_glpi_formulario_chamado" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <jwi:Instance_Webbot DisplayName="Abre_Chrome" sap2010:WorkflowViewState.IdRef="Instance_Webbot_1" instance="webBot" />
     <jwo:OpenBrowser download_folder_path="{x:Null}" user_data_dir="{x:Null}" DisplayName="Pagina_Zabbix" Headless="False" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="&quot;file:///C:/Users/Ricardo/Downloads/usuarios_biotipo.html&quot;" WebDriverPath="''" anonimous="False" arguments="[]" createInstance="True" inBrowser="CHROME" outBrowser="webBot" page_load_strategy="Normal" upWebDriver="True" />
     <jwm:Maximize_Window DisplayName="Maximiza_Window" sap2010:WorkflowViewState.IdRef="Maximize_Window_3" botInstance="webBot" />
@@ -173,14 +173,14 @@
       <sap2010:ViewStateData Id="Find_Element_82" sap:VirtualizedContainerService.HintSize="600,177" />
       <sap2010:ViewStateData Id="Click_27" sap:VirtualizedContainerService.HintSize="600,81" />
       <sap2010:ViewStateData Id="Wait_20" sap:VirtualizedContainerService.HintSize="600,96" />
-      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="622,5852">
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="622,5872">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="JornadaRPAStudio.Workflow_1" sap:VirtualizedContainerService.HintSize="662,5932">
+      <sap2010:ViewStateData Id="JornadaRPAStudio.Workflow_1" sap:VirtualizedContainerService.HintSize="662,5952">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>

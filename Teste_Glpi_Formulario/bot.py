@@ -9,7 +9,7 @@ from datetime import datetime
 
 class Bot:
     def bot(self):
-        # Sequence: Teste_glpi_formulario
+        # Sequence: Teste_glpi_formulario_chamado
 
         #  Activity Instance WebBot
         # Displayname: Abre_Chrome
