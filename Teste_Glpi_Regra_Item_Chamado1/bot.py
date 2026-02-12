@@ -86,7 +86,7 @@ class Bot:
 
         # Assign Activity
         # Displayname: Assign_Values
-        banco_regra = banco_regra.assign(Localizacao=banco_regra['Nome'].str.split(' - ').str[1])
+        banco_regra = banco_regra.assign(Localizacao=banco_regra['Nome'].str.split(' _ ').str[1])
 
         # Assign Activity
         # Displayname: Assign_Values
@@ -474,7 +474,7 @@ class Bot:
 
                 # Type Into Activity
                 # Displayname: Type_Into
-                nome_adicionar.send_keys("JOLI")
+                nome_adicionar.send_keys(item_regra["Localizacao"])
 
                 # Wait Activity
                 # Displayname: espera_nome
@@ -580,7 +580,7 @@ class Bot:
 
                 # Type Into Activity
                 # Displayname: Type_Into
-                nome_adicionar.send_keys("ITAPEVI")
+                nome_adicionar.send_keys(item_regra["Localizacao"])
 
                 # Wait Activity
                 # Displayname: espera_nome
@@ -686,7 +686,7 @@ class Bot:
 
                 # Type Into Activity
                 # Displayname: Type_Into
-                nome_adicionar.send_keys("MENDES")
+                nome_adicionar.send_keys(item_regra["Localizacao"])
 
                 # Wait Activity
                 # Displayname: espera_nome

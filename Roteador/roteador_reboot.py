@@ -16,6 +16,7 @@ def reiniciar_roteador():
     servico = Service(caminho_chromedriver)
     
     driver = webdriver.Chrome(service=servico, options=chrome_options)
+    driver.maximize_window()
     
     try:
         print("=" * 60)

@@ -331,7 +331,7 @@ class Bot:
 
                 # Type Into Activity
                 # Displayname: Type_Into
-                nome_adicionar.send_keys("JOLI")
+                nome_adicionar.send_keys(item_regra["LOCALIZACAO"])
 
                 # Wait Activity
                 # Displayname: espera_nome
@@ -437,7 +437,7 @@ class Bot:
 
                 # Type Into Activity
                 # Displayname: Type_Into
-                nome_adicionar.send_keys("ITAPEVI")
+                nome_adicionar.send_keys(item_regra["LOCALIZACAO"])
 
                 # Wait Activity
                 # Displayname: espera_nome
@@ -543,7 +543,7 @@ class Bot:
 
                 # Type Into Activity
                 # Displayname: Type_Into
-                nome_adicionar.send_keys("MENDES")
+                nome_adicionar.send_keys(item_regra["LOCALIZACAO"])
 
                 # Wait Activity
                 # Displayname: espera_nome

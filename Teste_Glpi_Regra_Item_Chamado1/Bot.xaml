@@ -54,7 +54,7 @@
           <Sequence DisplayName="Lista_acoes" sap2010:WorkflowViewState.IdRef="Sequence_26">
             <jpa:Assign_Values DisplayName="Assign" sap2010:WorkflowViewState.IdRef="Assign_Values_1" isGlobal="False" to="banco_regra" value="banco_regra.assign(Interface2=banco_regra['Interface'].str.split(':').str[0])" />
             <jpa:Assign_Values sap2010:WorkflowViewState.IdRef="Assign_Values_2" isGlobal="False" to="lista_ips" value="banco_regra['Interface2'].tolist()" />
-            <jpa:Assign_Values sap2010:WorkflowViewState.IdRef="Assign_Values_3" isGlobal="False" to="banco_regra" value="banco_regra.assign(Localizacao=banco_regra['Nome'].str.split(' - ').str[1])" />
+            <jpa:Assign_Values sap2010:WorkflowViewState.IdRef="Assign_Values_3" isGlobal="False" to="banco_regra" value="banco_regra.assign(Localizacao=banco_regra['Nome'].str.split(' _ ').str[1])" />
             <jpa:Assign_Values sap2010:WorkflowViewState.IdRef="Assign_Values_4" isGlobal="False" to="lista_localizacoes" value="banco_regra['Localizacao'].tolist()" />
             <jpa:Assign_Values DisplayName="Converte_dados" sap2010:WorkflowViewState.IdRef="Assign_Values_5" isGlobal="False" to="banco_regra" value="banco_regra.to_dict(orient='records')" />
           </Sequence>
@@ -176,7 +176,7 @@
                                         <jmc:Click DisplayName="Clica_botao" Element="drop_adiciona" sap2010:WorkflowViewState.IdRef="Click_102" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
                                         <jww:Wait DisplayName="Espera_drop" sap2010:WorkflowViewState.IdRef="Wait_123" InstanceBrowser="webBot" wait_time="3000" />
                                         <jwf:Find_Element sap2010:WorkflowViewState.IdRef="Find_Element_190" InstanceBrowser="webBot" by="XPATH" ensure_clickable="False" ensure_visible="False" instance_element="nome_adicionar" selector="&quot;/html/body/span/span/span/input&quot;" waiting_time="1000" />
-                                        <jkt:Type_Into sap2010:WorkflowViewState.IdRef="Type_Into_51" click_before="False" convertTo="None" element_instance="nome_adicionar" empty_field="False" interval="0" text="&quot;JOLI&quot;" type="Send_Keys" with_spaces="True" />
+                                        <jkt:Type_Into sap2010:WorkflowViewState.IdRef="Type_Into_51" click_before="False" convertTo="None" element_instance="nome_adicionar" empty_field="False" interval="0" text="item_regra[&quot;Localizacao&quot;]" type="Send_Keys" with_spaces="True" />
                                         <jww:Wait DisplayName="espera_nome" sap2010:WorkflowViewState.IdRef="Wait_124" InstanceBrowser="webBot" wait_time="3000" />
                                         <jwf:Find_Element sap2010:WorkflowViewState.IdRef="Find_Element_191" InstanceBrowser="webBot" by="CSS_SELECTOR" ensure_clickable="False" ensure_visible="False" instance_element="select_acoes" selector="&quot;.select2-results__option--highlighted&quot;" waiting_time="1000" />
                                         <jmc:Click Element="select_acoes" sap2010:WorkflowViewState.IdRef="Click_103" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
@@ -209,7 +209,7 @@
                                         <jmc:Click DisplayName="Clica_botao" Element="drop_adiciona" sap2010:WorkflowViewState.IdRef="Click_108" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
                                         <jww:Wait DisplayName="Espera_drop" sap2010:WorkflowViewState.IdRef="Wait_132" InstanceBrowser="webBot" wait_time="3000" />
                                         <jwf:Find_Element sap2010:WorkflowViewState.IdRef="Find_Element_198" InstanceBrowser="webBot" by="XPATH" ensure_clickable="False" ensure_visible="False" instance_element="nome_adicionar" selector="&quot;/html/body/span/span/span/input&quot;" waiting_time="1000" />
-                                        <jkt:Type_Into sap2010:WorkflowViewState.IdRef="Type_Into_53" click_before="False" convertTo="None" element_instance="nome_adicionar" empty_field="False" interval="0" text="&quot;ITAPEVI&quot;" type="Send_Keys" with_spaces="True" />
+                                        <jkt:Type_Into sap2010:WorkflowViewState.IdRef="Type_Into_53" click_before="False" convertTo="None" element_instance="nome_adicionar" empty_field="False" interval="0" text="item_regra[&quot;Localizacao&quot;]" type="Send_Keys" with_spaces="True" />
                                         <jww:Wait DisplayName="espera_nome" sap2010:WorkflowViewState.IdRef="Wait_133" InstanceBrowser="webBot" wait_time="3000" />
                                         <jwf:Find_Element sap2010:WorkflowViewState.IdRef="Find_Element_199" InstanceBrowser="webBot" by="CSS_SELECTOR" ensure_clickable="False" ensure_visible="False" instance_element="select_acoes" selector="&quot;.select2-results__option--highlighted&quot;" waiting_time="1000" />
                                         <jmc:Click Element="select_acoes" sap2010:WorkflowViewState.IdRef="Click_109" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
@@ -242,7 +242,7 @@
                                         <jmc:Click DisplayName="Clica_botao" Element="drop_adiciona" sap2010:WorkflowViewState.IdRef="Click_114" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
                                         <jww:Wait DisplayName="Espera_drop" sap2010:WorkflowViewState.IdRef="Wait_141" InstanceBrowser="webBot" wait_time="3000" />
                                         <jwf:Find_Element sap2010:WorkflowViewState.IdRef="Find_Element_206" InstanceBrowser="webBot" by="XPATH" ensure_clickable="False" ensure_visible="False" instance_element="nome_adicionar" selector="&quot;/html/body/span/span/span/input&quot;" waiting_time="1000" />
-                                        <jkt:Type_Into sap2010:WorkflowViewState.IdRef="Type_Into_55" click_before="False" convertTo="None" element_instance="nome_adicionar" empty_field="False" interval="0" text="&quot;MENDES&quot;" type="Send_Keys" with_spaces="True" />
+                                        <jkt:Type_Into sap2010:WorkflowViewState.IdRef="Type_Into_55" click_before="False" convertTo="None" element_instance="nome_adicionar" empty_field="False" interval="0" text="item_regra[&quot;Localizacao&quot;]" type="Send_Keys" with_spaces="True" />
                                         <jww:Wait DisplayName="espera_nome" sap2010:WorkflowViewState.IdRef="Wait_142" InstanceBrowser="webBot" wait_time="3000" />
                                         <jwf:Find_Element sap2010:WorkflowViewState.IdRef="Find_Element_207" InstanceBrowser="webBot" by="CSS_SELECTOR" ensure_clickable="False" ensure_visible="False" instance_element="select_acoes" selector="&quot;.select2-results__option--highlighted&quot;" waiting_time="1000" />
                                         <jmc:Click Element="select_acoes" sap2010:WorkflowViewState.IdRef="Click_115" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
@@ -587,44 +587,44 @@
       <sap2010:ViewStateData Id="Click_98" sap:VirtualizedContainerService.HintSize="484,81" />
       <sap2010:ViewStateData Id="Wait_108" sap:VirtualizedContainerService.HintSize="484,96" />
       <sap2010:ViewStateData Id="Navigate_To_2" sap:VirtualizedContainerService.HintSize="484,170" />
-      <sap2010:ViewStateData Id="Sequence_22" sap:VirtualizedContainerService.HintSize="506,28442">
+      <sap2010:ViewStateData Id="Sequence_22" sap:VirtualizedContainerService.HintSize="506,27968">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Sequence_23" sap:VirtualizedContainerService.HintSize="528,28566">
+      <sap2010:ViewStateData Id="Sequence_23" sap:VirtualizedContainerService.HintSize="528,28092">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Sequence_24" sap:VirtualizedContainerService.HintSize="550,28690">
+      <sap2010:ViewStateData Id="Sequence_24" sap:VirtualizedContainerService.HintSize="550,28216">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Form_Element_Action_Web_6" sap:VirtualizedContainerService.HintSize="564,28789" />
-      <sap2010:ViewStateData Id="Sequence_21" sap:VirtualizedContainerService.HintSize="586,28913">
+      <sap2010:ViewStateData Id="Form_Element_Action_Web_6" sap:VirtualizedContainerService.HintSize="564,28315" />
+      <sap2010:ViewStateData Id="Sequence_21" sap:VirtualizedContainerService.HintSize="586,28439">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="ForEach_4" sap:VirtualizedContainerService.HintSize="600,29016" />
-      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="622,35221">
+      <sap2010:ViewStateData Id="ForEach_4" sap:VirtualizedContainerService.HintSize="600,28542" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="622,34747">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="JornadaRPAStudio.Workflow_1" sap:VirtualizedContainerService.HintSize="662,35301">
+      <sap2010:ViewStateData Id="JornadaRPAStudio.Workflow_1" sap:VirtualizedContainerService.HintSize="662,34827">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
