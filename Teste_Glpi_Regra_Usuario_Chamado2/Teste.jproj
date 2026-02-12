@@ -6,16 +6,16 @@
   "Dependencies": [],
   "WebDrivers": [
     {
-      "Import": "CHROME,C:\\Users\\biotipo\\Documents\\GitHub\\RPA\\WebDrivers\\CHROME\\chromedriver.exe"
+      "Import": "CHROME,C:\\Users\\ricardo\\Documents\\GitHub\\RPA\\WebDrivers\\CHROME\\chromedriver.exe"
     },
     {
       "Import": "CUSTOM,C:\\RPA\\WebDrivers\\custom\\custom.exe"
     },
     {
-      "Import": "EDGE,C:\\Users\\biotipo\\Documents\\GitHub\\RPA\\WebDrivers\\EDGE\\msedgedriver.exe"
+      "Import": "EDGE,C:\\Users\\ricardo\\Documents\\GitHub\\RPA\\WebDrivers\\EDGE\\msedgedriver.exe"
     },
     {
-      "Import": "FIREFOX,C:\\Users\\biotipo\\Documents\\GitHub\\RPA\\WebDrivers\\FIREFOX\\geckodriver.exe"
+      "Import": "FIREFOX,C:\\Users\\ricardo\\Documents\\GitHub\\RPA\\WebDrivers\\FIREFOX\\geckodriver.exe"
     }
   ],
   "MaestroLogin": "",
@@ -35,7 +35,7 @@
   ],
   "PathSelector": "C:\\Jornada RPA Selector 1.0\\JornadaRPA.Selector.exe",
   "PathRunner": "C:\\",
-  "PathInstalledPython": "C:\\Users\\biotipo\\Documents\\GitHub\\RPA\\Teste_Glpi_Regra_Usuario_Chamado1\\venv\\Scripts",
+  "PathInstalledPython": "C:\\Users\\ricardo\\Documents\\GitHub\\RPA\\Teste_Glpi_Regra_Usuario_Chamado2\\venv\\Scripts",
   "PathPythonVersion": "3.13",
   "PathPythonBaseVersion": null
 }
