@@ -23,10 +23,18 @@ class Bot:
         webBotDef_options = default_options()
         webBotDef_options.add_argument("--page-load-strategy=Normal")
         webBot.options = webBotDef_options
-        webBot.browse("http://10.2.17.30")
+        webBot.browse("https://www.vivo.com.br")
 
-        # Enter IFrame Activity
+        # Wait Activity
+        # Displayname: Wait
+        webBot.wait(3000)
+
+        # Custom Python Code Activity
         # This activity cannot be used in a community version.
+
+        # Wait Activity
+        # Displayname: Wait
+        webBot.wait(3000)
 
 
         return

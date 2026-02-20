@@ -1,8 +1,9 @@
 ﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="JornadaRPA.Bot" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap2010:WorkflowViewState.IdRef="JornadaRPAStudio.Workflow_1"
  xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
- xmlns:jwe="clr-namespace:JornadaRPA.Web.Enter_Iframe;assembly=JornadaRPA.Web"
+ xmlns:jpc="clr-namespace:JornadaRPA.Python.CodePython;assembly=JornadaRPA.Python"
  xmlns:jwi="clr-namespace:JornadaRPA.Web.Instance_Webbot;assembly=JornadaRPA.Web"
  xmlns:jwo="clr-namespace:JornadaRPA.Web.OpenBrowser;assembly=JornadaRPA.Web"
+ xmlns:jww="clr-namespace:JornadaRPA.Web.Wait;assembly=JornadaRPA.Web"
  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
  xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
  xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
@@ -11,9 +12,11 @@
  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <Sequence DisplayName="Sequencia_teste" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <jwi:Instance_Webbot DisplayName="Abre_Chrome" sap2010:WorkflowViewState.IdRef="Instance_Webbot_1" instance="webBot" />
-    <jwo:OpenBrowser download_folder_path="{x:Null}" user_data_dir="{x:Null}" DisplayName="Pagina_Zabbix" Headless="False" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="&quot;http://10.2.17.30&quot;" WebDriverPath="''" anonimous="False" arguments="[]" createInstance="True" inBrowser="CHROME" outBrowser="webBot" page_load_strategy="Normal" upWebDriver="True" />
-    <jwe:Enter_Iframe iframe="{x:Null}" inBrowser="webBot" />
-    <sads:DebugSymbol.Symbol>dzRDOlxVc2Vyc1xyaWNhcmRvXERvY3VtZW50c1xHaXRIdWJcUlBBXFRlc3RlXEJvdC54YW1sBAwDEQ4CAQENBQ18AgEEDgUO8gICAQMPBQ8+AgEC</sads:DebugSymbol.Symbol>
+    <jwo:OpenBrowser download_folder_path="{x:Null}" user_data_dir="{x:Null}" DisplayName="Pagina_Zabbix" Headless="False" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="&quot;https://www.vivo.com.br&quot;" WebDriverPath="''" anonimous="False" arguments="[]" createInstance="True" inBrowser="CHROME" outBrowser="webBot" page_load_strategy="Normal" upWebDriver="True" />
+    <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_1" InstanceBrowser="webBot" wait_time="3000" />
+    <jpc:CodePython Code="import smtplib&#xA;from email.mime.text import MIMEText&#xA;from email.mime.multipart import MIMEMultipart&#xA;&#xA;# Configurações de credenciais&#xA;sender_email = &quot;ricardo98365@gmail.com&quot;&#xA;receiver_email = &quot;gprilopes@gmail.com&quot;&#xA;password = &quot;vbdg tzyk bevv nukd&quot; # Use Senha de App, não a senha normal&#xA;&#xA;# Estrutura da mensagem&#xA;message = MIMEMultipart()&#xA;message['From'] = sender_email&#xA;message['To'] = receiver_email&#xA;message['Subject'] = &quot;Relatório Automático - RPA&quot;&#xA;body = &quot;Olá, segue o relatório em anexo.&quot;&#xA;message.attach(MIMEText(body, 'plain'))&#xA;&#xA;# Conexão e Envio&#xA;try:&#xA;    with smtplib.SMTP_SSL('smtp.gmail.com', 465) as server:&#xA;        server.login(sender_email, password)&#xA;        server.send_message(message)&#xA;    print(&quot;Email enviado com sucesso!&quot;)&#xA;except Exception as e:&#xA;    print(f&quot;Erro: {e}&quot;)" sap2010:WorkflowViewState.IdRef="CodePython_1" />
+    <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_2" InstanceBrowser="webBot" wait_time="3000" />
+    <sads:DebugSymbol.Symbol>dzRDOlxVc2Vyc1xyaWNhcmRvXERvY3VtZW50c1xHaXRIdWJcUlBBXFRlc3RlXEJvdC54YW1sBg0DFA4CAQEOBQ58AgEGDwUP+AICAQUQBRBkAgEEEQUR/wcCAQMSBRJkAgEC</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
@@ -33,14 +36,17 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="357,503">
+      <sap2010:ViewStateData Id="Wait_1" sap:VirtualizedContainerService.HintSize="335,96" />
+      <sap2010:ViewStateData Id="CodePython_1" sap:VirtualizedContainerService.HintSize="335,81" />
+      <sap2010:ViewStateData Id="Wait_2" sap:VirtualizedContainerService.HintSize="335,96" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="357,856">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="JornadaRPAStudio.Workflow_1" sap:VirtualizedContainerService.HintSize="397,583">
+      <sap2010:ViewStateData Id="JornadaRPAStudio.Workflow_1" sap:VirtualizedContainerService.HintSize="397,936">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
