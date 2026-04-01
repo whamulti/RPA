@@ -4,6 +4,8 @@ from botcity.web.browsers.chrome import default_options
 from webdriver_manager.chrome import ChromeDriverManager
 from botcity.web import *
 from datetime import datetime
+from jornadaRPA.webScrap import Webscrap
+import pandas as pd
 
 class Bot:
     def bot(self):

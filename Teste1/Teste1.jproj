@@ -1,7 +1,7 @@
 {
-  "NameProject": "Teste",
+  "NameProject": "Teste1",
   "Main": "Bot.xaml",
-  "Description": "",
+  "Description": null,
   "Tecnology": "Python",
   "Dependencies": [],
   "WebDrivers": [
@@ -21,24 +21,12 @@
   "MaestroLogin": null,
   "Packages": [
     {
-      "Import": "JornadaRPA.Web"
-    },
-    {
-      "Import": "JornadaRPA.Mouse"
-    },
-    {
       "Import": "JornadaRPA.Python"
-    },
-    {
-      "Import": "JornadaRPA.Keyboard"
-    },
-    {
-      "Import": "webscrap"
     }
   ],
   "PathSelector": "C:\\Jornada RPA Selector 1.0\\JornadaRPA.Selector.exe",
   "PathRunner": "C:\\",
-  "PathInstalledPython": "C:\\Users\\ricardo\\Documents\\GitHub\\RPA\\Teste\\venv\\Scripts",
+  "PathInstalledPython": "C:\\Users\\ricardo\\Documents\\GitHub\\RPA\\Teste1\\venv\\Scripts\\",
   "PathPythonVersion": "3.13",
   "PathPythonBaseVersion": null
 }

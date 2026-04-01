@@ -1,5 +1,6 @@
 # Community Version: This license is intended for educational and tool evaluation purposes.
 
+from botcity.web.util import element_as_select
 import pandas as pd
 from jornadaRPA.webScrap import Webscrap
 from botcity.web.browsers.chrome import default_options
@@ -39,7 +40,7 @@ class Bot:
 
         #  Navigate to Activity
         # Displayname: Navegar_para
-        webBot.navigate_to("http://10.2.17.66/front/user.form.php")
+        webBot.navigate_to("http://10.2.17.6/front/user.form.php")
 
         # Find Element Activity
         # Displayname: Localiza_botao
@@ -67,11 +68,11 @@ class Bot:
 
         # Type Into Activity
         # Displayname: Usuario_glpi
-        usuario_glpi.send_keys("ricardo")
+        usuario_glpi.send_keys("glpi")
 
         # Type Into Activity
         # Displayname: Senha_glpi
-        senha_glpi.send_keys("0805")
+        senha_glpi.send_keys("Tipo@123456")
 
         # Scroll Element Activity
         # Displayname: Scroll_Page
@@ -158,6 +159,11 @@ class Bot:
             # Displayname: Dados_de_ip
             digita_localizacao.send_keys(item_usuario["LOCALIZACAO"])
 
+            # Select Field Activity
+            # Displayname: Web_Select_Field
+            {x:Null} = element_as_select({x:Null})
+            {x:Null}.select_by_index(index={x:Null})
+
             # Wait Activity
             # Displayname: Wait
             webBot.wait(3000)
@@ -196,7 +202,7 @@ class Bot:
 
             #  Navigate to Activity
             # Displayname: retornar_pagina
-            webBot.navigate_to("http://10.2.17.66/front/user.form.php")
+            webBot.navigate_to("http://10.2.17.6/front/user.form.php")
 
             # Wait Activity
             # Displayname: Espera_3_segundos
