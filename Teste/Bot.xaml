@@ -1,7 +1,14 @@
 ﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="JornadaRPA.Bot" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap2010:WorkflowViewState.IdRef="JornadaRPAStudio.Workflow_1"
  xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
- xmlns:jpc="clr-namespace:JornadaRPA.Python.CodePython;assembly=JornadaRPA.Python"
+ xmlns:jkt="clr-namespace:JornadaRPA.Keyboard.Type_Into;assembly=JornadaRPA.Keyboard"
+ xmlns:jmc="clr-namespace:JornadaRPA.Mouse.Click;assembly=JornadaRPA.Mouse"
+ xmlns:jpf="clr-namespace:JornadaRPA.Python.ForEach;assembly=JornadaRPA.Python"
+ xmlns:jwe="clr-namespace:JornadaRPA.Web.Element_Library;assembly=JornadaRPA.Web"
+ xmlns:jwe1="clr-namespace:JornadaRPA.Web.ExtractDataTable;assembly=JornadaRPA.Web"
+ xmlns:jwf="clr-namespace:JornadaRPA.Web.Find_Element;assembly=JornadaRPA.Web"
  xmlns:jwi="clr-namespace:JornadaRPA.Web.Instance_Webbot;assembly=JornadaRPA.Web"
+ xmlns:jwm="clr-namespace:JornadaRPA.Web.Maximize_Window;assembly=JornadaRPA.Web"
+ xmlns:jwn="clr-namespace:JornadaRPA.Web.Navigate_To;assembly=JornadaRPA.Web"
  xmlns:jwo="clr-namespace:JornadaRPA.Web.OpenBrowser;assembly=JornadaRPA.Web"
  xmlns:jww="clr-namespace:JornadaRPA.Web.Wait;assembly=JornadaRPA.Web"
  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -11,16 +18,51 @@
  xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <Sequence DisplayName="Sequencia_teste" sap2010:WorkflowViewState.IdRef="Sequence_1">
-    <jwi:Instance_Webbot DisplayName="Abre_Chrome" sap2010:WorkflowViewState.IdRef="Instance_Webbot_1" instance="webBot" />
-    <jwo:OpenBrowser download_folder_path="{x:Null}" user_data_dir="{x:Null}" DisplayName="Pagina_Zabbix" Headless="False" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="&quot;https://www.vivo.com.br&quot;" WebDriverPath="''" anonimous="False" arguments="[]" createInstance="True" inBrowser="CHROME" outBrowser="webBot" page_load_strategy="Normal" upWebDriver="True" />
-    <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_1" InstanceBrowser="webBot" wait_time="3000" />
-    <jpc:CodePython Code="import smtplib&#xA;from email.mime.text import MIMEText&#xA;from email.mime.multipart import MIMEMultipart&#xA;&#xA;# Configurações de credenciais&#xA;sender_email = &quot;ricardo98365@gmail.com&quot;&#xA;receiver_email = &quot;gprilopes@gmail.com&quot;&#xA;password = &quot;vbdg tzyk bevv nukd&quot; # Use Senha de App, não a senha normal&#xA;&#xA;# Estrutura da mensagem&#xA;message = MIMEMultipart()&#xA;message['From'] = sender_email&#xA;message['To'] = receiver_email&#xA;message['Subject'] = &quot;Relatório Automático - RPA&quot;&#xA;body = &quot;Olá, segue o relatório em anexo.&quot;&#xA;message.attach(MIMEText(body, 'plain'))&#xA;&#xA;# Conexão e Envio&#xA;try:&#xA;    with smtplib.SMTP_SSL('smtp.gmail.com', 465) as server:&#xA;        server.login(sender_email, password)&#xA;        server.send_message(message)&#xA;    print(&quot;Email enviado com sucesso!&quot;)&#xA;except Exception as e:&#xA;    print(f&quot;Erro: {e}&quot;)" sap2010:WorkflowViewState.IdRef="CodePython_1" />
-    <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_2" InstanceBrowser="webBot" wait_time="3000" />
-    <sads:DebugSymbol.Symbol>dzRDOlxVc2Vyc1xyaWNhcmRvXERvY3VtZW50c1xHaXRIdWJcUlBBXFRlc3RlXEJvdC54YW1sBg0DFA4CAQEOBQ58AgEGDwUP+AICAQUQBRBkAgEEEQUR/wcCAQMSBRJkAgEC</sads:DebugSymbol.Symbol>
+    <jwi:Instance_Webbot DisplayName="Abre Chrome" sap2010:WorkflowViewState.IdRef="Instance_Webbot_1" instance="webBot" />
+    <jwo:OpenBrowser download_folder_path="{x:Null}" user_data_dir="{x:Null}" DisplayName="Pagina Zabbix" Headless="False" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="&quot;http://10.2.17.7/zabbix/zabbix.php?action=item.list&amp;context=host&amp;filter_groupids%5B%5D=22&amp;filter_hostids%5B%5D=10927&amp;filter_hostids%5B%5D=10928&amp;filter_hostids%5B%5D=10929&amp;filter_name=ICMP+ping&amp;filter_key=icmpping&amp;filter_type=-1&amp;filter_value_type=-1&amp;filter_history=&amp;filter_trends=&amp;filter_delay=&amp;filter_evaltype=0&amp;filter_tags%5B0%5D%5Btag%5D=target&amp;filter_tags%5B0%5D%5Boperator%5D=0&amp;filter_tags%5B0%5D%5Bvalue%5D=snmp&amp;filter_state=-1&amp;filter_status=-1&amp;filter_with_triggers=-1&amp;filter_inherited=-1&amp;filter_discovered=-1&amp;filter_set=1&quot;" WebDriverPath="''" anonimous="False" arguments="[]" createInstance="False" inBrowser="CHROME" outBrowser="webBot" page_load_strategy="Normal" upWebDriver="True" />
+    <jwm:Maximize_Window DisplayName="Maximiza Navegador" sap2010:WorkflowViewState.IdRef="Maximize_Window_1" botInstance="webBot" />
+    <jwf:Find_Element DisplayName="Encontra o botão" sap2010:WorkflowViewState.IdRef="Find_Element_1" InstanceBrowser="webBot" by="ID" ensure_clickable="False" ensure_visible="False" instance_element="botao_login" selector="&quot;login&quot;" waiting_time="1000" />
+    <jmc:Click DisplayName="Clica no botão" Element="botao_login" sap2010:WorkflowViewState.IdRef="Click_1" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
+    <jwe:Element_Library InstanceBrowser="{x:Null}" sap2010:WorkflowViewState.IdRef="Element_Library_1" by="ID" ensure_clickable="True" ensure_visible="True" instance_element="identer" selector="&quot;enter&quot;" waiting_time="0">
+      <jwe:Element_Library.Body>
+        <ActivityAction x:TypeArguments="x:String">
+          <Sequence DisplayName="Element list" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <jwf:Find_Element DisplayName="Encontra campo usuario" sap2010:WorkflowViewState.IdRef="Find_Element_2" InstanceBrowser="webBot" by="ID" ensure_clickable="False" ensure_visible="False" instance_element="idusuario" selector="&quot;name&quot;" waiting_time="1000" />
+            <jwf:Find_Element DisplayName="Encontra campo senha" sap2010:WorkflowViewState.IdRef="Find_Element_3" InstanceBrowser="webBot" by="ID" ensure_clickable="False" ensure_visible="False" instance_element="idsenha" selector="&quot;password&quot;" waiting_time="1000" />
+            <jwf:Find_Element DisplayName="Encontra botão login" sap2010:WorkflowViewState.IdRef="Find_Element_4" InstanceBrowser="webBot" by="ID" ensure_clickable="False" ensure_visible="False" instance_element="idconecta" selector="&quot;enter&quot;" waiting_time="1000" />
+          </Sequence>
+        </ActivityAction>
+      </jwe:Element_Library.Body>
+    </jwe:Element_Library>
+    <jkt:Type_Into DisplayName="Campo usuário" sap2010:WorkflowViewState.IdRef="Type_Into_1" click_before="False" convertTo="None" element_instance="idusuario" empty_field="False" interval="0" text="&quot;admin&quot;" type="Send_Keys" with_spaces="True" />
+    <jkt:Type_Into DisplayName="Campo senha" sap2010:WorkflowViewState.IdRef="Type_Into_2" click_before="False" convertTo="None" element_instance="idsenha" empty_field="False" interval="0" text="&quot;biotipo2023&quot;" type="Send_Keys" with_spaces="True" />
+    <jmc:Click DisplayName="Botão Conectar-se" Element="idconecta" sap2010:WorkflowViewState.IdRef="Click_2" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
+    <jww:Wait DisplayName="Espera" sap2010:WorkflowViewState.IdRef="Wait_2" InstanceBrowser="webBot" wait_time="3000" />
+    <jwe1:ExtractDataTable Datatable="tabela_zabbix" DisplayName="Extração de tabela" sap2010:WorkflowViewState.IdRef="ExtractDataTable_1" Lines="0" XPathNext="None" XPathtable="&quot;/html/body/div/main/form/table&quot;" getLinks="False" inBrowser="webBot" returnData="Dict" />
+    <jpf:ForEach sap2010:WorkflowViewState.IdRef="ForEach_8" item="item_zabbix" values="tabela_zabbix">
+      <jpf:ForEach.Body>
+        <ActivityAction x:TypeArguments="x:String">
+          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_29">
+            <jwf:Find_Element DisplayName="Elemento percorre host" sap2010:WorkflowViewState.IdRef="Find_Element_6" InstanceBrowser="webBot" by="LINK_TEXT" ensure_clickable="False" ensure_visible="False" instance_element="host" selector="item_zabbix[&quot;Host&quot;]" waiting_time="1000" />
+            <jmc:Click DisplayName="Click no host" Element="host" sap2010:WorkflowViewState.IdRef="Click_4" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
+            <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_6" InstanceBrowser="webBot" wait_time="3000" />
+            <jwf:Find_Element DisplayName="Elemento link" sap2010:WorkflowViewState.IdRef="Find_Element_8" InstanceBrowser="webBot" by="XPATH" ensure_clickable="False" ensure_visible="False" instance_element="link" selector="&quot;/html/body/div/main/form/table/tbody/tr/td[4]/a[2]&quot;" waiting_time="1000" />
+            <jmc:Click DisplayName="Clica no link" Element="link" sap2010:WorkflowViewState.IdRef="Click_6" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
+            <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_7" InstanceBrowser="webBot" wait_time="3000" />
+            <jwf:Find_Element DisplayName="Elemento popup" sap2010:WorkflowViewState.IdRef="Find_Element_9" InstanceBrowser="webBot" by="XPATH" ensure_clickable="False" ensure_visible="False" instance_element="atualiza" selector="&quot;/html/body/div/div[2]/div[3]/button&quot;" waiting_time="1000" />
+            <jmc:Click DisplayName="Click no popup" Element="atualiza" sap2010:WorkflowViewState.IdRef="Click_7" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
+            <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_8" InstanceBrowser="webBot" wait_time="3000" />
+            <jwn:Navigate_To sap2010:WorkflowViewState.IdRef="Navigate_To_1" inBrowser="webBot" url="&quot;http://10.2.17.7/zabbix/zabbix.php?action=item.list&amp;context=host&amp;filter_groupids%5B%5D=22&amp;filter_hostids%5B%5D=10927&amp;filter_hostids%5B%5D=10928&amp;filter_hostids%5B%5D=10929&amp;filter_name=ICMP+ping&amp;filter_key=icmpping&amp;filter_type=-1&amp;filter_value_type=-1&amp;filter_history=&amp;filter_trends=&amp;filter_delay=&amp;filter_evaltype=0&amp;filter_tags%5B0%5D%5Btag%5D=target&amp;filter_tags%5B0%5D%5Boperator%5D=0&amp;filter_tags%5B0%5D%5Bvalue%5D=snmp&amp;filter_state=-1&amp;filter_status=-1&amp;filter_with_triggers=-1&amp;filter_inherited=-1&amp;filter_discovered=-1&amp;filter_set=1&quot;" />
+          </Sequence>
+        </ActivityAction>
+      </jpf:ForEach.Body>
+    </jpf:ForEach>
+    <jww:Wait DisplayName="Espera" sap2010:WorkflowViewState.IdRef="Wait_3" InstanceBrowser="webBot" wait_time="3000" />
+    <sads:DebugSymbol.Symbol>dzRDOlxVc2Vyc1xyaWNhcmRvXERvY3VtZW50c1xHaXRIdWJcUlBBXFRlc3RlXEJvdC54YW1sDhQDPg4CAQEVBRV8AgEOFgUWyQcCAQ0XBReGAQIBDBgFGIoCAgELGQUZtwECAQoaBSQbAgEJJQUlgQICAQgmBSaDAgIBBycFJ7gBAgEGKAUoeQIBBSkFKZcCAgEEKgU7EwIBAzwFPHkCAQI=</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
-      <sap2010:ViewStateData Id="Instance_Webbot_1" sap:VirtualizedContainerService.HintSize="335,105">
+      <sap2010:ViewStateData Id="Instance_Webbot_1" sap:VirtualizedContainerService.HintSize="600,81">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -28,7 +70,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="OpenBrowser_1" sap:VirtualizedContainerService.HintSize="335,194">
+      <sap2010:ViewStateData Id="OpenBrowser_1" sap:VirtualizedContainerService.HintSize="600,170">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -36,17 +78,52 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Wait_1" sap:VirtualizedContainerService.HintSize="335,96" />
-      <sap2010:ViewStateData Id="CodePython_1" sap:VirtualizedContainerService.HintSize="335,81" />
-      <sap2010:ViewStateData Id="Wait_2" sap:VirtualizedContainerService.HintSize="335,96" />
-      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="357,856">
+      <sap2010:ViewStateData Id="Maximize_Window_1" sap:VirtualizedContainerService.HintSize="600,91" />
+      <sap2010:ViewStateData Id="Find_Element_1" sap:VirtualizedContainerService.HintSize="600,177" />
+      <sap2010:ViewStateData Id="Click_1" sap:VirtualizedContainerService.HintSize="600,81" />
+      <sap2010:ViewStateData Id="Find_Element_2" sap:VirtualizedContainerService.HintSize="200,177" />
+      <sap2010:ViewStateData Id="Find_Element_3" sap:VirtualizedContainerService.HintSize="200,177" />
+      <sap2010:ViewStateData Id="Find_Element_4" sap:VirtualizedContainerService.HintSize="200,177" />
+      <sap2010:ViewStateData Id="Sequence_2" sap:VirtualizedContainerService.HintSize="222,735">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="JornadaRPAStudio.Workflow_1" sap:VirtualizedContainerService.HintSize="397,936">
+      <sap2010:ViewStateData Id="Element_Library_1" sap:VirtualizedContainerService.HintSize="600,834" />
+      <sap2010:ViewStateData Id="Type_Into_1" sap:VirtualizedContainerService.HintSize="600,123" />
+      <sap2010:ViewStateData Id="Type_Into_2" sap:VirtualizedContainerService.HintSize="600,123" />
+      <sap2010:ViewStateData Id="Click_2" sap:VirtualizedContainerService.HintSize="600,81" />
+      <sap2010:ViewStateData Id="Wait_2" sap:VirtualizedContainerService.HintSize="600,96" />
+      <sap2010:ViewStateData Id="ExtractDataTable_1" sap:VirtualizedContainerService.HintSize="600,296" />
+      <sap2010:ViewStateData Id="Find_Element_6" sap:VirtualizedContainerService.HintSize="335,177" />
+      <sap2010:ViewStateData Id="Click_4" sap:VirtualizedContainerService.HintSize="335,81" />
+      <sap2010:ViewStateData Id="Wait_6" sap:VirtualizedContainerService.HintSize="335,96" />
+      <sap2010:ViewStateData Id="Find_Element_8" sap:VirtualizedContainerService.HintSize="335,177" />
+      <sap2010:ViewStateData Id="Click_6" sap:VirtualizedContainerService.HintSize="335,81" />
+      <sap2010:ViewStateData Id="Wait_7" sap:VirtualizedContainerService.HintSize="335,96" />
+      <sap2010:ViewStateData Id="Find_Element_9" sap:VirtualizedContainerService.HintSize="335,177" />
+      <sap2010:ViewStateData Id="Click_7" sap:VirtualizedContainerService.HintSize="335,81" />
+      <sap2010:ViewStateData Id="Wait_8" sap:VirtualizedContainerService.HintSize="335,96" />
+      <sap2010:ViewStateData Id="Navigate_To_1" sap:VirtualizedContainerService.HintSize="335,146" />
+      <sap2010:ViewStateData Id="Sequence_29" sap:VirtualizedContainerService.HintSize="357,1692">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ForEach_8" sap:VirtualizedContainerService.HintSize="600,1795" />
+      <sap2010:ViewStateData Id="Wait_3" sap:VirtualizedContainerService.HintSize="600,96" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="622,4648">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="JornadaRPAStudio.Workflow_1" sap:VirtualizedContainerService.HintSize="662,4728">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>

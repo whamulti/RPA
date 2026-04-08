@@ -185,7 +185,6 @@ class Bot:
                 # Displayname: Click
                 joli.click()
 
-
             # ElseIf Activity
             # Displayname: ElseIf
             elif item_usuario["LOCALIZACAO"] == "ITAPEVI":
@@ -195,7 +194,6 @@ class Bot:
                 # Displayname: Click
                 itapevi.click()
 
-
             # Else Activity
             # Displayname: Else
             else:
@@ -204,7 +202,6 @@ class Bot:
                 # Click Activity
                 # Displayname: Click
                 mendes.click()
-
 
             # Wait Activity
             # Displayname: Wait
@@ -217,8 +214,6 @@ class Bot:
             # Wait Activity
             # Displayname: Espera_3_segundos
             webBot.wait(3000)
-
-
 
         return
 if __name__ == '__main__':

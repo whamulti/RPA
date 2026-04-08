@@ -1,5 +1,3 @@
-# Community Version: This license is intended for educational and tool evaluation purposes.
-
 from jornadaRPA.webScrap import Webscrap
 from botcity.web.browsers.chrome import default_options
 from webdriver_manager.chrome import ChromeDriverManager

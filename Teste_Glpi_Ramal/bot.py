@@ -237,8 +237,6 @@ class Bot:
             # Displayname: Espera_3_segundos
             webBot.wait(3000)
 
-
-
         return
 if __name__ == '__main__':
     bot = Bot()
