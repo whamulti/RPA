@@ -19,7 +19,7 @@
  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <Sequence DisplayName="Sequencia_teste" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <jwi:Instance_Webbot DisplayName="Abre Chrome" sap2010:WorkflowViewState.IdRef="Instance_Webbot_1" instance="webBot" />
-    <jwo:OpenBrowser download_folder_path="{x:Null}" user_data_dir="{x:Null}" DisplayName="Pagina Zabbix" Headless="False" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="&quot;http://10.2.17.7/zabbix/zabbix.php?action=item.list&amp;context=host&amp;filter_groupids%5B%5D=22&amp;filter_hostids%5B%5D=10927&amp;filter_hostids%5B%5D=10928&amp;filter_hostids%5B%5D=10929&amp;filter_name=ICMP+ping&amp;filter_key=icmpping&amp;filter_type=-1&amp;filter_value_type=-1&amp;filter_history=&amp;filter_trends=&amp;filter_delay=&amp;filter_evaltype=0&amp;filter_tags%5B0%5D%5Btag%5D=target&amp;filter_tags%5B0%5D%5Boperator%5D=0&amp;filter_tags%5B0%5D%5Bvalue%5D=snmp&amp;filter_state=-1&amp;filter_status=-1&amp;filter_with_triggers=-1&amp;filter_inherited=-1&amp;filter_discovered=-1&amp;filter_set=1&quot;" WebDriverPath="''" anonimous="False" arguments="[]" createInstance="False" inBrowser="CHROME" outBrowser="webBot" page_load_strategy="Normal" upWebDriver="True" />
+    <jwo:OpenBrowser download_folder_path="{x:Null}" user_data_dir="{x:Null}" DisplayName="Pagina Zabbix" Headless="False" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="&quot;http://10.2.17.7/zabbix/zabbix.php?action=item.list&amp;context=host&amp;filter_groupids%5B%5D=22&amp;filter_hostids%5B%5D=10927&amp;filter_hostids%5B%5D=10928&amp;filter_hostids%5B%5D=10929&amp;filter_hostids%5B%5D=10930&amp;filter_hostids%5B%5D=10931&amp;filter_hostids%5B%5D=10932&amp;filter_hostids%5B%5D=10933&amp;filter_hostids%5B%5D=10934&amp;filter_hostids%5B%5D=10935&amp;filter_hostids%5B%5D=10986&amp;filter_hostids%5B%5D=10937&amp;filter_hostids%5B%5D=10938&amp;filter_hostids%5B%5D=10939&amp;filter_hostids%5B%5D=10940&amp;filter_hostids%5B%5D=10941&amp;filter_hostids%5B%5D=10942&amp;filter_hostids%5B%5D=10943&amp;filter_hostids%5B%5D=10944&amp;filter_hostids%5B%5D=10945&amp;filter_hostids%5B%5D=10946&amp;filter_hostids%5B%5D=10947&amp;filter_hostids%5B%5D=10948&amp;filter_hostids%5B%5D=10949&amp;filter_hostids%5B%5D=10950&amp;filter_hostids%5B%5D=10951&amp;filter_hostids%5B%5D=10952&amp;filter_hostids%5B%5D=10953&amp;filter_hostids%5B%5D=10954&amp;filter_hostids%5B%5D=10955&amp;filter_hostids%5B%5D=10956&amp;filter_hostids%5B%5D=10957&amp;filter_hostids%5B%5D=10958&amp;filter_hostids%5B%5D=10959&amp;filter_hostids%5B%5D=10960&amp;filter_hostids%5B%5D=10961&amp;filter_hostids%5B%5D=10962&amp;filter_hostids%5B%5D=10963&amp;filter_hostids%5B%5D=10964&amp;filter_hostids%5B%5D=10965&amp;filter_hostids%5B%5D=10966&amp;filter_hostids%5B%5D=10967&amp;filter_hostids%5B%5D=10968&amp;filter_hostids%5B%5D=10969&amp;filter_hostids%5B%5D=10970&amp;filter_hostids%5B%5D=10987&amp;filter_hostids%5B%5D=10972&amp;filter_hostids%5B%5D=10973&amp;filter_hostids%5B%5D=10974&amp;filter_hostids%5B%5D=10975&amp;filter_hostids%5B%5D=10976&amp;filter_hostids%5B%5D=10977&amp;filter_hostids%5B%5D=10985&amp;filter_hostids%5B%5D=10978&amp;filter_hostids%5B%5D=10979&amp;filter_hostids%5B%5D=10980&amp;filter_hostids%5B%5D=10981&amp;filter_hostids%5B%5D=10982&amp;filter_name=ICMP+ping&amp;filter_key=icmpping&amp;filter_type=-1&amp;filter_value_type=-1&amp;filter_history=&amp;filter_trends=&amp;filter_delay=&amp;filter_evaltype=0&amp;filter_tags%5B0%5D%5Btag%5D=target&amp;filter_tags%5B0%5D%5Boperator%5D=0&amp;filter_tags%5B0%5D%5Bvalue%5D=snmp&amp;filter_state=-1&amp;filter_status=-1&amp;filter_with_triggers=-1&amp;filter_inherited=-1&amp;filter_discovered=-1&amp;filter_set=1&quot;" WebDriverPath="''" anonimous="False" arguments="[]" createInstance="False" inBrowser="CHROME" outBrowser="webBot" page_load_strategy="Normal" upWebDriver="True" />
     <jwm:Maximize_Window DisplayName="Maximiza Navegador" sap2010:WorkflowViewState.IdRef="Maximize_Window_1" botInstance="webBot" />
     <jwf:Find_Element DisplayName="Encontra o botão" sap2010:WorkflowViewState.IdRef="Find_Element_1" InstanceBrowser="webBot" by="ID" ensure_clickable="False" ensure_visible="False" instance_element="botao_login" selector="&quot;login&quot;" waiting_time="1000" />
     <jmc:Click DisplayName="Clica no botão" Element="botao_login" sap2010:WorkflowViewState.IdRef="Click_1" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
@@ -45,20 +45,35 @@
           <Sequence sap2010:WorkflowViewState.IdRef="Sequence_29">
             <jwf:Find_Element DisplayName="Elemento percorre host" sap2010:WorkflowViewState.IdRef="Find_Element_6" InstanceBrowser="webBot" by="LINK_TEXT" ensure_clickable="False" ensure_visible="False" instance_element="host" selector="item_zabbix[&quot;Host&quot;]" waiting_time="1000" />
             <jmc:Click DisplayName="Click no host" Element="host" sap2010:WorkflowViewState.IdRef="Click_4" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
-            <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_6" InstanceBrowser="webBot" wait_time="3000" />
-            <jwf:Find_Element DisplayName="Elemento link" sap2010:WorkflowViewState.IdRef="Find_Element_8" InstanceBrowser="webBot" by="XPATH" ensure_clickable="False" ensure_visible="False" instance_element="link" selector="&quot;/html/body/div/main/form/table/tbody/tr/td[4]/a[2]&quot;" waiting_time="1000" />
-            <jmc:Click DisplayName="Clica no link" Element="link" sap2010:WorkflowViewState.IdRef="Click_6" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
-            <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_7" InstanceBrowser="webBot" wait_time="3000" />
-            <jwf:Find_Element DisplayName="Elemento popup" sap2010:WorkflowViewState.IdRef="Find_Element_9" InstanceBrowser="webBot" by="XPATH" ensure_clickable="False" ensure_visible="False" instance_element="atualiza" selector="&quot;/html/body/div/div[2]/div[3]/button&quot;" waiting_time="1000" />
-            <jmc:Click DisplayName="Click no popup" Element="atualiza" sap2010:WorkflowViewState.IdRef="Click_7" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
             <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_8" InstanceBrowser="webBot" wait_time="3000" />
-            <jwn:Navigate_To sap2010:WorkflowViewState.IdRef="Navigate_To_1" inBrowser="webBot" url="&quot;http://10.2.17.7/zabbix/zabbix.php?action=item.list&amp;context=host&amp;filter_groupids%5B%5D=22&amp;filter_hostids%5B%5D=10927&amp;filter_hostids%5B%5D=10928&amp;filter_hostids%5B%5D=10929&amp;filter_name=ICMP+ping&amp;filter_key=icmpping&amp;filter_type=-1&amp;filter_value_type=-1&amp;filter_history=&amp;filter_trends=&amp;filter_delay=&amp;filter_evaltype=0&amp;filter_tags%5B0%5D%5Btag%5D=target&amp;filter_tags%5B0%5D%5Boperator%5D=0&amp;filter_tags%5B0%5D%5Bvalue%5D=snmp&amp;filter_state=-1&amp;filter_status=-1&amp;filter_with_triggers=-1&amp;filter_inherited=-1&amp;filter_discovered=-1&amp;filter_set=1&quot;" />
+            <jwf:Find_Element sap2010:WorkflowViewState.IdRef="Find_Element_7" InstanceBrowser="webBot" by="XPATH" ensure_clickable="False" ensure_visible="False" instance_element="link" selector="&quot;/html/body/div/main/form/table/tbody/tr/td[4]/a[2]&quot;" waiting_time="1000" />
+            <jmc:Click Element="link" sap2010:WorkflowViewState.IdRef="Click_5" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
+            <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_13" InstanceBrowser="webBot" wait_time="3000" />
+            <jwe:Element_Library InstanceBrowser="{x:Null}" sap2010:WorkflowViewState.IdRef="Element_Library_2" by="XPATH" ensure_clickable="True" ensure_visible="True" instance_element="xpath491" selector="&quot;/html/body/div/div[2]/div[3]/button&quot;" waiting_time="0">
+              <jwe:Element_Library.Body>
+                <ActivityAction x:TypeArguments="x:String">
+                  <Sequence DisplayName="Element list" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                    <jwf:Find_Element sap2010:WorkflowViewState.IdRef="Find_Element_8" InstanceBrowser="webBot" by="XPATH" ensure_clickable="False" ensure_visible="False" instance_element="drop" selector="&quot;/html/body/div/div[2]/div[2]/form/div/div/div/div[29]/z-select/button&quot;" waiting_time="1000" />
+                    <jwf:Find_Element sap2010:WorkflowViewState.IdRef="Find_Element_9" InstanceBrowser="webBot" by="XPATH" ensure_clickable="False" ensure_visible="False" instance_element="interface" selector="&quot;/html/body/div/div[2]/div[2]/form/div/div/div/div[29]/z-select/ul/li[3]/ul/li&quot;" waiting_time="1000" />
+                    <jwf:Find_Element sap2010:WorkflowViewState.IdRef="Find_Element_10" InstanceBrowser="webBot" by="XPATH" ensure_clickable="False" ensure_visible="False" instance_element="atualizar" selector="&quot;/html/body/div/div[2]/div[3]/button&quot;" waiting_time="1000" />
+                  </Sequence>
+                </ActivityAction>
+              </jwe:Element_Library.Body>
+            </jwe:Element_Library>
+            <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_10" InstanceBrowser="webBot" wait_time="3000" />
+            <jmc:Click Element="drop" sap2010:WorkflowViewState.IdRef="Click_6" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
+            <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_11" InstanceBrowser="webBot" wait_time="3000" />
+            <jmc:Click Element="interface" sap2010:WorkflowViewState.IdRef="Click_7" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
+            <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_12" InstanceBrowser="webBot" wait_time="3000" />
+            <jmc:Click Element="atualizar" sap2010:WorkflowViewState.IdRef="Click_8" button="Left" clicks="One" interval_between_clicks="0" wait_after="300" />
+            <jww:Wait sap2010:WorkflowViewState.IdRef="Wait_9" InstanceBrowser="webBot" wait_time="3000" />
+            <jwn:Navigate_To sap2010:WorkflowViewState.IdRef="Navigate_To_2" inBrowser="webBot" url="&quot;http://10.2.17.7/zabbix/zabbix.php?action=item.list&amp;context=host&amp;filter_groupids%5B%5D=22&amp;filter_hostids%5B%5D=10927&amp;filter_hostids%5B%5D=10928&amp;filter_hostids%5B%5D=10929&amp;filter_hostids%5B%5D=10930&amp;filter_hostids%5B%5D=10931&amp;filter_hostids%5B%5D=10932&amp;filter_hostids%5B%5D=10933&amp;filter_hostids%5B%5D=10934&amp;filter_hostids%5B%5D=10935&amp;filter_hostids%5B%5D=10986&amp;filter_hostids%5B%5D=10937&amp;filter_hostids%5B%5D=10938&amp;filter_hostids%5B%5D=10939&amp;filter_hostids%5B%5D=10940&amp;filter_hostids%5B%5D=10941&amp;filter_hostids%5B%5D=10942&amp;filter_hostids%5B%5D=10943&amp;filter_hostids%5B%5D=10944&amp;filter_hostids%5B%5D=10945&amp;filter_hostids%5B%5D=10946&amp;filter_hostids%5B%5D=10947&amp;filter_hostids%5B%5D=10948&amp;filter_hostids%5B%5D=10949&amp;filter_hostids%5B%5D=10950&amp;filter_hostids%5B%5D=10951&amp;filter_hostids%5B%5D=10952&amp;filter_hostids%5B%5D=10953&amp;filter_hostids%5B%5D=10954&amp;filter_hostids%5B%5D=10955&amp;filter_hostids%5B%5D=10956&amp;filter_hostids%5B%5D=10957&amp;filter_hostids%5B%5D=10958&amp;filter_hostids%5B%5D=10959&amp;filter_hostids%5B%5D=10960&amp;filter_hostids%5B%5D=10961&amp;filter_hostids%5B%5D=10962&amp;filter_hostids%5B%5D=10963&amp;filter_hostids%5B%5D=10964&amp;filter_hostids%5B%5D=10965&amp;filter_hostids%5B%5D=10966&amp;filter_hostids%5B%5D=10967&amp;filter_hostids%5B%5D=10968&amp;filter_hostids%5B%5D=10969&amp;filter_hostids%5B%5D=10970&amp;filter_hostids%5B%5D=10987&amp;filter_hostids%5B%5D=10972&amp;filter_hostids%5B%5D=10973&amp;filter_hostids%5B%5D=10974&amp;filter_hostids%5B%5D=10975&amp;filter_hostids%5B%5D=10976&amp;filter_hostids%5B%5D=10977&amp;filter_hostids%5B%5D=10985&amp;filter_hostids%5B%5D=10978&amp;filter_hostids%5B%5D=10979&amp;filter_hostids%5B%5D=10980&amp;filter_hostids%5B%5D=10981&amp;filter_hostids%5B%5D=10982&amp;filter_name=ICMP+ping&amp;filter_key=icmpping&amp;filter_type=-1&amp;filter_value_type=-1&amp;filter_history=&amp;filter_trends=&amp;filter_delay=&amp;filter_evaltype=0&amp;filter_tags%5B0%5D%5Btag%5D=target&amp;filter_tags%5B0%5D%5Boperator%5D=0&amp;filter_tags%5B0%5D%5Bvalue%5D=snmp&amp;filter_state=-1&amp;filter_status=-1&amp;filter_with_triggers=-1&amp;filter_inherited=-1&amp;filter_discovered=-1&amp;filter_set=1&quot;" />
           </Sequence>
         </ActivityAction>
       </jpf:ForEach.Body>
     </jpf:ForEach>
     <jww:Wait DisplayName="Espera" sap2010:WorkflowViewState.IdRef="Wait_3" InstanceBrowser="webBot" wait_time="3000" />
-    <sads:DebugSymbol.Symbol>dzRDOlxVc2Vyc1xyaWNhcmRvXERvY3VtZW50c1xHaXRIdWJcUlBBXFRlc3RlXEJvdC54YW1sDhQDPg4CAQEVBRV8AgEOFgUWyQcCAQ0XBReGAQIBDBgFGIoCAgELGQUZtwECAQoaBSQbAgEJJQUlgQICAQgmBSaDAgIBBycFJ7gBAgEGKAUoeQIBBSkFKZcCAgEEKgU7EwIBAzwFPHkCAQI=</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>dzRDOlxVc2Vyc1xyaWNhcmRvXERvY3VtZW50c1xHaXRIdWJcUlBBXFRlc3RlXEJvdC54YW1sDhQDTQ4CAQEVBRV8AgEOFgUW0xQCAQ0XBReGAQIBDBgFGIoCAgELGQUZtwECAQoaBSQbAgEJJQUlgQICAQgmBSaDAgIBBycFJ7gBAgEGKAUoeQIBBSkFKZcCAgEEKgVKEwIBA0sFS3kCAQI=</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
@@ -97,33 +112,48 @@
       <sap2010:ViewStateData Id="Click_2" sap:VirtualizedContainerService.HintSize="600,81" />
       <sap2010:ViewStateData Id="Wait_2" sap:VirtualizedContainerService.HintSize="600,96" />
       <sap2010:ViewStateData Id="ExtractDataTable_1" sap:VirtualizedContainerService.HintSize="600,296" />
-      <sap2010:ViewStateData Id="Find_Element_6" sap:VirtualizedContainerService.HintSize="335,177" />
-      <sap2010:ViewStateData Id="Click_4" sap:VirtualizedContainerService.HintSize="335,81" />
-      <sap2010:ViewStateData Id="Wait_6" sap:VirtualizedContainerService.HintSize="335,96" />
-      <sap2010:ViewStateData Id="Find_Element_8" sap:VirtualizedContainerService.HintSize="335,177" />
-      <sap2010:ViewStateData Id="Click_6" sap:VirtualizedContainerService.HintSize="335,81" />
-      <sap2010:ViewStateData Id="Wait_7" sap:VirtualizedContainerService.HintSize="335,96" />
-      <sap2010:ViewStateData Id="Find_Element_9" sap:VirtualizedContainerService.HintSize="335,177" />
-      <sap2010:ViewStateData Id="Click_7" sap:VirtualizedContainerService.HintSize="335,81" />
-      <sap2010:ViewStateData Id="Wait_8" sap:VirtualizedContainerService.HintSize="335,96" />
-      <sap2010:ViewStateData Id="Navigate_To_1" sap:VirtualizedContainerService.HintSize="335,146" />
-      <sap2010:ViewStateData Id="Sequence_29" sap:VirtualizedContainerService.HintSize="357,1692">
+      <sap2010:ViewStateData Id="Find_Element_6" sap:VirtualizedContainerService.HintSize="400,177" />
+      <sap2010:ViewStateData Id="Click_4" sap:VirtualizedContainerService.HintSize="400,81" />
+      <sap2010:ViewStateData Id="Wait_8" sap:VirtualizedContainerService.HintSize="400,96" />
+      <sap2010:ViewStateData Id="Find_Element_7" sap:VirtualizedContainerService.HintSize="400,177" />
+      <sap2010:ViewStateData Id="Click_5" sap:VirtualizedContainerService.HintSize="400,81" />
+      <sap2010:ViewStateData Id="Wait_13" sap:VirtualizedContainerService.HintSize="400,96" />
+      <sap2010:ViewStateData Id="Find_Element_8" sap:VirtualizedContainerService.HintSize="200,177" />
+      <sap2010:ViewStateData Id="Find_Element_9" sap:VirtualizedContainerService.HintSize="200,177" />
+      <sap2010:ViewStateData Id="Find_Element_10" sap:VirtualizedContainerService.HintSize="200,177" />
+      <sap2010:ViewStateData Id="Sequence_30" sap:VirtualizedContainerService.HintSize="222,735">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="ForEach_8" sap:VirtualizedContainerService.HintSize="600,1795" />
+      <sap2010:ViewStateData Id="Element_Library_2" sap:VirtualizedContainerService.HintSize="400,834" />
+      <sap2010:ViewStateData Id="Wait_10" sap:VirtualizedContainerService.HintSize="400,96" />
+      <sap2010:ViewStateData Id="Click_6" sap:VirtualizedContainerService.HintSize="400,81" />
+      <sap2010:ViewStateData Id="Wait_11" sap:VirtualizedContainerService.HintSize="400,96" />
+      <sap2010:ViewStateData Id="Click_7" sap:VirtualizedContainerService.HintSize="400,81" />
+      <sap2010:ViewStateData Id="Wait_12" sap:VirtualizedContainerService.HintSize="400,96" />
+      <sap2010:ViewStateData Id="Click_8" sap:VirtualizedContainerService.HintSize="400,81" />
+      <sap2010:ViewStateData Id="Wait_9" sap:VirtualizedContainerService.HintSize="400,96" />
+      <sap2010:ViewStateData Id="Navigate_To_2" sap:VirtualizedContainerService.HintSize="400,146" />
+      <sap2010:ViewStateData Id="Sequence_29" sap:VirtualizedContainerService.HintSize="422,3120">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ForEach_8" sap:VirtualizedContainerService.HintSize="600,3223" />
       <sap2010:ViewStateData Id="Wait_3" sap:VirtualizedContainerService.HintSize="600,96" />
-      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="622,4648">
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="622,6076">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="JornadaRPAStudio.Workflow_1" sap:VirtualizedContainerService.HintSize="662,4728">
+      <sap2010:ViewStateData Id="JornadaRPAStudio.Workflow_1" sap:VirtualizedContainerService.HintSize="662,6156">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
